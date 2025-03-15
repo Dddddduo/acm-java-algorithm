@@ -1,7 +1,7 @@
 import java.io.*;
 import java.math.*;
 import java.util.*;
-// https://ac.nowcoder.com/acm/contest/103151/A
+// https://ac.nowcoder.com/acm/contest/103151/B
 public class Main {
 
     static ScannerIos sc=new ScannerIos();
@@ -9,21 +9,32 @@ public class Main {
 
     static void solve() throws IOException {
 
-        long x=sc.nextLong();
-        long y=sc.nextLong();
-        long min=sc.nextLong();
+        long n=sc.nextLong();
+        long m=sc.nextLong();
+        long q=sc.nextLong();
 
-        int min1= (int) Math.min(x-1,min);
-        int min2= (int) Math.min(y-1,min);
+        long ans= m%2==0 ? 1 : -1; // 1偶数 2奇数
 
-        dduoln(Math.min(min1,min2));
+        long arr[]=new long[(int) n];
+        for (int i = 0; i < n; i++) {
+            arr[i]=sc.nextLong();
+        }
+
+        for (int i = 0; i < q; i++) {
+            long x=sc.nextLong();
+            long y=sc.nextLong();
+            if(x!=y){
+                ans*=-1;
+            }
+            dduoln(ans==1?"even":"odd");
+        }
 
     }
 
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-        t = sc.nextInt();
+//        t = sc.nextInt();
         while (t-- > 0) {solve();}
     }
 
