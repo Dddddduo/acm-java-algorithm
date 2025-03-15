@@ -4,8 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/acm-java-algorithm.iml" filepath="$PROJECT_DIR$/.idea/acm-java-algorithm.iml" />
       <module fileurl="file://$PROJECT_DIR$/day1/day1.iml" filepath="$PROJECT_DIR$/day1/day1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day2/day2.iml" filepath="$PROJECT_DIR$/day2/day2.iml" />
       <module fileurl="file://$PROJECT_DIR$/day1/t1/t1.iml" filepath="$PROJECT_DIR$/day1/t1/t1.iml" />
       <module fileurl="file://$PROJECT_DIR$/day1/t2/t2.iml" filepath="$PROJECT_DIR$/day1/t2/t2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day2/t3/t3.iml" filepath="$PROJECT_DIR$/day2/t3/t3.iml" />
     </modules>
   </component>
 </project>
