@@ -9,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- * https://ac.nowcoder.com/acm/contest/105953/I
+ * https://ac.nowcoder.com/acm/contest/105953/M
  */
 
 // xixi♡西
@@ -19,54 +19,22 @@ public class Main {
     static final int mod = (int) (1e9 + 7);
 //    static final int mod = (int) (1e9 + 7);
 
-
-//    static int n;
-//    static int arr[];
-//    static boolean visited[];
-//    static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
-
-    static int sum;
+    static int n;
     static int arr[];
+    static boolean visited[];
+    static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
     /**
      * @throws IOException
      */
     private static void solve() throws IOException {
         // todo
-        sum=0;
-        arr=new int[9];
 
-        String str=sc.next();
-
-        for(int i=1;i<=8;i++){
-            arr[i]=str.charAt(i-1);
-        }
-
-        for (int i = 1; i <= 8; i++) {
-            if(arr[i]=='0'){
-                sum++;
-                dfs(i);
-            }
-        }
-
-        dduoln(sum==1?"Yes":"No");
     }
-
-    private static void dfs(int i) {
-        // 递归出口
-        if(arr[i]=='1'){
-            return;
-        }
-        arr[i]='1';
-        // 递归函数
-        dfs((i+2)%8+1);
-        dfs((i+4)%8+1);
-    }
-
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-        t = sc.nextInt();
+//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
