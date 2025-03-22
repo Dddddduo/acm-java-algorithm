@@ -1,7 +1,6 @@
 // @github https://github.com/Dddddduo
 // @github https://github.com/Dddddduo/acm-java-algorithm
 // @github https://github.com/Dddddduo/Dduo-mini-data_structure
-
 import java.util.*;
 import java.io.*;
 import java.math.*;
@@ -10,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- * https://ac.nowcoder.com/acm/contest/105953/I
+ *
  */
 
 // xixi♡西
@@ -20,39 +19,73 @@ public class Main {
     static final int mod = (int) (1e9 + 7);
 //    static final int mod = (int) (1e9 + 7);
 
-
-//    static int n;
-//    static int arr[];
-//    static boolean visited[];
-//    static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+    static int n;
+    static long arr[];
+    static boolean visited[];
+    static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
     /**
      * @throws IOException
      */
     private static void solve() throws IOException {
         // todo
-        int n = sc.nextInt();
-        int m = sc.nextInt();
-        int k = sc.nextInt();
+        n=sc.nextInt();
+        arr=new long[n];
 
-        // 需要染色的点
-        int arr[][] = new int[m][2];
-        for (int i = 0; i < m; i++) {
-            arr[i][0] = sc.nextInt();
-            arr[i][1] = sc.nextInt();
+        long max=0;
+
+        ArrayList<Long>list=new ArrayList<>();
+
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextLong();
+            list.add(arr[i]);
+            max=Math.max(max,arr[i]);
         }
 
-        int len[] = new int[n + 5];
-        for (int i = 0; i < k; i++) {
-            len[sc.nextInt()] = i;
+        Deque<Long> deque = new LinkedList<>();
+        deque.add(max);
+
+        long ans1=max;
+        while(true){
+            if(ans1%3==0){
+                if(list.contains(ans1/3)){
+                    deque.addLast(ans1/3);
+                    list.remove(ans1/3);
+                    ans1/=3;
+                    continue;
+                }
+            }
+            if(list.contains(ans1*2)){
+                deque.addLast(ans1*2);
+                list.remove(ans1*2);
+                ans1*=2;
+                continue;
+            }
+            break;
         }
 
-        int cnt = 0;
-        for (int i = 0; i < m; i++) {
-//            cnt += Math.abs(len[arr[i][0]] - len[arr[i][1]]);
-            cnt += Math.abs(arr[i][0] - arr[i][1]);
+        ans1=max;
+        while(true){
+            if(ans1%2==0){
+                if(list.contains(ans1/2)){
+                    deque.addFirst(ans1/2);
+                    list.remove(ans1/2);
+                    ans1/=2;
+                    continue;
+                }
+            }
+            if(list.contains(ans1*3)){
+                deque.addFirst(ans1*3);
+                list.remove(ans1*3);
+                ans1*=3;
+                continue;
+            }
+            break;
         }
-        dduoln(cnt);
+
+        for (Long l : deque) {
+            dduo(l+" ");
+        }
 
     }
 

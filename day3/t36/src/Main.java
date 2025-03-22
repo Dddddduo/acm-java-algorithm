@@ -1,7 +1,6 @@
 // @github https://github.com/Dddddduo
 // @github https://github.com/Dddddduo/acm-java-algorithm
 // @github https://github.com/Dddddduo/Dduo-mini-data_structure
-
 import java.util.*;
 import java.io.*;
 import java.math.*;
@@ -10,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- * https://ac.nowcoder.com/acm/contest/105953/I
+ * https://ac.nowcoder.com/acm/contest/105953/L
  */
 
 // xixi♡西
@@ -20,45 +19,44 @@ public class Main {
     static final int mod = (int) (1e9 + 7);
 //    static final int mod = (int) (1e9 + 7);
 
-
-//    static int n;
-//    static int arr[];
-//    static boolean visited[];
-//    static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+    static int n;
+    static int arr[];
+    static boolean visited[];
+    static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
     /**
      * @throws IOException
      */
     private static void solve() throws IOException {
         // todo
-        int n = sc.nextInt();
-        int m = sc.nextInt();
-        int k = sc.nextInt();
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+        double c = sc.nextDouble();
+        double d = sc.nextDouble();
 
-        // 需要染色的点
-        int arr[][] = new int[m][2];
-        for (int i = 0; i < m; i++) {
-            arr[i][0] = sc.nextInt();
-            arr[i][1] = sc.nextInt();
+        // 确保 a >= c
+        if (a < c) {
+            double temp = a;
+            a = c;
+            c = temp;
+            temp = b;
+            b = d;
+            d = temp;
         }
 
-        int len[] = new int[n + 5];
-        for (int i = 0; i < k; i++) {
-            len[sc.nextInt()] = i;
+        double ans = 0.0;
+        for (double i = 0; i <= a; i += 0.000001) {
+            double x = Math.sqrt(b  * b * (1 - i * i / (a * a)));
+            double y = Math.sqrt(d  * d * (1 - i * i / (c * c)));
+            ans += Math.max(x,  y) * 0.000001;
+//            dduoln(ans);
         }
-
-        int cnt = 0;
-        for (int i = 0; i < m; i++) {
-//            cnt += Math.abs(len[arr[i][0]] - len[arr[i][1]]);
-            cnt += Math.abs(arr[i][0] - arr[i][1]);
-        }
-        dduoln(cnt);
-
+        dduoln(ans * 4);
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-//        t = sc.nextInt();
+        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
