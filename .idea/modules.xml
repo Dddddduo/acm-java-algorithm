@@ -2,6 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/A1013/A1013.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/A1013/A1013.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/B1013/B1013.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/B1013/B1013.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/C1013/C1013.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/C1013/C1013.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/CodeforcesRound1013Div. 3.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/CodeforcesRound1013Div. 3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/D1013/D1013.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/D1013/D1013.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/E1013/E1013.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/E1013/E1013.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/F1013/F1013.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/F1013/F1013.iml" />
+      <module fileurl="file://$PROJECT_DIR$/temple/IsPrime/IsPrime.iml" filepath="$PROJECT_DIR$/temple/IsPrime/IsPrime.iml" />
       <module fileurl="file://$PROJECT_DIR$/temple/LcmAndGcd/LcmAndGcd.iml" filepath="$PROJECT_DIR$/temple/LcmAndGcd/LcmAndGcd.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/acm-java-algorithm.iml" filepath="$PROJECT_DIR$/.idea/acm-java-algorithm.iml" />
       <module fileurl="file://$PROJECT_DIR$/day1/day1.iml" filepath="$PROJECT_DIR$/day1/day1.iml" />
