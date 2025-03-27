@@ -1,24 +1,5 @@
-import java.math.*;
-import java.util.*;
 import java.io.*;
-
-public class Main {
-    public static void main(String[] args) throws IOException {
-        IOS sc=new IOS();
-        int n=sc.nextInt();
-        int max=Integer.MIN_VALUE;
-        int min=Integer.MAX_VALUE;
-        for (int i = 0; i < n; i++) {
-            int ans=sc.nextInt();
-            max=Math.max(max,ans);
-            min=Math.min(min,ans);
-        }
-
-        System.out.println( (max-min)+" "+( (max-min)%2!=0?(max+min)/2+1: (max+min)/2) );
-
-    }
-}
-
+import java.util.*;
 
 class IOS{
     BufferedReader bf;
