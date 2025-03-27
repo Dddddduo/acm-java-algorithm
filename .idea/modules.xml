@@ -2,15 +2,26 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1012Div. 2/A1012/A1012.iml" filepath="$PROJECT_DIR$/CodeforcesRound1012Div. 2/A1012/A1012.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/A1013/A1013.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/A1013/A1013.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NowcoderXiaobai107/A107/A107.iml" filepath="$PROJECT_DIR$/NowcoderXiaobai107/A107/A107.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1012Div. 2/B1012/B1012.iml" filepath="$PROJECT_DIR$/CodeforcesRound1012Div. 2/B1012/B1012.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/B1013/B1013.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/B1013/B1013.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NowcoderXiaobai107/B107/B107.iml" filepath="$PROJECT_DIR$/NowcoderXiaobai107/B107/B107.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1012Div. 2/C1012/C1012.iml" filepath="$PROJECT_DIR$/CodeforcesRound1012Div. 2/C1012/C1012.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/C1013/C1013.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/C1013/C1013.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NowcoderXiaobai107/C107/C107.iml" filepath="$PROJECT_DIR$/NowcoderXiaobai107/C107/C107.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1012Div. 2/CodeforcesRound1012Div. 2.iml" filepath="$PROJECT_DIR$/CodeforcesRound1012Div. 2/CodeforcesRound1012Div. 2.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/CodeforcesRound1013Div. 3.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/CodeforcesRound1013Div. 3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1012Div. 2/D1012/D1012.iml" filepath="$PROJECT_DIR$/CodeforcesRound1012Div. 2/D1012/D1012.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/D1013/D1013.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/D1013/D1013.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NowcoderXiaobai107/D107/D107.iml" filepath="$PROJECT_DIR$/NowcoderXiaobai107/D107/D107.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/E1013/E1013.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/E1013/E1013.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NowcoderXiaobai107/E107/E107.iml" filepath="$PROJECT_DIR$/NowcoderXiaobai107/E107/E107.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/F1013/F1013.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/F1013/F1013.iml" />
       <module fileurl="file://$PROJECT_DIR$/temple/IsPrime/IsPrime.iml" filepath="$PROJECT_DIR$/temple/IsPrime/IsPrime.iml" />
       <module fileurl="file://$PROJECT_DIR$/temple/LcmAndGcd/LcmAndGcd.iml" filepath="$PROJECT_DIR$/temple/LcmAndGcd/LcmAndGcd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NowcoderXiaobai107/NowcoderXiaobai107.iml" filepath="$PROJECT_DIR$/NowcoderXiaobai107/NowcoderXiaobai107.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/acm-java-algorithm.iml" filepath="$PROJECT_DIR$/.idea/acm-java-algorithm.iml" />
       <module fileurl="file://$PROJECT_DIR$/day1/day1.iml" filepath="$PROJECT_DIR$/day1/day1.iml" />
       <module fileurl="file://$PROJECT_DIR$/day2/day2.iml" filepath="$PROJECT_DIR$/day2/day2.iml" />
