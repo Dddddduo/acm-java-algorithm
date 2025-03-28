@@ -36,30 +36,25 @@ public class Main {
         long[][] a = new long[n + 1][k + 1];
         long[][] dp = new long[n + 1][k + 1];
 
-        // 读取输入数据
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= k; j++) {
                 a[i][j] = sc.nextLong();
             }
         }
 
-        // 初始化第一行
         for (int i = 1; i <= k; i++) {
             dp[1][i] = a[1][i];
         }
 
-        // 初始化第一列
         for (int i = 1; i <= n; i++) {
             dp[i][1] = a[i][1] + dp[i - 1][1];
         }
 
-        // 动态规划计算
         for (int i = 2; i <= n; i++) {
             for (int j = 2; j <= k; j++) {
-                dp[i][j] = Math.max(
-                        Math.max(dp[i - 1][j - 1] + a[i][j], 0)
-                        , Math.max(dp[i][j - 1] - a[i][j-1]+a[i][j], dp[i-1][j]+a[i][j])
-                );
+                dp[i][j] = Math.max(dp[i - 1][j - 1] + a[i][j],
+                        Math.max(dp[i][j - 1] - a[i][j - 1] + a[i][j],
+                                dp[i - 1][j] + a[i][j]));
             }
         }
 
@@ -70,10 +65,11 @@ public class Main {
 //            dduoln();
 //        }
 
-        // 查找最终结果
         long ans = 0;
-        for (int j = 1; j <= k; j++) {
-            ans = Math.max(ans, dp[n][j]);
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= k; j++) {
+                ans=Math.max(ans,dp[i][j]);
+            }
         }
 
         System.out.println(ans);

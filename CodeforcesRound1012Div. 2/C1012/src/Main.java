@@ -29,10 +29,17 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        int n=sc.nextInt();
-        int arr[]=new int[n];
-        for (int i = 0; i < n; i++) {
-            arr[i]=sc.nextInt();
+
+        List<int []>list=new ArrayList<>();
+        for(int i=0;i<375;i++){
+            for(int j=0;j<375;i++){
+                list.add(new int[]{});
+            }
+        }
+
+        int q=sc.nextInt();
+        for (int i = 0; i < q; i++) {
+            int a=sc.nextInt();
         }
 
 
@@ -41,7 +48,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-        t = sc.nextInt();
+//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
