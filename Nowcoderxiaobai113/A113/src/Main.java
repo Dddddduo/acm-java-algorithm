@@ -9,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- * https://ac.nowcoder.com/acm/contest/98241/C
+ * https://ac.nowcoder.com/acm/contest/105825/A
  */
 
 // xixi♡西
@@ -29,8 +29,27 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        int n=sc.nextInt();
         String str=sc.next();
+        long sum=1;
+
+        for(int i=0;i<str.length();i++){
+            if(sum>=2025){
+                dduoln("YES");
+                return;
+            }
+            if(str.charAt(i)=='-'){
+                sum-=1;
+            }
+            if(str.charAt(i)=='*'){
+                sum*=2;
+            }
+        }
+        if(sum>=2025){
+            dduoln("YES");
+            return;
+        }else {
+            dduoln("NO");
+        }
 
     }
 

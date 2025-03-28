@@ -9,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- * https://ac.nowcoder.com/acm/contest/98241/C
+ * https://ac.nowcoder.com/acm/contest/105825/B
  */
 
 // xixi♡西
@@ -29,9 +29,58 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        int n=sc.nextInt();
-        String str=sc.next();
+        int n = sc.nextInt();
+        long[] a = new long[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextLong();
+        }
 
+        int rounds = findMinRounds(a);
+        dduoln(rounds);
+
+
+    }
+
+    public static int findMinRounds(long[] a) {
+        int rounds = 0;
+        Set<String> visited = new HashSet<>();
+        while (true) {
+            if (allElementsSame(a)) {
+                return rounds;
+            }
+            String state = Arrays.toString(a);
+            if (visited.contains(state))  {
+                return -1;
+            }
+            visited.add(state);
+            long mex = calculateMex(a);
+            for (int i = 0; i < a.length;  i++) {
+                a[i] = Math.max(0,  a[i] - mex);
+            }
+            rounds++;
+        }
+    }
+
+    public static boolean allElementsSame(long[] a) {
+        long first = a[0];
+        for (long num : a) {
+            if (num != first) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static long calculateMex(long[] a) {
+        Set<Long> set = new HashSet<>();
+        for (long num : a) {
+            set.add(num);
+        }
+        long mex = 0;
+        while (set.contains(mex))  {
+            mex++;
+        }
+        return mex;
     }
 
     public static void main(String[] args) throws Exception {

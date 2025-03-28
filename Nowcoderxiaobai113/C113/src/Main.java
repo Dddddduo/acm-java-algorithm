@@ -9,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- * https://ac.nowcoder.com/acm/contest/98241/C
+ *  https://ac.nowcoder.com/acm/contest/105825/C
  */
 
 // xixi♡西
@@ -28,10 +28,56 @@ public class Main {
      * @throws IOException
      */
     private static void solve() throws IOException {
-        // todo
-        int n=sc.nextInt();
-        String str=sc.next();
+        int n = sc.nextInt();
+        List<Queue<Integer>> list = new ArrayList<>();
+        Map<Integer, Integer> elementToQueueIndex = new HashMap<>();
+        int sum = 0;
+        HashSet<Integer> hs = new HashSet<>();
+        int min = Integer.MAX_VALUE;
 
+        for (int i = 0; i < n; i++) {
+            list.add(new  LinkedList<>());
+            int nn = sc.nextInt();
+            sum += nn;
+            for (int i1 = 0; i1 < nn; i1++) {
+                int v = sc.nextInt();
+                if (!hs.add(v))  {
+                    dduoln("NO");
+                    return;
+                }
+                min = Math.min(min,  v);
+                list.get(i).add(v);
+                elementToQueueIndex.put(v,  i);
+            }
+        }
+
+        Stack<Integer> stack = new Stack<>();
+        stack.add(min);
+        int currentQueueIndex = elementToQueueIndex.get(min);
+        list.get(currentQueueIndex).poll();
+
+        int current = min;
+        while (stack.size()  < sum) {
+            int next = current + 1;
+            if (elementToQueueIndex.containsKey(next))  {
+                int nextQueueIndex = elementToQueueIndex.get(next);
+                if (!list.get(nextQueueIndex).isEmpty()  && list.get(nextQueueIndex).peek()  == next) {
+                    stack.add(next);
+                    list.get(nextQueueIndex).poll();
+                    current = next;
+                } else {
+                    break;
+                }
+            } else {
+                break;
+            }
+        }
+
+        if (stack.size()  == sum) {
+            dduoln("YES");
+        } else {
+            dduoln("NO");
+        }
     }
 
     public static void main(String[] args) throws Exception {

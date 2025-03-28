@@ -9,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- * https://ac.nowcoder.com/acm/contest/98241/C
+ * https://ac.nowcoder.com/acm/contest/105825/E
  */
 
 // xixi♡西
@@ -29,11 +29,85 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        int n=sc.nextInt();
-        String str=sc.next();
+
+        int n = sc.nextInt();
+        int[] arr = new int[n+1];
+        for (int i = 0; i < n; i++) {
+            arr[i+1] = sc.nextInt();
+        }
+
+        int[] dp = new int[n + 1];
+
+        Arrays.fill(dp,-1);
+
+        dp[0] = 0;
+
+        for (int i = 2; i <= n; i++) {
+            for (int j = 1; j < i; j++) {
+                if (dp[j - 1] != -1 && check(arr, j, i)) {
+                    dp[i] = Math.max(dp[i],  dp[j - 1] + 1);
+                }
+            }
+        }
+
+        dduoln(dp[n]);
 
     }
 
+    public static boolean check(int[] arr, int left, int right) {
+        if (right - left + 1 < 2) {
+            return false;
+        }
+        Map<Integer, List<Integer>> primeToIndices = new HashMap<>();
+
+        for (int i = left; i <= right; i++) {
+            List<Integer> factors = primeFactors(arr[i]);
+            for (int factor : factors) {
+                primeToIndices.computeIfAbsent(factor,  k -> new ArrayList<>()).add(i);
+            }
+        }
+
+        for (int i = left; i <= right; i++) {
+            boolean judge = false;
+            List<Integer> factors = primeFactors(arr[i]);
+            for (int factor : factors) {
+                List<Integer> indices = primeToIndices.get(factor);
+                for (int index : indices) {
+                    if (index != i) {
+                        judge = true;
+                        break;
+                    }
+                }
+                if (judge) {
+                    break;
+                }
+            }
+            if (!judge) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static List<Integer> primeFactors(int num) {
+        List<Integer> factors = new ArrayList<>();
+        for (int i = 2; i * i <= num; i++) {
+            while (num % i == 0) {
+                if (!factors.contains(i))  {
+                    factors.add(i);
+                }
+                num /= i;
+            }
+        }
+        if (num > 1) {
+            factors.add(num);
+        }
+        return factors;
+    }
+
+    public static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
     public static void main(String[] args) throws Exception {
         int t = 1;
 //        t = sc.nextInt();

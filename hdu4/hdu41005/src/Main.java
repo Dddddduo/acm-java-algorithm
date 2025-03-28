@@ -9,10 +9,10 @@ import java.time.*;
 
 /**
  * 题目地址
- * https://ac.nowcoder.com/acm/contest/98241/C
+ * https://acm.hdu.edu.cn/contest/problem?cid=1153&pid=1005
  */
 
-// xixi♡西
+// xixi西
 public class Main {
 
     static IoScanner sc = new IoScanner();
@@ -29,14 +29,81 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        int n=sc.nextInt();
-        String str=sc.next();
+        double p=sc.nextDouble(); // 当前价格
+        int n=sc.nextInt(); // 优惠卷
+        int k=sc.nextInt(); // 上限
 
+        double arr[][]=new double[n][2];
+
+        int cnt0=0; // 打折
+        int cnt1=0; // 优惠
+
+        for (int i = 0; i < n; i++) {
+            arr[i][0]=sc.nextDouble();
+            arr[i][1]=sc.nextDouble();
+            if(arr[i][0]==0){
+                cnt0++;
+            }else{
+                cnt1++;
+            }
+        }
+
+        Double arr0[]=new Double[cnt0];
+        Double arr1[]=new Double[cnt1];
+
+        int ii=0;
+        int jj=0;
+        for (int i = 0; i < n; i++) {
+            if(arr[i][0]==0){
+                arr0[ii]=arr[i][1];
+                ii++;
+            }else{
+                arr1[jj]=arr[i][1];
+                jj++;
+            }
+        }
+
+        Arrays.sort(arr0);
+        Arrays.sort(arr1,((o1, o2) -> Double.compare(o2,o1)));
+
+        double pre0[]=new double[cnt0+1];
+        double pre1[]=new double[cnt1+1];
+
+        pre0[0]= 1.0;
+        for(int i=1;i<arr0.length+1;i++){
+            pre0[i]=arr0[i-1]*pre0[i-1]*0.1;
+        }
+
+        for(int i=1;i<arr1.length+1;i++){
+            pre1[i]=arr1[i-1]+pre1[i-1];
+        }
+
+//        for (Double v : pre0) {
+//            System.out.println(v);
+//        }
+//        for (Double v : pre1) {
+//            System.out.println(v);
+//        }
+
+        int i=0;
+        double cnt=Integer.MAX_VALUE;
+        while(i<=k){
+            int j=(k-i);
+//            System.out.println(j);
+            if(j<pre1.length&&i<pre0.length) {
+//                System.out.println(pre0[i]+" "+pre1[j]);
+//                System.out.println(p*pre0[i]-pre1[j]);
+                cnt=Math.min(cnt,p*pre0[i]-pre1[j]);
+            }
+            i++;
+        }
+
+        System.out.println(String.format("%.2f",cnt<=0?0:cnt));
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-//        t = sc.nextInt();
+        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }

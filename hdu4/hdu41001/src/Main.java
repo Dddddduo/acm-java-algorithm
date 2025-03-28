@@ -1,6 +1,7 @@
 // @github https://github.com/Dddddduo
 // @github https://github.com/Dddddduo/acm-java-algorithm
 // @github https://github.com/Dddddduo/Dduo-mini-data_structure
+
 import java.util.*;
 import java.io.*;
 import java.math.*;
@@ -9,10 +10,10 @@ import java.time.*;
 
 /**
  * 题目地址
- * https://ac.nowcoder.com/acm/contest/98241/C
+ * https://acm.hdu.edu.cn/contest/problem?cid=1153&pid=1001
  */
 
-// xixi♡西
+// xixi西
 public class Main {
 
     static IoScanner sc = new IoScanner();
@@ -29,14 +30,58 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        int n=sc.nextInt();
-        String str=sc.next();
+        int n = sc.nextInt();
+        int k = sc.nextInt();
 
+        long[][] a = new long[n + 1][k + 1];
+        long[][] dp = new long[n + 1][k + 1];
+
+        // 读取输入数据
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= k; j++) {
+                a[i][j] = sc.nextLong();
+            }
+        }
+
+        // 初始化第一行
+        for (int i = 1; i <= k; i++) {
+            dp[1][i] = a[1][i];
+        }
+
+        // 初始化第一列
+        for (int i = 1; i <= n; i++) {
+            dp[i][1] = a[i][1] + dp[i - 1][1];
+        }
+
+        // 动态规划计算
+        for (int i = 2; i <= n; i++) {
+            for (int j = 2; j <= k; j++) {
+                dp[i][j] = Math.max(
+                        Math.max(dp[i - 1][j - 1] + a[i][j], 0)
+                        , Math.max(dp[i][j - 1] - a[i][j-1]+a[i][j], dp[i-1][j]+a[i][j])
+                );
+            }
+        }
+
+//        for (int i = 1; i <= n; i++) {
+//            for (int j = 1; j <= k; j++) {
+//                dduo(dp[i][j] + " ");
+//            }
+//            dduoln();
+//        }
+
+        // 查找最终结果
+        long ans = 0;
+        for (int j = 1; j <= k; j++) {
+            ans = Math.max(ans, dp[n][j]);
+        }
+
+        System.out.println(ans);
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-//        t = sc.nextInt();
+        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }

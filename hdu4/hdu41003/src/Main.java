@@ -9,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- * https://ac.nowcoder.com/acm/contest/98241/C
+ *
  */
 
 // xixi♡西
@@ -29,14 +29,21 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        int n=sc.nextInt();
-        String str=sc.next();
+        long k=sc.nextLong();
+        long b=sc.nextLong();
+        long c=sc.nextLong();
+        long v=sc.nextLong();
+
+        long cnt=0;
+
+        System.out.println(cnt);
 
     }
 
+
     public static void main(String[] args) throws Exception {
         int t = 1;
-//        t = sc.nextInt();
+        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
