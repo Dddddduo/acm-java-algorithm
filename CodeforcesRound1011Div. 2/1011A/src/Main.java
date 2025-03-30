@@ -9,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- * https://codeforces.com/contest/2092/problem/C
+ * https://codeforces.com/contest/2085
  */
 
 // xixi♡西
@@ -30,40 +30,25 @@ public class Main {
     private static void solve() throws IOException {
         // todo
         int n=sc.nextInt();
-        int k= sc.nextInt();
-        List<Long>list1=new ArrayList<>();// 奇数
-        List<Long>list2=new ArrayList<>();// 偶数
+        int k=sc.nextInt();
+        String str=sc.next();
 
-        long max=0;
-
-        for (int i = 0; i < n; i++) {
-            long a=sc.nextLong();
-            max=Math.max(a,max);
-            if(a%2==0){
-                list2.add(a);
-            }else{
-                list1.add(a);
+        if(k==0){
+            String string = new StringBuilder(str).reverse().toString();
+            if(str.compareTo(string)<0){
+                dduoln("YES");
+            }else {
+                dduoln("NO");
             }
-        }
-
-        if(list1.size()==0||list2.size()==0){
-            dduoln(max);
-            return;
-        }
-
-        Long sum = list1.get(0);
-        for (int i = 0; i < list2.size(); i++) {
-            sum+=list2.get(i);
-        }
-
-        for (int i = 1; i < list1.size(); i++) {
-            if(sum%2!=0){
-                sum-=1;
+        }else{
+            for (int i = 0; i < n-1; i++) {
+                if(str.charAt(i)!=str.charAt(i+1)){
+                    dduoln("YES");
+                    return;
+                }
             }
-            sum+=list1.get(i);
+            dduoln("NO");
         }
-
-        dduoln(Math.max(max,sum));
     }
 
     public static void main(String[] args) throws Exception {

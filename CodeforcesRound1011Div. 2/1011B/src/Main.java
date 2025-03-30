@@ -9,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- * https://codeforces.com/contest/2092/problem/C
+ * https://codeforces.com/contest/2085/problem/B
  */
 
 // xixi♡西
@@ -30,40 +30,42 @@ public class Main {
     private static void solve() throws IOException {
         // todo
         int n=sc.nextInt();
-        int k= sc.nextInt();
-        List<Long>list1=new ArrayList<>();// 奇数
-        List<Long>list2=new ArrayList<>();// 偶数
-
-        long max=0;
-
+        long arr[]=new long[n];
+        boolean judge=false;
         for (int i = 0; i < n; i++) {
-            long a=sc.nextLong();
-            max=Math.max(a,max);
-            if(a%2==0){
-                list2.add(a);
-            }else{
-                list1.add(a);
+            arr[i]=sc.nextLong();
+            if(arr[i]==0){
+                judge=true;
             }
         }
 
-        if(list1.size()==0||list2.size()==0){
-            dduoln(max);
+        if(judge==false){
+            dduoln("1");
+            dduoln("1 "+n);
+//            dduoln();
             return;
         }
 
-        Long sum = list1.get(0);
-        for (int i = 0; i < list2.size(); i++) {
-            sum+=list2.get(i);
+        if(arr[0]==0&&arr[n-1]==0){
+            dduoln("3");
+            dduoln("1 2");
+            dduoln("2 "+(n-1));
+            dduoln("1 2");
+        }else if(arr[0]==0&&arr[n-1]!=0){
+            dduoln("2");
+            dduoln("1 "+(n-1));
+            dduoln("1 2");
+        }else if(arr[0]!=0&&arr[n-1]==0){
+            dduoln("2");
+            dduoln("2 "+(n));
+            dduoln("1 2");
+        }else {
+            dduoln("2");
+            dduoln("1 "+(n-1));
+            dduoln("1 2");
         }
+//        dduoln();
 
-        for (int i = 1; i < list1.size(); i++) {
-            if(sum%2!=0){
-                sum-=1;
-            }
-            sum+=list1.get(i);
-        }
-
-        dduoln(Math.max(max,sum));
     }
 
     public static void main(String[] args) throws Exception {
