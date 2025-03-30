@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1014Div. 2/1014A/1014A.iml" filepath="$PROJECT_DIR$/CodeforcesRound1014Div. 2/1014A/1014A.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1014Div. 2/1014B/1014B.iml" filepath="$PROJECT_DIR$/CodeforcesRound1014Div. 2/1014B/1014B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1014Div. 2/1014C/1014C.iml" filepath="$PROJECT_DIR$/CodeforcesRound1014Div. 2/1014C/1014C.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1012Div. 2/A1012/A1012.iml" filepath="$PROJECT_DIR$/CodeforcesRound1012Div. 2/A1012/A1012.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/A1013/A1013.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/A1013/A1013.iml" />
       <module fileurl="file://$PROJECT_DIR$/NowcoderXiaobai107/A107/A107.iml" filepath="$PROJECT_DIR$/NowcoderXiaobai107/A107/A107.iml" />
@@ -16,6 +19,7 @@
       <module fileurl="file://$PROJECT_DIR$/Nowcoderxiaobai113/C113/C113.iml" filepath="$PROJECT_DIR$/Nowcoderxiaobai113/C113/C113.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1012Div. 2/CodeforcesRound1012Div. 2.iml" filepath="$PROJECT_DIR$/CodeforcesRound1012Div. 2/CodeforcesRound1012Div. 2.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/CodeforcesRound1013Div. 3.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/CodeforcesRound1013Div. 3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1014Div. 2/CodeforcesRound1014Div. 2.iml" filepath="$PROJECT_DIR$/CodeforcesRound1014Div. 2/CodeforcesRound1014Div. 2.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1012Div. 2/D1012/D1012.iml" filepath="$PROJECT_DIR$/CodeforcesRound1012Div. 2/D1012/D1012.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/D1013/D1013.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/D1013/D1013.iml" />
       <module fileurl="file://$PROJECT_DIR$/NowcoderXiaobai107/D107/D107.iml" filepath="$PROJECT_DIR$/NowcoderXiaobai107/D107/D107.iml" />
