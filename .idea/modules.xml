@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1010Div.2/1010A/1010A.iml" filepath="$PROJECT_DIR$/CodeforcesRound1010Div.2/1010A/1010A.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1010Div.2/1010B/1010B.iml" filepath="$PROJECT_DIR$/CodeforcesRound1010Div.2/1010B/1010B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1010Div.2/1010C/1010C.iml" filepath="$PROJECT_DIR$/CodeforcesRound1010Div.2/1010C/1010C.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1011Div. 2/1011A/1011A.iml" filepath="$PROJECT_DIR$/CodeforcesRound1011Div. 2/1011A/1011A.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1011Div. 2/1011B/1011B.iml" filepath="$PROJECT_DIR$/CodeforcesRound1011Div. 2/1011B/1011B.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1014Div. 2/1014A/1014A.iml" filepath="$PROJECT_DIR$/CodeforcesRound1014Div. 2/1014A/1014A.iml" />
@@ -12,6 +15,10 @@
       <module fileurl="file://$PROJECT_DIR$/1400-1700 day1/1500_day1/1500_day1.iml" filepath="$PROJECT_DIR$/1400-1700 day1/1500_day1/1500_day1.iml" />
       <module fileurl="file://$PROJECT_DIR$/1400-1700 day1/1600_day1/1600_day1.iml" filepath="$PROJECT_DIR$/1400-1700 day1/1600_day1/1600_day1.iml" />
       <module fileurl="file://$PROJECT_DIR$/1400-1700 day1/1700_day1/1700_day1.iml" filepath="$PROJECT_DIR$/1400-1700 day1/1700_day1/1700_day1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EducationalRound177/177A/177A.iml" filepath="$PROJECT_DIR$/EducationalRound177/177A/177A.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EducationalRound177/177B/177B.iml" filepath="$PROJECT_DIR$/EducationalRound177/177B/177B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EducationalRound177/177C/177C.iml" filepath="$PROJECT_DIR$/EducationalRound177/177C/177C.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EducationalRound177/177D/177D.iml" filepath="$PROJECT_DIR$/EducationalRound177/177D/177D.iml" />
       <module fileurl="file://$PROJECT_DIR$/NowcoderYurengjie2025/2025B/2025B.iml" filepath="$PROJECT_DIR$/NowcoderYurengjie2025/2025B/2025B.iml" />
       <module fileurl="file://$PROJECT_DIR$/NowcoderYurengjie2025/2025F/2025F.iml" filepath="$PROJECT_DIR$/NowcoderYurengjie2025/2025F/2025F.iml" />
       <module fileurl="file://$PROJECT_DIR$/NowcoderYurengjie2025/2025I/2025I.iml" filepath="$PROJECT_DIR$/NowcoderYurengjie2025/2025I/2025I.iml" />
@@ -41,6 +48,7 @@
       <module fileurl="file://$PROJECT_DIR$/NowcoderXiaobai107/C107/C107.iml" filepath="$PROJECT_DIR$/NowcoderXiaobai107/C107/C107.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderxiaobai113/C113/C113.iml" filepath="$PROJECT_DIR$/Nowcoderxiaobai113/C113/C113.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderlianxi136/C136/C136.iml" filepath="$PROJECT_DIR$/Nowcoderlianxi136/C136/C136.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1010Div.2/CodeforcesRound1010Div.2.iml" filepath="$PROJECT_DIR$/CodeforcesRound1010Div.2/CodeforcesRound1010Div.2.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1011Div. 2/CodeforcesRound1011Div. 2.iml" filepath="$PROJECT_DIR$/CodeforcesRound1011Div. 2/CodeforcesRound1011Div. 2.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1012Div. 2/CodeforcesRound1012Div. 2.iml" filepath="$PROJECT_DIR$/CodeforcesRound1012Div. 2/CodeforcesRound1012Div. 2.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/CodeforcesRound1013Div. 3.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/CodeforcesRound1013Div. 3.iml" />
@@ -53,6 +61,7 @@
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/E1013/E1013.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/E1013/E1013.iml" />
       <module fileurl="file://$PROJECT_DIR$/NowcoderXiaobai107/E107/E107.iml" filepath="$PROJECT_DIR$/NowcoderXiaobai107/E107/E107.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderxiaobai113/E113/E113.iml" filepath="$PROJECT_DIR$/Nowcoderxiaobai113/E113/E113.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EducationalRound177/EducationalRound177.iml" filepath="$PROJECT_DIR$/EducationalRound177/EducationalRound177.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound1013Div. 3/F1013/F1013.iml" filepath="$PROJECT_DIR$/CodeforcesRound1013Div. 3/F1013/F1013.iml" />
       <module fileurl="file://$PROJECT_DIR$/temple/IoScanner/IoScanner.iml" filepath="$PROJECT_DIR$/temple/IoScanner/IoScanner.iml" />
       <module fileurl="file://$PROJECT_DIR$/temple/IsPrime/IsPrime.iml" filepath="$PROJECT_DIR$/temple/IsPrime/IsPrime.iml" />
