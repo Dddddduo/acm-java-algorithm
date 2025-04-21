@@ -11,7 +11,7 @@
 `2024-2025赛季算法竞赛选手` | `Java后端开发者` | `在役` | 
 
 🏆 核心成就：
-- Codeforces最高 rating 1400（ Specialist ）
+- Codeforces最高 rating 1500（ Specialist ）
 - 牛客周赛 rating 1700（全国前5%）
 - LeetCode Hot100 全解（含多种语言实现）
 - 第15届蓝桥杯Java组国赛三等奖
