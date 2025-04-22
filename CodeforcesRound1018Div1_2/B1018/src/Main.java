@@ -9,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- * https://ac.nowcoder.com/acm/problem/292797
+ * https://codeforces.com/contest/2096/problem/B
  */
 
 // xixi♡西
@@ -24,60 +24,48 @@ public class Main {
     static boolean visited[];
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
-    static long ans=0;
     /**
      * @throws IOException
      */
     private static void solve() throws IOException {
         // todo
         int n=sc.nextInt();
-        adj=new ArrayList<>();
-
-        for (int i = 0; i < n + 5; i++) {
-            adj.add(new ArrayList<>());
+        long k=sc.nextInt();
+        long l[]=new long[n];
+        long r[]=new long[n];
+        for (int i = 0; i < n; i++) {
+            l[i]=sc.nextLong();
+        }
+        for (int i = 0; i < n; i++) {
+            r[i]=sc.nextLong();
         }
 
-        visited=new boolean[n+5];
-        for (int i = 0; i < n-1; i++) {
-            int u=sc.nextInt();
-            int v=sc.nextInt();
-            adj.get(u).add(v);
-            adj.get(v).add(u);
-        }
+        long cnt=0;
+        ArrayList<Long> list = new ArrayList<>();
 
-        visited[1]=true;
-        dfs(1);
-        dduoln(ans);
-    }
-
-
-    private static int[] dfs(int u) {
-        boolean childOpen = false;
-        boolean childChange = false;
-        for(int v : adj.get(u)){
-            if(visited[v]==true) continue;
-            visited[v]=true;
-            int[] res = dfs(v);
-            if(res[0] == 1){
-                childOpen = true;
-            }else if(res[1] == 1){
-                childChange = true;
+        for (int i = 0; i < n; i++) {
+            if(l[i]>r[i]){
+                cnt+=l[i];
+                list.add(r[i]);
+            }else {
+                cnt+=r[i];
+                list.add(l[i]);
             }
         }
-        if(childChange) {
-            return new int[]{0, 0};
-        }
-        if(childOpen){
-            ans++;
-            return new int[]{0, 1};
-        }
-        return new int[]{1, 0};
-    }
 
+        Collections.sort(list,Collections.reverseOrder());
+        for (int i = 0; i < k - 1; i++) {
+            cnt+=list.get(i);
+        }
+        cnt++;
+
+        dduoln(cnt);
+
+    }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-//        t = sc.nextInt();
+        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }

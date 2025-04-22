@@ -9,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- * https://ac.nowcoder.com/acm/problem/292797
+ * https://codeforces.com/contest/2096/problem/D
  */
 
 // xixi♡西
@@ -24,60 +24,50 @@ public class Main {
     static boolean visited[];
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
-    static long ans=0;
     /**
      * @throws IOException
      */
     private static void solve() throws IOException {
         // todo
         int n=sc.nextInt();
-        adj=new ArrayList<>();
-
-        for (int i = 0; i < n + 5; i++) {
-            adj.add(new ArrayList<>());
+//        Integer arr[][]=new Integer[n][2];
+//        for (int i = 0; i < n; i++) {
+//            arr[i][0]=sc.nextInt();
+//            arr[i][1]=sc.nextInt();
+//        }
+//        Arrays.sort(arr,((o1, o2) -> {
+//            if(o1[0].equals(o2[0])){
+//                return o1[1]-o2[1];
+//            }else {
+//                return o1[0]-o2[0];
+//            }
+//        }));
+//        for (int i = 0; i < n; i++) {
+//            dduoln(arr[i][0]+" "+arr[i][1]);
+//        }
+//
+//        for (int i = 0; i < n-4; i+=4) {
+//            int x1=arr[i][0],y1=arr[i][1];
+//            int x2=arr[i+1][0],y2=arr[i+1][1];
+//            int x3=arr[i+2][0],y3=arr[i+2][1];
+//            int x4=arr[i+3][0],y4=arr[i+3][1];
+//
+//
+//        }
+        int px=0;int py=0;
+        for (int i = 0; i < n; i++) {
+            long x=sc.nextLong();
+            long y=sc.nextLong();
+            px^=x;
+            py^=(x+y);
         }
+        dduoln(px+" "+(py-px));
 
-        visited=new boolean[n+5];
-        for (int i = 0; i < n-1; i++) {
-            int u=sc.nextInt();
-            int v=sc.nextInt();
-            adj.get(u).add(v);
-            adj.get(v).add(u);
-        }
-
-        visited[1]=true;
-        dfs(1);
-        dduoln(ans);
     }
-
-
-    private static int[] dfs(int u) {
-        boolean childOpen = false;
-        boolean childChange = false;
-        for(int v : adj.get(u)){
-            if(visited[v]==true) continue;
-            visited[v]=true;
-            int[] res = dfs(v);
-            if(res[0] == 1){
-                childOpen = true;
-            }else if(res[1] == 1){
-                childChange = true;
-            }
-        }
-        if(childChange) {
-            return new int[]{0, 0};
-        }
-        if(childOpen){
-            ans++;
-            return new int[]{0, 1};
-        }
-        return new int[]{1, 0};
-    }
-
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-//        t = sc.nextInt();
+        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }

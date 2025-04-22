@@ -9,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- * https://ac.nowcoder.com/acm/problem/292797
+ * https://codeforces.com/contest/2096/problem/A
  */
 
 // xixi♡西
@@ -24,60 +24,54 @@ public class Main {
     static boolean visited[];
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
-    static long ans=0;
     /**
      * @throws IOException
      */
     private static void solve() throws IOException {
         // todo
         int n=sc.nextInt();
-        adj=new ArrayList<>();
+        String str=sc.next();
 
-        for (int i = 0; i < n + 5; i++) {
-            adj.add(new ArrayList<>());
+        int arr[]=new int[n+1];
+
+        int index=n;
+
+        int min=1;
+        int max=n;
+
+        HashSet<Integer>hs=new HashSet<>();
+
+        for(int i=n-2;i>=0;i--){
+            if(str.charAt(i)=='<'){
+                arr[index]=min;
+                hs.add(min);
+                min++;
+            }else {
+                arr[index]=max;
+                hs.add(max);
+                max--;
+            }
+            index--;
         }
 
-        visited=new boolean[n+5];
-        for (int i = 0; i < n-1; i++) {
-            int u=sc.nextInt();
-            int v=sc.nextInt();
-            adj.get(u).add(v);
-            adj.get(v).add(u);
-        }
-
-        visited[1]=true;
-        dfs(1);
-        dduoln(ans);
-    }
-
-
-    private static int[] dfs(int u) {
-        boolean childOpen = false;
-        boolean childChange = false;
-        for(int v : adj.get(u)){
-            if(visited[v]==true) continue;
-            visited[v]=true;
-            int[] res = dfs(v);
-            if(res[0] == 1){
-                childOpen = true;
-            }else if(res[1] == 1){
-                childChange = true;
+        for (int i = 1; i <= n; i++) {
+            if(hs.contains(i)==false){
+                dduo(i+" ");
+                break;
             }
         }
-        if(childChange) {
-            return new int[]{0, 0};
-        }
-        if(childOpen){
-            ans++;
-            return new int[]{0, 1};
-        }
-        return new int[]{1, 0};
-    }
 
+        for (int i = 2; i <= n; i++) {
+            dduo(arr[i]+" ");
+        }
+        dduoln();
+
+
+    }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-//        t = sc.nextInt();
+        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
