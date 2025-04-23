@@ -9,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- *
+ * https://codeforces.com/contest/1974/problem/B
  */
 
 // xixi♡西
@@ -29,26 +29,43 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        long x=sc.nextLong();
-        long m=sc.nextLong();
+        int n=sc.nextInt();
+        String str=sc.next();
 
-//        for(long y=1;y<=m;y++){
-//            long xor=(x^y);
-//            if(xor==0)continue;
-//            if(x%xor==0||y%xor==0){
-//                dduoln(y);
-//            }
+        TreeSet<Character>ts=new TreeSet<>();
+        for(int i=0;i<str.length();i++){
+            ts.add(str.charAt(i));
+        }
+
+        StringBuilder sb=new StringBuilder();
+        HashMap<Character,Character>hm=new HashMap<>();
+        for (Character h : ts) {
+            sb.append(h);
+        }
+        String string = sb.toString();
+
+//        System.out.println(string);
+
+        for(int i=0;i<string.length()/2;i++){
+            hm.put(string.charAt(i),string.charAt(string.length()-i-1));
+            hm.put(string.charAt(string.length()-i-1),string.charAt(i));
+        }
+
+//        for (Map.Entry<Character, Character> characterCharacterEntry : hm.entrySet()) {
+//            dduoln(characterCharacterEntry.getKey()+" "+characterCharacterEntry.getValue());
 //        }
 
-        int cnt=0;
-        for(long y=1;y<=Math.min(x*3,m);y++){
-            long xor=(x^y);
-            if(xor==0)continue;
-            if(x%xor==0||y%xor==0){
-                cnt++;
+        StringBuilder s=new StringBuilder();
+        for(int i=0;i<str.length();i++){
+            char c = str.charAt(i);
+            if(hm.containsKey(c)){
+                s.append(hm.get(c));
+            }else {
+                s.append(c);
             }
         }
-        dduoln(cnt);
+        dduoln(s.toString());
+
 
     }
 

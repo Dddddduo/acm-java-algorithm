@@ -9,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- *
+ * https://codeforces.com/contest/1974/problem/A
  */
 
 // xixi♡西
@@ -29,27 +29,40 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        long x=sc.nextLong();
-        long m=sc.nextLong();
+        long x=sc.nextLong(); // 1*1
+        long y=sc.nextLong(); // 2*2
 
-//        for(long y=1;y<=m;y++){
-//            long xor=(x^y);
-//            if(xor==0)continue;
-//            if(x%xor==0||y%xor==0){
-//                dduoln(y);
-//            }
-//        }
-
-        int cnt=0;
-        for(long y=1;y<=Math.min(x*3,m);y++){
-            long xor=(x^y);
-            if(xor==0)continue;
-            if(x%xor==0||y%xor==0){
-                cnt++;
-            }
+        long ans; // 把2*2放下
+        if(y%2==0){
+            ans=(y/2);
+        }else{
+            ans=(y/2+1);
         }
-        dduoln(cnt);
 
+        long ans1; // 可以放多少个1*1
+        if(y%2==0){
+            ans1=ans*7;
+        }else {
+            ans1=ans*7+4;
+        }
+
+        if(x<=ans1){
+            dduoln(ans);
+            return;
+        }
+
+        x-=ans1;
+
+        long ans2; // 放下ans2
+        if(x%15==0){
+            ans2=x/15;
+        }else{
+            ans2=x/15+1;
+        }
+
+//        dduoln(ans+" "+ans2);
+
+        dduoln(ans2+ans);
     }
 
     public static void main(String[] args) throws Exception {

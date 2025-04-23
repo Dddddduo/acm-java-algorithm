@@ -9,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- *
+ * https://codeforces.com/contest/1974/problem/C
  */
 
 // xixi♡西
@@ -29,27 +29,29 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        long x=sc.nextLong();
-        long m=sc.nextLong();
+        int n=sc.nextInt();
+        long arr[]=new long[n];
+        for (int i = 0; i < n; i++) {
+            arr[i]=sc.nextLong();
+        }
 
-//        for(long y=1;y<=m;y++){
-//            long xor=(x^y);
-//            if(xor==0)continue;
-//            if(x%xor==0||y%xor==0){
-//                dduoln(y);
-//            }
-//        }
+        HashMap<List<Long>,Long> hm = new HashMap<>();
+        long cnt=0;
 
-        int cnt=0;
-        for(long y=1;y<=Math.min(x*3,m);y++){
-            long xor=(x^y);
-            if(xor==0)continue;
-            if(x%xor==0||y%xor==0){
-                cnt++;
+        for (int i = 0; i < n - 2; i++) {
+            List<Long> yuanlai=Arrays.asList(arr[i],arr[i+1],arr[i+2]);
+            List<List<Long>>chuxian=Arrays.asList(
+                Arrays.asList(0L,arr[i+1],arr[i+2]),
+                Arrays.asList(arr[i],0L,arr[i+2]),
+                Arrays.asList(arr[i],arr[i+1],0L)
+            );
+            for (List<Long> list : chuxian) {
+                cnt+=(hm.getOrDefault(list,0L)-hm.getOrDefault(yuanlai,0L));
+                hm.put(list,hm.getOrDefault(list,0L)+1);
             }
+            hm.put(yuanlai,hm.getOrDefault(yuanlai,0L)+1);
         }
         dduoln(cnt);
-
     }
 
     public static void main(String[] args) throws Exception {
