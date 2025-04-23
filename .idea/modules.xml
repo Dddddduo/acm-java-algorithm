@@ -92,6 +92,12 @@
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai89/89E/89E.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai89/89E/89E.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai89/89F/89F.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai89/89F/89F.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai89/89G/89G.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai89/89G/89G.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai90/90A/90A.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai90/90A/90A.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai90/90B/90B.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai90/90B/90B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai90/90C/90C.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai90/90C/90C.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai90/90D/90D.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai90/90D/90D.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai90/90E/90E.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai90/90E/90E.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai90/90F/90F.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai90/90F/90F.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound920Div.3/920A/920A.iml" filepath="$PROJECT_DIR$/CodeforcesRound920Div.3/920A/920A.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound920Div.3/920B/920B.iml" filepath="$PROJECT_DIR$/CodeforcesRound920Div.3/920B/920B.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeforcesRound920Div.3/920C/920C.iml" filepath="$PROJECT_DIR$/CodeforcesRound920Div.3/920C/920C.iml" />
@@ -155,7 +161,9 @@
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai87/Nowcoderzhousai87.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai87/Nowcoderzhousai87.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai88/Nowcoderzhousai88.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai88/Nowcoderzhousai88.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai89/Nowcoderzhousai89.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai89/Nowcoderzhousai89.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai90/Nowcoderzhousai90.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai90/Nowcoderzhousai90.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShengsaiTrain1/ShengsaiTrain1.iml" filepath="$PROJECT_DIR$/ShengsaiTrain1/ShengsaiTrain1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShengsaiTrain2/ShengsaiTrain2.iml" filepath="$PROJECT_DIR$/ShengsaiTrain2/ShengsaiTrain2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tuesday/Tuesday.iml" filepath="$PROJECT_DIR$/Tuesday/Tuesday.iml" />
       <module fileurl="file://$PROJECT_DIR$/Warm/Warm.iml" filepath="$PROJECT_DIR$/Warm/Warm.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/acm-java-algorithm.iml" filepath="$PROJECT_DIR$/.idea/acm-java-algorithm.iml" />
@@ -208,8 +216,11 @@
       <module fileurl="file://$PROJECT_DIR$/lanqiaoshengsai15Java/lanqiaoshengsai15Java.iml" filepath="$PROJECT_DIR$/lanqiaoshengsai15Java/lanqiaoshengsai15Java.iml" />
       <module fileurl="file://$PROJECT_DIR$/lanqiaoshengsai15Java/shengsai1/shengsai1.iml" filepath="$PROJECT_DIR$/lanqiaoshengsai15Java/shengsai1/shengsai1.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShengsaiTrain1/shengsai1400day1/shengsai1400day1.iml" filepath="$PROJECT_DIR$/ShengsaiTrain1/shengsai1400day1/shengsai1400day1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShengsaiTrain2/shengsai1400day2/shengsai1400day2.iml" filepath="$PROJECT_DIR$/ShengsaiTrain2/shengsai1400day2/shengsai1400day2.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShengsaiTrain1/shengsai1500day1/shengsai1500day1.iml" filepath="$PROJECT_DIR$/ShengsaiTrain1/shengsai1500day1/shengsai1500day1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShengsaiTrain2/shengsai1500day2/shengsai1500day2.iml" filepath="$PROJECT_DIR$/ShengsaiTrain2/shengsai1500day2/shengsai1500day2.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShengsaiTrain1/shengsai1600day1/shengsai1600day1.iml" filepath="$PROJECT_DIR$/ShengsaiTrain1/shengsai1600day1/shengsai1600day1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShengsaiTrain2/shengsai1600day2/shengsai1600day2.iml" filepath="$PROJECT_DIR$/ShengsaiTrain2/shengsai1600day2/shengsai1600day2.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShengsaiTrain1/shengsai1700day1/shengsai1700day1.iml" filepath="$PROJECT_DIR$/ShengsaiTrain1/shengsai1700day1/shengsai1700day1.iml" />
       <module fileurl="file://$PROJECT_DIR$/lanqiaoshengsai15Java/shengsai2/shengsai2.iml" filepath="$PROJECT_DIR$/lanqiaoshengsai15Java/shengsai2/shengsai2.iml" />
       <module fileurl="file://$PROJECT_DIR$/lanqiaoshengsai15Java/shengsai3/shengsai3.iml" filepath="$PROJECT_DIR$/lanqiaoshengsai15Java/shengsai3/shengsai3.iml" />
