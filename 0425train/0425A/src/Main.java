@@ -99,6 +99,7 @@ public class Main {
             }
         }
 
+        // 理论上这是一种贪心
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= m; j++) {
                 if (arr[i][j] == '?' &&
