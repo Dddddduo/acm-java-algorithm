@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 
 // 组合数
 public class Main {
@@ -38,5 +39,33 @@ public class Main {
         System.out.println("C(5,2)  = " + cn(5, 2)); // 输出10
         System.out.println("A(5,2)  = " + an(5, 2)); // 输出20
         System.out.println("C(20,10)  = " + cn(20, 10)); // 输出184756
+    }
+
+    // 下面是高精度版
+
+    // 计算排列数 An(n, m) = n! / (n-m)!
+    public static BigInteger an(BigInteger n, BigInteger m) {
+        if (m.compareTo(BigInteger.ZERO)  < 0 || m.compareTo(n)  > 0) return BigInteger.ZERO;
+        BigInteger result = BigInteger.ONE;
+        for (BigInteger i = BigInteger.ZERO; i.compareTo(m)  < 0; i = i.add(BigInteger.ONE))  {
+            result = result.multiply(n.subtract(i));
+        }
+        return result;
+    }
+
+    // 计算组合数 Cn(n, m) = An(n, m) / m!
+    public static BigInteger cn(BigInteger n, BigInteger m) {
+        if (m.compareTo(BigInteger.ZERO)  < 0 || m.compareTo(n)  > 0) return BigInteger.ZERO;
+        return an(n, m).divide(factorial(m));
+    }
+
+    // 计算阶乘（用于组合数分母）
+    private static BigInteger factorial(BigInteger n) {
+        if (n.compareTo(BigInteger.ZERO)  < 0) throw new IllegalArgumentException("n不能为负数");
+        BigInteger result = BigInteger.ONE;
+        for (BigInteger i = BigInteger.TWO; i.compareTo(n)  <= 0; i = i.add(BigInteger.ONE))  {
+            result = result.multiply(i);
+        }
+        return result;
     }
 }
