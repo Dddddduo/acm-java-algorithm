@@ -1,6 +1,6 @@
 import java.math.BigInteger;
 
-// 组合数
+// 组合数模版 普通 高精度
 public class Main {
     // 计算排列数 An(n, m) = n! / (n-m)!
     public static long an(int n, int m) {
@@ -63,7 +63,7 @@ public class Main {
     private static BigInteger factorial(BigInteger n) {
         if (n.compareTo(BigInteger.ZERO)  < 0) throw new IllegalArgumentException("n不能为负数");
         BigInteger result = BigInteger.ONE;
-        for (BigInteger i = BigInteger.TWO; i.compareTo(n)  <= 0; i = i.add(BigInteger.ONE))  {
+        for (BigInteger i = new BigInteger("2"); i.compareTo(n)  <= 0; i = i.add(BigInteger.ONE))  {
             result = result.multiply(i);
         }
         return result;
