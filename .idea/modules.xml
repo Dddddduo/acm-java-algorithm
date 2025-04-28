@@ -185,6 +185,7 @@
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai91/Nowcoderzhousai91.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai91/Nowcoderzhousai91.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShengsaiTrain1/ShengsaiTrain1.iml" filepath="$PROJECT_DIR$/ShengsaiTrain1/ShengsaiTrain1.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShengsaiTrain2/ShengsaiTrain2.iml" filepath="$PROJECT_DIR$/ShengsaiTrain2/ShengsaiTrain2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShengsaiTrain3/ShengsaiTrain3.iml" filepath="$PROJECT_DIR$/ShengsaiTrain3/ShengsaiTrain3.iml" />
       <module fileurl="file://$PROJECT_DIR$/The 2022 Zhejiang University City College Freshman Programming Contest/The 2022 Zhejiang University City College Freshman Programming Contest.iml" filepath="$PROJECT_DIR$/The 2022 Zhejiang University City College Freshman Programming Contest/The 2022 Zhejiang University City College Freshman Programming Contest.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tuesday/Tuesday.iml" filepath="$PROJECT_DIR$/Tuesday/Tuesday.iml" />
       <module fileurl="file://$PROJECT_DIR$/Warm/Warm.iml" filepath="$PROJECT_DIR$/Warm/Warm.iml" />
@@ -218,6 +219,15 @@
       <module fileurl="file://$PROJECT_DIR$/day8/day82/day82.iml" filepath="$PROJECT_DIR$/day8/day82/day82.iml" />
       <module fileurl="file://$PROJECT_DIR$/day8/day83/day83.iml" filepath="$PROJECT_DIR$/day8/day83/day83.iml" />
       <module fileurl="file://$PROJECT_DIR$/day8/day84/day84.iml" filepath="$PROJECT_DIR$/day8/day84/day84.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanba.iml" filepath="$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanba.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanba6/dongbeisaixuanba6.iml" filepath="$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanba6/dongbeisaixuanba6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanba7/dongbeisaixuanba7.iml" filepath="$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanba7/dongbeisaixuanba7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanbat1/dongbeisaixuanbat1.iml" filepath="$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanbat1/dongbeisaixuanbat1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanbat2/dongbeisaixuanbat2.iml" filepath="$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanbat2/dongbeisaixuanbat2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanbat3/dongbeisaixuanbat3.iml" filepath="$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanbat3/dongbeisaixuanbat3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanbat4/dongbeisaixuanbat4.iml" filepath="$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanbat4/dongbeisaixuanbat4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanbat5/dongbeisaixuanbat5.iml" filepath="$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanbat5/dongbeisaixuanbat5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanbat6/dongbeisaixuanbat6.iml" filepath="$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanbat6/dongbeisaixuanbat6.iml" />
       <module fileurl="file://$PROJECT_DIR$/gzdx2025/gzdx2025.iml" filepath="$PROJECT_DIR$/gzdx2025/gzdx2025.iml" />
       <module fileurl="file://$PROJECT_DIR$/gzdx2025/gzdx2025A/gzdx2025A.iml" filepath="$PROJECT_DIR$/gzdx2025/gzdx2025A/gzdx2025A.iml" />
       <module fileurl="file://$PROJECT_DIR$/hbgydx2025/hbgydx2025.iml" filepath="$PROJECT_DIR$/hbgydx2025/hbgydx2025.iml" />
@@ -267,6 +277,9 @@
       <module fileurl="file://$PROJECT_DIR$/day2/t5/t5.iml" filepath="$PROJECT_DIR$/day2/t5/t5.iml" />
       <module fileurl="file://$PROJECT_DIR$/day2/t6/t6.iml" filepath="$PROJECT_DIR$/day2/t6/t6.iml" />
       <module fileurl="file://$PROJECT_DIR$/temple/temple.iml" filepath="$PROJECT_DIR$/temple/temple.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShengsaiTrain3/train3A/train3A.iml" filepath="$PROJECT_DIR$/ShengsaiTrain3/train3A/train3A.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShengsaiTrain3/train3B/train3B.iml" filepath="$PROJECT_DIR$/ShengsaiTrain3/train3B/train3B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShengsaiTrain3/train3C/train3C.iml" filepath="$PROJECT_DIR$/ShengsaiTrain3/train3C/train3C.iml" />
       <module fileurl="file://$PROJECT_DIR$/Warm/warm1/warm1.iml" filepath="$PROJECT_DIR$/Warm/warm1/warm1.iml" />
       <module fileurl="file://$PROJECT_DIR$/The 2022 Zhejiang University City College Freshman Programming Contest/zhedacitycollegeA/zhedacitycollegeA.iml" filepath="$PROJECT_DIR$/The 2022 Zhejiang University City College Freshman Programming Contest/zhedacitycollegeA/zhedacitycollegeA.iml" />
       <module fileurl="file://$PROJECT_DIR$/The 2022 Zhejiang University City College Freshman Programming Contest/zhedacitycollegeB/zhedacitycollegeB.iml" filepath="$PROJECT_DIR$/The 2022 Zhejiang University City College Freshman Programming Contest/zhedacitycollegeB/zhedacitycollegeB.iml" />
