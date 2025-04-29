@@ -7,6 +7,7 @@ public class Main {
         System.out.println("Hello world!");
     }
 
+    // 最普通的质数筛
     public static boolean isPrime(long number) {
         if (number <= 1) {
             return false;
