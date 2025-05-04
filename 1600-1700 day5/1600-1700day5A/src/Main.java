@@ -9,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- *
+ * https://codeforces.com/problemset/problem/2051/E
  */
 
 // xixi♡西
@@ -29,12 +29,81 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
+        int n=sc.nextInt();
+        char wang=sc.next().charAt(0);
+        HashMap<Character ,Integer> hm=new HashMap<>();
+        ArrayList<PriorityQueue<Integer>>list=new ArrayList<>();
+        for (int i = 0; i < 100; i++) {
+            list.add(new PriorityQueue<>());
+        }
+        for (int i = 0; i < 2 * n; i++) {
+            String str=sc.next();
+            int a=str.charAt(0)-'0';
+            char b=str.charAt(1);
+            list.get(b).add(a);
+//            dduoln(a+" "+b);
+            hm.put(b,hm.getOrDefault(b,0)+1);
+        }
+
+//        for (Map.Entry<Character, Integer> characterIntegerEntry : hm.entrySet()) {
+//            dduoln(characterIntegerEntry.getKey()+" "+characterIntegerEntry.getValue());
+//        }
+
+        // 看一下王牌的数量
+        int nunWang=hm.getOrDefault(wang,0);
+        int needWang=0;
+        for (Character c : hm.keySet()) {
+            if(c==wang)continue;
+            if(hm.get(c)%2!=0){
+//                dduoln(c+" "+hm.get(c));
+                needWang++;
+            }
+        }
+
+//        dduoln(needWang+" "+nunWang);
+
+        if(needWang>nunWang||(nunWang-needWang)%2!=0){
+            dduoln("IMPOSSIBLE");
+        }else {
+            for (Character c : hm.keySet()) {
+                if(c==wang)continue;
+                int num=hm.get(c); // 数量
+                if(num%2==0){
+                    PriorityQueue<Integer> pq = list.get(c);
+                    while (!pq.isEmpty()){
+                        Integer poll1 = pq.poll();
+                        Integer poll2 = pq.poll();
+                        dduoln((poll1+""+c)+" "+(poll2+""+c));
+                    }
+                }else if(num%2!=0){
+                    PriorityQueue<Integer> pq = list.get(c);
+                    while (pq.size()!=1){
+                        Integer poll1 = pq.poll();
+                        Integer poll2 = pq.poll();
+                        dduoln((poll1+""+c)+" "+(poll2+""+c));
+                    }
+                    Integer lastPoll = pq.poll();
+                    PriorityQueue<Integer> wangpq = list.get(wang);
+                    Integer wangpoll = wangpq.poll();
+                    dduoln((lastPoll+""+c)+" "+(wangpoll+""+wang));
+                }
+            }
+
+            PriorityQueue<Integer> wangpq = list.get(wang);
+            while (!wangpq.isEmpty()){
+                Integer poll1 = wangpq.poll();
+                Integer poll2 = wangpq.poll();
+                dduoln((poll1+""+wang)+" "+(poll2+""+wang));
+            }
+        }
+
+//        dduoln();
 
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-//        t = sc.nextInt();
+        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
@@ -109,4 +178,4 @@ class IoScanner {
     public BigDecimal nextDecimal() throws IOException {
         return new BigDecimal(next());
     }
-} 
+}

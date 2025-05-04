@@ -9,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- *
+ * https://ac.nowcoder.com/acm/contest/108217/C
  */
 
 // xixi♡西
@@ -29,7 +29,21 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
+        int n=sc.nextInt();
+        String str[]=new String[n];
+        for (int i = 0; i < n; i++) {
+            str[i]=sc.next();
+        }
 
+        Arrays.sort(str, (o1, o2) -> {
+            return (o1 + o2).compareTo(o2 + o1);
+        });
+
+        StringBuilder sb=new StringBuilder();
+        for (int i = 0; i < n; i++) {
+            sb.append(str[i]);
+        }
+        dduoln(sb);
     }
 
     public static void main(String[] args) throws Exception {

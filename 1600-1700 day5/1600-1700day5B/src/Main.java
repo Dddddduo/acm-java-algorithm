@@ -9,7 +9,7 @@ import java.time.*;
 
 /**
  * 题目地址
- *
+ * https://codeforces.com/problemset/problem/2051/E
  */
 
 // xixi♡西
@@ -29,12 +29,58 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        long[] a = new long[n];
+        long[] b = new long[n];
+        for (int i = 0; i < n; i++) {a[i] = sc.nextLong();}
+        for (int i = 0; i < n; i++) {b[i] = sc.nextLong();}
 
+        List<long[]> list = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            list.add(new long[]{a[i], 1});
+            list.add(new long[]{b[i], 2});
+        }
+
+        Collections.sort(list,((o1, o2) ->{
+            if(o1[0]==o2[0]){
+                return Long.compare(o1[1],o2[1]);
+            }else {
+                return Long.compare(o1[0],o2[0]);
+            }
+        }));
+        long max=0;
+        // 差评
+        long chaping=0;
+        // 购买数量
+        long cnt=n;
+
+        // 根据贪心 我们可以知道 每次的价格无非就是那几个临界值
+        // 所以我吗在遍历的过程中选择的是从0-n*2
+        // 遍历每一种价格 在循环中控制状态 包括当前差评和购买的总件数
+        for(int i=0;i<n*2;){
+            // 定价
+            long jia=list.get(i)[0];
+            if(chaping<=k){
+                max=Math.max(max,jia*cnt);
+            }
+            while (i<2*n&&list.get(i)[0]==jia){
+                long[] arr = list.get(i);
+                if(arr[1]==1){
+                    chaping++;
+                }else if(arr[1]==2){
+                    chaping--;
+                    cnt--;
+                }
+                i++;
+            }
+        }
+        dduoln(max);
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-//        t = sc.nextInt();
+        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
