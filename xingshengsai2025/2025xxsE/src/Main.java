@@ -20,14 +20,15 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        int a1=sc.nextInt();
-        int a2=sc.nextInt();
-        int a3=sc.nextInt();
-        if(a1>a2&&a2<a3){
-            dduoln("YES");
-        }else {
-            dduoln("NO");
+        int n = sc.nextInt();
+        long cnt=0;
+        for (int i = 0; i < n - 1; i++) {
+            long a=sc.nextLong();
+            long b=sc.nextLong();
+            cnt-=a;
+            cnt+=b;
         }
+        dduoln(cnt);
     }
 
     public static void main(String[] args) throws Exception {

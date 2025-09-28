@@ -20,19 +20,25 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        int a1=sc.nextInt();
-        int a2=sc.nextInt();
-        int a3=sc.nextInt();
-        if(a1>a2&&a2<a3){
-            dduoln("YES");
-        }else {
-            dduoln("NO");
+        int[] arr = new int[4];
+        for (int j = 0; j < 4; j++) {
+            arr[j] = sc.nextInt();
+        }
+
+        Arrays.sort(arr);
+
+        if (arr[0] + 30 == arr[1] &&
+                arr[1] + 30 == arr[2] &&
+                arr[2] + 30 == arr[3]) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
         }
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-//        t = sc.nextInt();
+        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }

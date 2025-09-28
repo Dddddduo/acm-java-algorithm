@@ -20,13 +20,23 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        int a1=sc.nextInt();
-        int a2=sc.nextInt();
-        int a3=sc.nextInt();
-        if(a1>a2&&a2<a3){
-            dduoln("YES");
+//        System.out.println((double) 1/(double)7);
+//        System.out.println((double) 2/(double)7);
+//        System.out.println((double) 3/(double)7);
+//        System.out.println((double) 4/(double)7);
+//        System.out.println((double) 5/(double)7);
+//        System.out.println((double) 6/(double)7);
+//        System.out.println((double) 7/(double)7);
+//        System.out.println((double) 8/(double)7);
+//        System.out.println((double) 9/(double)7);
+//        System.out.println((double) 10/(double)7);
+//        System.out.println((double) 11/(double)7);
+//        System.out.println((double) 12/(double)7);
+        long n=sc.nextLong();
+        if(n%7==0){
+            dduoln("0");
         }else {
-            dduoln("NO");
+            dduoln("6");
         }
     }
 

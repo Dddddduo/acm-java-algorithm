@@ -20,14 +20,7 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        int a1=sc.nextInt();
-        int a2=sc.nextInt();
-        int a3=sc.nextInt();
-        if(a1>a2&&a2<a3){
-            dduoln("YES");
-        }else {
-            dduoln("NO");
-        }
+
     }
 
     public static void main(String[] args) throws Exception {

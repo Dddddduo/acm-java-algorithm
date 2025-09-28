@@ -20,19 +20,29 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        int a1=sc.nextInt();
-        int a2=sc.nextInt();
-        int a3=sc.nextInt();
-        if(a1>a2&&a2<a3){
-            dduoln("YES");
-        }else {
-            dduoln("NO");
+        int n = sc.nextInt();
+        long[] a = new long[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextLong();
         }
+        Arrays.sort(a);
+        long[] preSum = new long[n + 1];
+        for (int i = 0; i < n; i++) {
+            preSum[i + 1] = preSum[i] + a[i];
+        }
+        long total = 0;
+        for (int i = 0; i < n; i++) {
+            long left = (long) i * a[i] - preSum[i];
+            long right = preSum[n] - preSum[i + 1] - (long) (n - i - 1) * a[i];
+            total += left;
+            total += right;
+        }
+        System.out.println(total);
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-//        t = sc.nextInt();
+        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }

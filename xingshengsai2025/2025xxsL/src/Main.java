@@ -20,14 +20,28 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        int a1=sc.nextInt();
-        int a2=sc.nextInt();
-        int a3=sc.nextInt();
-        if(a1>a2&&a2<a3){
-            dduoln("YES");
-        }else {
-            dduoln("NO");
+        HashMap<Character, Character> hm = new HashMap<>();
+        int n=sc.nextInt();
+        for (int i = 0; i < 3; i++) {
+            char ch = sc.next().charAt(0);
+            char ch1 = sc.next().charAt(0);
+            hm.put(ch, ch1);
         }
+
+        char arr[][]=new char[3][n];
+        for (int i = 0; i < 3; i++) {
+            String ch = sc.next();
+            arr[i]=ch.toCharArray();
+        }
+
+        for (int i = 0; i < 3; i++) {
+            for (int i1 = 0; i1 < n; i1++) {
+                System.out.print(hm.get(arr[i][i1]));
+            }
+            System.out.println();
+        }
+
+
     }
 
     public static void main(String[] args) throws Exception {
