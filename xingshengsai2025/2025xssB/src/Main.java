@@ -15,18 +15,71 @@ public class Main {
     static boolean visited[];
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
+    // 8个方向
+    static int[][] dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}};
+
     /**
      * @throws IOException
      */
     private static void solve() throws IOException {
-        // todo
-        int a1=sc.nextInt();
-        int a2=sc.nextInt();
-        int a3=sc.nextInt();
-        if(a1>a2&&a2<a3){
-            dduoln("YES");
-        }else {
-            dduoln("NO");
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+
+        char[][] board = new char[n][m];
+        for (int i = 0; i < n; i++) {
+            String line = sc.nextLine();
+            for (int j = 0; j < m; j++) {
+                board[i][j] = line.charAt(j);
+            }
+        }
+
+        boolean[][] visited = new boolean[n][m];
+        int cnt = 0;
+
+        // 找出所有连通空格区域
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (board[i][j] == '.' && !visited[i][j]) {
+                    bfs(board, visited, i, j, n, m);
+                    cnt++;
+                }
+            }
+        }
+
+        // 统计剩余的数字格
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (board[i][j] >= '1' && board[i][j] <= '8' && !visited[i][j]) {
+                    cnt++;
+                }
+            }
+        }
+
+        dduoln(cnt);
+    }
+
+    private static void bfs(char[][] board, boolean[][] visited, int x, int y, int n, int m) {
+        Queue<int[]> queue = new LinkedList<>();
+        queue.offer(new int[]{x, y});
+        visited[x][y] = true;
+
+        while (!queue.isEmpty()) {
+            int[] curr = queue.poll();
+            int currX = curr[0], currY = curr[1];
+
+            for (int[] dir : dirs) {
+                int nx = currX + dir[0];
+                int ny = currY + dir[1];
+
+                if (nx >= 0 && nx < n && ny >= 0 && ny < m && !visited[nx][ny]) {
+                    if (board[nx][ny] == '.') {
+                        visited[nx][ny] = true;
+                        queue.offer(new int[]{nx, ny});
+                    } else if (board[nx][ny] >= '1' && board[nx][ny] <= '8') {
+                        visited[nx][ny] = true;
+                    }
+                }
+            }
         }
     }
 

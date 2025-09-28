@@ -20,14 +20,36 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        int a1=sc.nextInt();
-        int a2=sc.nextInt();
-        int a3=sc.nextInt();
-        if(a1>a2&&a2<a3){
-            dduoln("YES");
-        }else {
-            dduoln("NO");
+        long n = sc.nextLong();
+        for(int i = 2; i <= n-2; i++) {
+            String s = numberToBase(n, i);
+//            System.out.println(s);
+            if(s.equals(new StringBuilder(s).reverse().toString())==false) {
+                System.out.println("NO");
+                return;
+            }
         }
+        System.out.println("YES");
+
+    }
+
+    /**
+     * 将一个长整数转换为指定进制的字符串表示。
+     *
+     * @param n 要转换的长整数
+     * @param b 目标进制，必须大于等于2
+     * @return 转换后的字符串表示
+     */
+    public static String numberToBase(long n, long b) {
+        if (n == 0) {
+            return "0";
+        }
+        StringBuilder sb = new StringBuilder();
+        while (n > 0) {
+            sb.append(n % b);
+            n = n / b;
+        }
+        return sb.reverse().toString();
     }
 
     public static void main(String[] args) throws Exception {

@@ -20,14 +20,30 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        int a1=sc.nextInt();
-        int a2=sc.nextInt();
-        int a3=sc.nextInt();
-        if(a1>a2&&a2<a3){
-            dduoln("YES");
-        }else {
-            dduoln("NO");
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        int k=sc.nextInt();
+
+        long arr[]=new long[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextLong();
         }
+
+        Arrays.sort(arr);
+        int pi=0;
+        int pj=n-1;
+        long cnt=0;
+        for (int i = 0; i < k; i++) {
+            if(m>0){
+                m--;
+                cnt+=1000000007-arr[pi];
+                pi++;
+            }else {
+                cnt+=arr[pj];
+                pj--;
+            }
+        }
+        dduoln(cnt);
     }
 
     public static void main(String[] args) throws Exception {

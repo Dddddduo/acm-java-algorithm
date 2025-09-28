@@ -20,13 +20,14 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        int a1=sc.nextInt();
-        int a2=sc.nextInt();
-        int a3=sc.nextInt();
-        if(a1>a2&&a2<a3){
-            dduoln("YES");
-        }else {
-            dduoln("NO");
+        double n = sc.nextDouble();
+        double ans = n * 199 * 0.01;
+        ans=Math.floor(ans);
+//        System.out.println(ans);
+        if(ans>=100){
+            dduoln("-1");
+        }else{
+            dduoln((int)(100-ans));
         }
     }
 
