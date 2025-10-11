@@ -20,35 +20,36 @@ public class Main {
      */
     private static void solve() throws IOException {
         // todo
-        int n=sc.nextInt();
-        int m=sc.nextInt();
-        int k=sc.nextInt();
-
-        long arr[]=new long[n];
-        for(int i=0;i<n;i++){
-            arr[i]=sc.nextLong();
-        }
-
-        Arrays.sort(arr);
-        int pi=0;
-        int pj=n-1;
+        String str = sc.next();
+        char[] charArray = str.toCharArray();
+        int p_first = 0 ;
+        int p_last = str.length()-1 ;
         long cnt=0;
-        for (int i = 0; i < k; i++) {
-            if(m>0){
-                m--;
-                cnt+=1000000007-arr[pi];
-                pi++;
+        long t = str.length();
+        long add = str.length() - 2;
+        while (p_first <= p_last){
+            if(p_last != p_first ){
+                cnt+= (charArray[p_first]-'0')*t;
+                cnt+= (charArray[p_last]-'0')*t;
+//                System.out.println(charArray[p_first]-'0'+" "+t);
+//                System.out.println(charArray[p_last]-'0'+" "+t);
             }else {
-                cnt+=arr[pj];
-                pj--;
+                cnt+= (charArray[p_first]-'0')*t;
+//                System.out.println(charArray[p_first]-'0'+" "+t);
             }
+//            System.out.println(cnt);
+            t+=add;
+            add-=2;
+            p_first++;
+            p_last--;
+//            System.out.println("point:"+p_first+" "+p_last);
         }
         dduoln(cnt);
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-//        t = sc.nextInt();
+        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
