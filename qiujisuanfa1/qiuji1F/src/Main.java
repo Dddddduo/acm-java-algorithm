@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        long n = scanner.nextLong();
-        long m = scanner.nextLong();
+        long n = scanner.nextLong(); // 字符串长度
+        long m = scanner.nextLong(); // 最多可以改变的字符数
         String s = scanner.next();
         scanner.close();
 
@@ -24,6 +24,7 @@ public class Main {
         for (int r = 0; r < n; r++) {
             int num = s.charAt(r) - '0';
             cnt.put(num, cnt.getOrDefault(num, 0) + 1);
+
             while (l <= r && cnt.getOrDefault(target, 0) > m) {
                 int leftNum = s.charAt(l) - '0';
                 cnt.put(leftNum, cnt.get(leftNum) - 1);
