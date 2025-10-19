@@ -8,7 +8,7 @@
 ![CCF](https://img.shields.io/badge/CCF算法大赛-全国前500-important)
 
 **👨💻 开发者信息**  
-`2024-2025赛季算法竞赛选手` | `Java后端开发者` | `在役` | 
+`2024-2025赛季算法竞赛选手` | `Java后端开发者` | `已退役` | 
 
 🏆 核心成就：
 - Codeforces最高 rating 1500（ Specialist ）
