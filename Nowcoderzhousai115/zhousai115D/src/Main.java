@@ -1,65 +1,53 @@
 import java.util.*;
 import java.io.*;
-import java.math.*;
-import java.lang.*;
-import java.time.*;
 
 public class Main {
-
     static IoScanner sc = new IoScanner();
-//    static final int mod = (int) (1e9 + 7);
 
-    static int n;
-    static int arr[];
-    static boolean visited[];
-    static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
-
-    // 异或: 相异为1 相同为0
-    /**
-     * @throws IOException
-     */
     private static void solve() throws IOException {
-        // todo
         int n = sc.nextInt();
+        int[][] arr = new int[n][2];
 
-        int[] a = new int[n];
         for (int i = 0; i < n; i++) {
-            a[i] = sc.nextInt();
+            arr[i][0] = sc.nextInt();
+            arr[i][1] = sc.nextInt();
         }
 
-        int[] cnt = new int[30];
+        Arrays.sort(arr, (a, b) -> a[0] - b[0]);
 
-        // 有多少个数是当前位是1,一共30位
-        for (int num : a) {
-            for (int j = 0; j < 30; j++) {
-                cnt[j]+= (num >> j) & 1;
+        // 优先队列
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        int current = 0;
+        int index = 0;
+
+        while (true) {
+
+            while (index < n && arr[index][0] <= current) {
+                pq.offer(arr[index][1]);
+                index++;
             }
-        }
 
-        long ans = 0;
-        for (int num : a) {
-            long sum = 0;
-            for (int j = 0; j < 30; j++) {
-                if (((num >> j) & 1) == 1) {
-                    sum += (long) (n - cnt[j]) * (1L << j);
-                } else {
-                    sum += (long) cnt[j] * (1L << j);
-                }
+            while (!pq.isEmpty() && pq.peek() < current) {
+                pq.poll();
             }
-            ans=Math.max(ans,sum);
+
+            if (pq.isEmpty()) {
+                break;
+            }
+
+            pq.poll();
+            current++;
         }
 
-        System.out.println(ans);
+        System.out.println(current);
     }
 
     public static void main(String[] args) throws Exception {
-        int t = 1;
-        t = sc.nextInt();
+        int t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
     }
-
 }
 
 class IoScanner {
@@ -102,13 +90,5 @@ class IoScanner {
 
     public float nextFloat() throws IOException {
         return Float.parseFloat(next());
-    }
-
-    public BigInteger nextBigInteger() throws IOException {
-        return new BigInteger(next());
-    }
-
-    public BigDecimal nextDecimal() throws IOException {
-        return new BigDecimal(next());
     }
 }
