@@ -2,54 +2,23 @@ import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
-import java.time.*;
 
 public class Main {
 
     static IoScanner sc = new IoScanner();
 //    static final int mod = (int) (1e9 + 7);
+//    static final int mod = (int) (998244353);
 
     static int n;
     static int arr[];
     static boolean visited[];
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
-    // 异或: 相异为1 相同为0
     /**
      * @throws IOException
      */
     private static void solve() throws IOException {
-        // todo
-        int n = sc.nextInt();
 
-        int[] a = new int[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = sc.nextInt();
-        }
-
-        int[] cnt = new int[30];
-
-        // 有多少个数是当前位是1,一共30位
-        for (int num : a) {
-            for (int j = 0; j < 30; j++) {
-                cnt[j]+= (num >> j) & 1;
-            }
-        }
-
-        long ans = 0;
-        for (int num : a) {
-            long sum = 0;
-            for (int j = 0; j < 30; j++) {
-                if (((num >> j) & 1) == 1) {
-                    sum += (long) (n - cnt[j]) * (1L << j);
-                } else {
-                    sum += (long) cnt[j] * (1L << j);
-                }
-            }
-            ans=Math.max(ans,sum);
-        }
-
-        System.out.println(ans);
     }
 
     public static void main(String[] args) throws Exception {
