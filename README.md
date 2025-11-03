@@ -11,14 +11,15 @@
 `2024-2025赛季算法竞赛选手` | `Java后端开发者` | `已退役` | 
 
 🏆 核心成就：
-- Codeforces最高 rating 1500（ Specialist ）
-- 牛客周赛 rating 1700（全国前5%）
-- LeetCode Hot100 全解（含多种语言实现）
 - 第十八届 CCPC 吉林省大学生程序设计竞赛A组 铜牌
 - 第十九届 CCPC 中国东北地区大学生程序设计竞赛暨全国邀请赛(东北) 铜牌
 - 第15届蓝桥杯Java组 省赛一等奖 国赛三等奖
 - 第16届蓝桥杯Java组 省赛一等奖 国赛二等奖 
 - CCF编程能力认证 CACC全国前500名 国赛优秀奖
+- Codeforces最高 rating 1500（ Specialist ）
+- 牛客周赛 rating 1700
+- LeetCode Hot100 全解
+- LeetCode 常见SQL 全解
 ---
 
 ## 📦 仓库全景图
