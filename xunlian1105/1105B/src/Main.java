@@ -17,7 +17,32 @@ public class Main {
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
     private static void solve() throws IOException {
+        String str=sc.next();
+        Deque<Character> dq = new ArrayDeque<>();
 
+        HashMap<Character, Character> hm = new HashMap<>();
+        hm.put(')', '(');
+        hm.put(']', '[');
+        hm.put('}', '{');
+
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if(c=='('||c=='['||c=='{'){
+                dq.addLast(c);
+            }else{
+                if (dq.isEmpty() || dq.peek() != hm.get(c)) {
+                    System.out.println("No");
+                    return;
+                }
+                dq.pollLast();
+            }
+        }
+
+        if(dq.isEmpty()){
+            System.out.println("Yes");
+        }else{
+            System.out.println("No");
+        }
 
     }
 
