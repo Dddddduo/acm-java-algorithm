@@ -18,7 +18,93 @@ public class Main {
 
     private static void solve() throws IOException {
 
+        int n = sc.nextInt();
+        int k = sc.nextInt();
 
+        Long x[]=new Long[n];
+        for (int i = 0; i < n; i++) {
+            x[i] = sc.nextLong();
+        }
+
+        int m = (n + k - 1) / k;
+
+        Long[] sortedX = x.clone();
+        Arrays.sort(sortedX);
+        reverse(sortedX);
+        Set<Long> keySet = new HashSet<>();
+        for (int i = 0; i < m; i++) {
+            keySet.add(sortedX[i]);
+        }
+
+        Deque<Long> stack = new ArrayDeque<>();
+        List<Long> output = new ArrayList<>();
+        int inputIndex = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (i % k == 0) {
+                if (!stack.isEmpty() && keySet.contains(stack.peek())) {
+                    output.add(stack.pop());
+                } else {
+                    while (inputIndex < n) {
+                        if (keySet.contains(x[inputIndex])) {
+                            output.add(x[inputIndex]);
+                            inputIndex++;
+                            break;
+                        } else {
+                            stack.push(x[inputIndex]);
+                            inputIndex++;
+                        }
+                    }
+                    if (inputIndex >= n && !stack.isEmpty()) {
+                        output.add(stack.pop());
+                    }
+                }
+            } else {
+                if (!stack.isEmpty() && !keySet.contains(stack.peek())) {
+                    output.add(stack.pop());
+                } else {
+                    while (inputIndex < n) {
+                        if (!keySet.contains(x[inputIndex])) {
+                            output.add(x[inputIndex]);
+                            inputIndex++;
+                            break;
+                        } else {
+                            stack.push(x[inputIndex]);
+                            inputIndex++;
+                        }
+                    }
+                    if (inputIndex >= n && !stack.isEmpty()) {
+                        output.add(stack.pop());
+                    }
+                }
+            }
+        }
+
+        long total = 0;
+        for (int i = 0; i < n; i++) {
+            if (i % k == 0) {
+                total += output.get(i);
+            }
+        }
+        sc.println(total);
+
+        StringBuilder sb = new StringBuilder();
+        for (Long num : output) {
+            sb.append(num).append(" ");
+        }
+        if (sb.length() > 0) {
+            sb.setLength(sb.length() - 1);
+        }
+        sc.println(sb.toString());
+
+    }
+
+    private static void reverse(Long[] array) {
+        for (int i = 0; i < array.length / 2; i++) {
+            Long temp = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = temp;
+        }
     }
 
     public static void main(String[] args) throws Exception {

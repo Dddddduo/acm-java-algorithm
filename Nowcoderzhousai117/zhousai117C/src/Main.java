@@ -18,6 +18,11 @@ public class Main {
 
     private static void solve() throws IOException {
 
+        long n = sc.nextLong();
+        long m = sc.nextLong();
+
+        sc.println(n*(m-1)+(n-1)*m);
+
 
     }
 

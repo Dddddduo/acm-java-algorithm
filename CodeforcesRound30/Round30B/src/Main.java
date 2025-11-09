@@ -18,12 +18,40 @@ public class Main {
 
     private static void solve() throws IOException {
 
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+
+        PriorityQueue<Integer> pq = new PriorityQueue<>((a,b)->b-a);
+        for (int i = 0; i < n; i++) {
+            int a=sc.nextInt();
+            pq.offer(a);
+        }
+
+//        System.out.println(pq.peek());
+
+        ArrayList<Integer[]> list=new ArrayList<>();
+        for (int i = 0; i < m; i++) {
+            int num1= sc.nextInt();;
+            int num2= sc.nextInt();;
+            list.add(new Integer[]{num1,num2});
+        }
+
+        Collections.sort(list,(new Comparator<Integer[]>() {
+            @Override
+            public int compare(Integer[] o1, Integer[] o2) {
+                if(o1[1]==o2[1]) {
+                    return o1[0]-o2[0];
+                }else{
+                    return o2[1]-o1[1];
+                }
+            }
+        }));
 
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-//        t = sc.nextInt();
+        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }

@@ -18,7 +18,26 @@ public class Main {
 
     private static void solve() throws IOException {
 
+        int n = sc.nextInt();
+        int arr[]=new int[n+5];
 
+        for (int i = 0; i < n - 1; i++) {
+            int u = sc.nextInt();
+            int v = sc.nextInt();
+            arr[u]++;
+            arr[v]++;
+        }
+
+        int index=-1;
+
+        for (int i = 0; i < n+5; i++) {
+            if(arr[i]>1){
+                index=i;
+                break;
+            }
+        }
+
+        sc.println(index);
     }
 
     public static void main(String[] args) throws Exception {

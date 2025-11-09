@@ -1,29 +1,63 @@
-// https://github.com/Dddddduo/acm-java-algorithm
 import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
 
-// 多多世界第一可爱!
 public class Main {
 
     static IoScanner sc = new IoScanner();
-//    static final int mod = (int) (1e9 + 7);
-//    static final int mod = (int) (998244353);
-
     static int n;
-    static int arr[];
-    static boolean visited[];
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
     private static void solve() throws IOException {
 
+        n = sc.nextInt();
 
+        for (int i = 0; i <= n+5; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        for (int i = 0; i < n - 1; i++) {
+            int u = sc.nextInt();
+            int v = sc.nextInt();
+            adj.get(u).add(v);
+            adj.get(v).add(u);
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 1; i <= n; i++) {
+            int node = bfs(i);
+            sb.append(node).append(" ");
+        }
+        sc.println(sb.toString());
+    }
+
+    static int bfs(int start) {
+
+        int[] arr = new int[n + 1];
+        Arrays.fill(arr, -1);
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(start);
+        arr[start] = 0;
+        int cnt = 0;
+        while (!queue.isEmpty()) {
+            int current = queue.poll();
+            if (arr[current] == 9) {
+                cnt++;
+            } else if (arr[current] < 9) {
+                for (int neighbor : adj.get(current)) {
+                    if (arr[neighbor] == -1) {
+                        arr[neighbor] = arr[current] + 1;
+                        queue.add(neighbor);
+                    }
+                }
+            }
+        }
+        return cnt;
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
@@ -141,17 +175,12 @@ class IoScanner {
         bw.newLine();
     }
 
-    //其他调试命令：
     public void flush() throws IOException{
-        //交互题分组调试，或者提前退出的情况下可以先运行此语句再推出
         bw.flush();
         return;
     }
 
     public boolean hasNext() throws IOException{
-        //本地普通IDE难以使用这个方法调试，需要按照数据组flush，刷新语句:
-        //sc.flush()
-        //调试完可删去
         return bf.ready();
     }
 

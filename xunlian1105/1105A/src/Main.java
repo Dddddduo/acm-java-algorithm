@@ -17,6 +17,35 @@ public class Main {
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
     private static void solve() throws IOException {
+        int t=sc.nextInt();
+        // 1 0
+        // 2 1
+        // 3 2
+        // 5 3
+        // 8 5
+        long arr[]=new long[100005];
+
+        // 0
+        arr[0]=0;
+        arr[1]=1;
+
+        // 1
+        arr[2]=1;
+        arr[3]=2;
+
+        // 2
+        arr[4]=2;
+        arr[5]=3;
+
+        for(int i=6;i<100000;i+=2){
+            arr[i]=arr[i-1];
+            arr[i+1]=arr[i-1]+arr[i-2];
+        }
+
+        for (int i = 0; i < t; i++) {
+            int num = sc.nextInt();
+            System.out.println(arr[num*2]+arr[num*2+1]);
+        }
 
 
     }

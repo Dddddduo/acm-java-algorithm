@@ -18,7 +18,33 @@ public class Main {
 
     private static void solve() throws IOException {
 
+        int n=sc.nextInt();
+        long arr[]=new long[n];
 
+        for (int i = 0; i < n; i++) {
+            long num = sc.nextLong();
+            arr[i]=(int)num;
+        }
+
+        Deque<Long> stack = new ArrayDeque<>();
+        Set<Long> set = new HashSet<>();
+
+        for (long num : arr) {
+            if (set.contains(num)) {
+                while (true) {
+                    long top = stack.pop();
+                    set.remove(top);
+                    if (top == num) {
+                        break;
+                    }
+                }
+            } else {
+                stack.push(num);
+                set.add(num);
+            }
+        }
+
+        sc.println(stack.size());
     }
 
     public static void main(String[] args) throws Exception {

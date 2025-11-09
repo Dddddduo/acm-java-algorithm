@@ -18,6 +18,18 @@ public class Main {
 
     private static void solve() throws IOException {
 
+        int l=sc.nextInt();
+        int r=sc.nextInt();
+
+        if(l==1 && r==1){
+            sc.println("LU");
+        }else if(l==1 && r==2){
+            sc.println("LD");
+        }else if(l==2 && r==1){
+            sc.println("RU");
+        }else if(l==2 && r==2){
+            sc.println("RD");
+        }
 
     }
 

@@ -14,10 +14,33 @@ public class Main {
     static int n;
     static int arr[];
     static boolean visited[];
-    static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+    static ArrayList<ArrayList<Integer>> adj ;
+    static int[] degree;
 
     private static void solve() throws IOException {
 
+        n = sc.nextInt();
+        adj= new ArrayList<>();
+        arr = new int[n+5];
+        visited = new boolean[n+5];
+
+        for (int i = 0; i < n+5; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        for (int i = 0; i < n-1; i++) {
+            int u=sc.nextInt();
+            int v=sc.nextInt();
+            adj.get(u).add(v);
+            adj.get(v).add(u);
+        }
+
+        long count=0;
+        for (ArrayList<Integer> integers : adj) {
+            count+=Math.max(0,integers.size()-2);
+        }
+
+        sc.println(count);
 
     }
 
