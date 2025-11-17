@@ -14,7 +14,7 @@
 - 第十九届 CCPC 东北地区大学生程序设计竞赛 铜牌
 - 第16届蓝桥杯Java组 省赛一等奖 国赛二等奖 
 - 第15届蓝桥杯Java组 省赛一等奖 国赛三等奖
-- CCF编程能力认证 CACC全国前500名 国赛优秀奖
+- CCF编程能力认证 吉林省第七名 CACC全国前500名 国赛优秀奖
 - Codeforces最高 rating 1500（ Specialist ）
 - 牛客周赛 rating 1700
 - LeetCode Hot100 全解
