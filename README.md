@@ -4,17 +4,16 @@
 ![Codeforces](https://img.shields.io/badge/Codeforces-1400-blue)
 ![NowCoder](https://img.shields.io/badge/牛客周赛-1700-red)
 ![LeetCode](https://img.shields.io/badge/LeetCode-Hot100%20全解-success)
-![Lanqiao](https://img.shields.io/badge/蓝桥杯-国三-9cf)
-![CCF](https://img.shields.io/badge/CCF算法大赛-全国前500-important)
 
 **👨💻 开发者信息**  
 `2024-2025赛季算法竞赛选手` | `Java后端开发者` | `已退役` | 
 
 🏆 核心成就：
+- 第十九届 CCPC 中国大学生程序设计竞赛全国邀请赛(东北) 铜牌
 - 第十八届 CCPC 吉林省大学生程序设计竞赛A组 铜牌
-- 第十九届 CCPC 中国东北地区大学生程序设计竞赛暨全国邀请赛(东北) 铜牌
-- 第15届蓝桥杯Java组 省赛一等奖 国赛三等奖
+- 第十九届 CCPC 东北地区大学生程序设计竞赛 铜牌
 - 第16届蓝桥杯Java组 省赛一等奖 国赛二等奖 
+- 第15届蓝桥杯Java组 省赛一等奖 国赛三等奖
 - CCF编程能力认证 CACC全国前500名 国赛优秀奖
 - Codeforces最高 rating 1500（ Specialist ）
 - 牛客周赛 rating 1700
