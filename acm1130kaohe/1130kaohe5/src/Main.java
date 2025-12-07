@@ -18,6 +18,29 @@ public class Main {
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
     private static void solve() throws IOException {
+        int n = sc.nextInt();
+        int k=sc.nextInt();
+
+        int arr[]=new int[n];
+
+        int index[]=new int[n+1];
+        for (int i = 0; i < n; i++) {
+            arr[i]=sc.nextInt();
+            index[arr[i]]++;
+        }
+
+        // 在k之前有多少个空数 需要补
+        long cnt1=0;
+        for(int i=0;i<k;i++){
+            if(index[i]==0){
+                cnt1++;
+            }
+        }
+
+        // 正好为k都有多少个数 需要去掉
+        long cnt2=index[k];
+
+        sc.println(Math.max(cnt1,cnt2));
 
     }
 

@@ -18,6 +18,36 @@ public class Main {
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
     private static void solve() throws IOException {
+        int n=sc.nextInt();
+        int arr[]=new int[n*2];
+        HashMap<Integer, Integer> hm = new HashMap<>();
+        for (int i = 0; i < n*2; i++) {
+            arr[i] = sc.nextInt();
+            hm.put(arr[i],hm.getOrDefault(arr[i],0)+1);
+        }
+
+        Set<Integer> set = hm.keySet();
+        int ji=0;
+        int ou=0;
+        for (Integer i : set) {
+            if(hm.get(i)%2!=0){
+                ji+=1;
+            }else{
+                ou+=1;
+            }
+        }
+
+        long cnt = ji+ou*2;
+
+        if (ji == 0) {
+            if (ou % 2 != n % 2) {
+                cnt -= 2;
+            }
+        }
+
+        if(cnt<0)cnt=0;
+
+        sc.println(cnt);
 
     }
 

@@ -18,6 +18,29 @@ public class Main {
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
     private static void solve() throws IOException {
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i]=sc.nextInt();
+        }
+
+        int i=0;
+
+        while(i+1<n&&arr[i]<=arr[i+1]){
+            i++;
+        }
+
+//        sc.println(i);
+
+        for(int j=i+1;j<n;j++){
+            if(arr[j]>arr[j-1]){
+                sc.println("NO");
+                return;
+            }
+        }
+
+        sc.println("YES");
 
     }
 

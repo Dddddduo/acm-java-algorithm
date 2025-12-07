@@ -19,11 +19,92 @@ public class Main {
 
     private static void solve() throws IOException {
 
+        int[] arr1 = new int[4];
+        int[] arr2 = new int[4];
+
+        for (int i = 0; i < 4; i++) {
+            arr1[i] = sc.nextInt();
+        }
+
+        for (int i = 0; i < 4; i++) {
+            arr2[i] = sc.nextInt();
+        }
+
+        int[] result1 = getArr(arr1);
+        int[] result2 = getArr(arr2);
+
+        int totalCombinations = 13 * 13;
+
+        int winCount = 0;
+        winCount += result1[2] * (result2[1] + result2[0]);
+        winCount += result1[1] * result2[0];
+
+        int tieCount = 0;
+        tieCount += result1[2] * result2[2];
+        tieCount += result1[1] * result2[1];
+        tieCount += result1[0] * result2[0];
+
+        int loseCount = 0;
+        loseCount += result1[0] * (result2[1] + result2[2]);
+        loseCount += result1[1] * result2[2];
+
+        String resWin = formatFraction(winCount, totalCombinations);
+        String resTie = formatFraction(tieCount, totalCombinations);
+        String resLose = formatFraction(loseCount, totalCombinations);
+
+        sc.println(resWin + " " + resTie + " " + resLose);
+    }
+
+    private static int getHandType(int[] hand) {
+        Map<Integer, Integer> counts = new HashMap<>();
+        for (int card : hand) {
+            counts.put(card, counts.getOrDefault(card, 0) + 1);
+        }
+
+        List<Integer> values = new ArrayList<>(counts.values());
+        int maxCount = Collections.max(values);
+
+        if (maxCount >= 4) {
+            return 2;
+        }
+        if (values.contains(3) && values.contains(2)) {
+            return 1;
+        }
+        return 0;
+    }
+
+    private static int[] getArr(int[] initialCards) {
+        int[] dist = new int[3];
+        for (int card = 1; card <= 13; card++) {
+            int[] hand = new int[5];
+            System.arraycopy(initialCards, 0, hand, 0, 4);
+            hand[4] = card;
+            int type = getHandType(hand);
+            dist[type]++;
+        }
+        return dist;
+    }
+
+    private static int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    private static String formatFraction(int num, int den) {
+        if (num == 0) {
+            return "0/1";
+        }
+        int commonDivisor = gcd(Math.abs(num), Math.abs(den));
+        return (num / commonDivisor) + "/" + (den / commonDivisor);
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-        t = sc.nextInt();
+//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }

@@ -1,5 +1,3 @@
-// https://github.com/Dddddduo/acm-java-algorithm
-
 import java.util.*;
 import java.io.*;
 import java.math.*;
@@ -9,21 +7,94 @@ import java.lang.*;
 public class Main {
 
     static IoScanner sc = new IoScanner();
-//    static final int mod = (int) (1e9 + 7);
-//    static final int mod = (int) (998244353);
-
     static int n;
-    static int arr[];
-    static boolean visited[];
+    static int ans[];
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
     private static void solve() throws IOException {
 
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+
+        String str1 = sc.next();
+        String str2 = sc.next();
+
+        int lcm = lcm(n, m);
+
+        StringBuilder sb1 = new StringBuilder();
+        StringBuilder sb2 = new StringBuilder();
+
+        for (int i = 0; i < lcm / n; i++) {
+            sb1.append(str1);
+        }
+
+        for (int i = 0; i < lcm / m; i++) {
+            sb2.append(str2);
+        }
+
+
+        BigInteger b = new BigInteger("1"+sb1.toString()).subtract(new BigInteger("1"+sb2.toString()));
+        if(b.compareTo(BigInteger.ZERO)>=0){
+            sc.println(lcm);
+            for (int i = 0; i < lcm - b.toString().length(); i++) {
+                sc.print("0");
+            }
+            sc.println(b);
+        }else{
+            StringBuilder ans1=new StringBuilder("2");
+            ans1.append(sb1);
+            StringBuilder ans2=new StringBuilder("1");
+            ans2.append(sb2);
+            BigInteger subtract = new BigInteger(ans1.toString()).subtract(new BigInteger(ans2.toString())).subtract(BigInteger.ONE);
+            sc.println(lcm);
+            for (int i = 0; i < lcm - subtract.toString().length(); i++) {
+                sc.print("0");
+            }
+            sc.println(subtract);
+
+        }
+
     }
+
+    /**
+     * 欧几里得算法求最大公约数（GCD）
+     * @param a 第一个数
+     * @param b 第二个数
+     * @return 最大公约数
+     */
+    public static int gcd(int a, int b) {
+        // 处理负数（取绝对值），避免计算错误
+        a = Math.abs(a);
+        b = Math.abs(b);
+
+        // 欧几里得核心：辗转相除，直到余数为0，此时的除数就是GCD
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    /**
+     * 求最小公倍数（LCM）
+     * @param a 第一个数
+     * @param b 第二个数
+     * @return 最小公倍数（若两数都为0，返回0）
+     */
+    public static int lcm(int a, int b) {
+        // 处理特殊情况：两数都为0时，无最小公倍数，返回0
+        if (a == 0 && b == 0) {
+            return 0;
+        }
+        // 公式：LCM(a,b) = |a*b| / GCD(a,b)
+        return Math.abs(a * b) / gcd(a, b);
+    }
+
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-        t = sc.nextInt();
+        // t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
@@ -141,17 +212,11 @@ class IoScanner {
         bw.newLine();
     }
 
-    //其他调试命令：
     public void flush() throws IOException {
-        //交互题分组调试，或者提前退出的情况下可以先运行此语句再推出
         bw.flush();
-        return;
     }
 
     public boolean hasNext() throws IOException {
-        //本地普通IDE难以使用这个方法调试，需要按照数据组flush，刷新语句:
-        //sc.flush()
-        //调试完可删去
         return bf.ready();
     }
 

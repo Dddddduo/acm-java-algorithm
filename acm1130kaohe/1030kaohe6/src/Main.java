@@ -19,6 +19,38 @@ public class Main {
 
     private static void solve() throws IOException {
 
+        int n = sc.nextInt();
+        long arr[]=new long[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextLong();
+        }
+
+        Arrays.sort(arr);
+        long min = Long.MAX_VALUE;
+
+        // 放在头尾的是 arr[index-1]和arr[index]
+        int index = -1;
+
+        for (int i = 1; i < n; i++) {
+            if(arr[i]-arr[i-1]<min){
+                min = arr[i]-arr[i-1];
+                index = i;
+            }
+        }
+
+        sc.print(arr[index-1]+" ");
+
+        // 拿后面的放
+        for (int i = index+1; i < n; i++) {
+            sc.print(arr[i]+" ");
+        }
+
+        // 拿前面的放
+        for (int i = 0; i < index-1; i++) {
+            sc.print(arr[i]+" ");
+        }
+
+        sc.println(arr[index]+" ");
     }
 
     public static void main(String[] args) throws Exception {

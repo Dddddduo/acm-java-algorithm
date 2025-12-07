@@ -18,6 +18,41 @@ public class Main {
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
     private static void solve() throws IOException {
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        long arr[] = new long[n];
+        long min = Long.MAX_VALUE;
+        long max = Long.MIN_VALUE;
+        long sum = 0;
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+            min = Math.min(arr[i], min);
+            max = Math.max(arr[i], max);
+            sum += arr[i];
+        }
+
+        long cnt=0;
+
+        // Tom第一次拿完 立即输
+        for (int i = 0; i < n; i++) {
+            if(arr[i]-min-k>0){
+                cnt+=arr[i]-min-k;
+            }
+        }
+
+//        sc.println(cnt);
+
+        if(cnt>1){
+            sc.println("Jerry");
+            return;
+        }
+
+        // 一直拿 直到都变成0
+        if(sum%2!=0){
+            sc.println("Tom");
+        }else{
+            sc.println("Jerry");
+        }
 
     }
 

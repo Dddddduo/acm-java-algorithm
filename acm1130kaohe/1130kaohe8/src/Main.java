@@ -9,8 +9,8 @@ import java.lang.*;
 public class Main {
 
     static IoScanner sc = new IoScanner();
-//    static final int mod = (int) (1e9 + 7);
-//    static final int mod = (int) (998244353);
+    //    static final int mod = (int) (1e9 + 7);
+    static final long mod = (long) (998244353);
 
     static int n;
     static int arr[];
@@ -18,7 +18,60 @@ public class Main {
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
     private static void solve() throws IOException {
+        int n = sc.nextInt();
+        long num = sc.nextLong();
+        long arr[] = new long[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextLong();
+        }
 
+        long cnt = 0;
+        long min = 0;
+
+        for (int i = 1; i <= n; i++) {
+            if (i % 2 == 1) {
+                cnt += arr[i - 1];
+            } else {
+                cnt -= arr[i - 1];
+            }
+            min = Math.min(min, cnt);
+        }
+
+        long you = -min;
+
+//        if (you >= 40) {
+//            sc.println(0);
+//            return;
+//        }
+
+        num = num >> (int) you;
+        if (num <= 0) {
+            sc.println(0);
+            return;
+        }
+
+        num = num % mod;
+
+        long zuo = cnt - min;
+
+        num = num % mod;
+        num = num * fastPowerMod(2, zuo, mod) % mod;
+
+        sc.println(num);
+    }
+
+    // 快速幂取模模版
+    public static long fastPowerMod(long base, long exponent, long mod) {
+        long result = 1 % mod;
+        base = base % mod;
+        while (exponent > 0) {
+            if ((exponent & 1) != 0) {
+                result = (result * base) % mod;
+            }
+            base = (base * base) % mod;
+            exponent >>= 1;
+        }
+        return result;
     }
 
     public static void main(String[] args) throws Exception {

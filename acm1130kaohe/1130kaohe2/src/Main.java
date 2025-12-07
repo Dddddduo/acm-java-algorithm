@@ -18,7 +18,48 @@ public class Main {
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
     private static void solve() throws IOException {
+        int n = sc.nextInt();
+        long arr[] = new long[n + 2];
+        HashSet<Long> integers = new HashSet<>();
+        for (int i = 1; i < n + 1; i++) {
+            arr[i] = sc.nextLong();
+            integers.add(arr[i]);
+        }
 
+        arr[n + 1] = Long.MAX_VALUE;
+
+        if (integers.size() == 1) {
+            sc.println("0");
+            return;
+        }
+
+        long result = Long.MAX_VALUE;
+
+        // 是否开始出现连续相同的数字
+        boolean judge = false;
+        // 前面那个相同数的索引
+        int pre_index = -1;
+
+        for (int i = 2; i < n + 2; i++) {
+            if (judge == false && arr[i] == arr[i - 1]) {
+                judge = true;
+                pre_index = i - 1;
+            } else if (arr[i] != arr[i - 1]) {
+                if (judge == true) {
+                    judge = false;
+                    result = Math.min(result, (long)(pre_index - 1) *(long) arr[i - 1] + (long)(n - (i - 1)) * (long)arr[i - 1]);
+//                    sc.println(pre_index+" "+(i-1));
+                } else if (judge == false) {
+//                    result=Math.min(result,(i-1)*arr[i]+(n-i)*arr[i]);
+                }
+            }
+        }
+
+        for (int i = 1; i <= n; i++) {
+            result=Math.min(result,(long)(i-1)*(long)arr[i]+(long)(n-i)*(long)arr[i]);
+        }
+
+        sc.println(result);
     }
 
     public static void main(String[] args) throws Exception {

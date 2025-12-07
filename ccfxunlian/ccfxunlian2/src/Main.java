@@ -9,8 +9,8 @@ import java.lang.*;
 public class Main {
 
     static IoScanner sc = new IoScanner();
-//    static final int mod = (int) (1e9 + 7);
-//    static final int mod = (int) (998244353);
+    //    static final int mod = (int) (1e9 + 7);
+    static final int mod = (int) (998244353);
 
     static int n;
     static int arr[];
@@ -19,6 +19,68 @@ public class Main {
 
     private static void solve() throws IOException {
 
+        int n = sc.nextInt();
+        long result = sc.nextLong();
+        long arr[] = new long[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextLong();
+        }
+
+        // you计算出最左边的位置
+        // zuo计算出相对于最左边的位置的偏移量
+        long temp = 0;
+        long you = 0;
+        for (int i = 0; i < n; i++) {
+            if ((i+1) % 2 == 1) {
+                // 奇数 <<
+                temp += arr[i];
+            } else {
+                // 偶数 >>
+                temp -= arr[i];
+            }
+            you = Math.min(temp, you);
+        }
+
+        you *= -1;
+        if (you >= 40) {
+            sc.println("0");
+            return;
+        }
+
+        // 右移
+        result = result >> you;
+        if (result == 0) {
+            sc.println("0");
+            return;
+        }
+
+        // 左移
+        result = result % mod;
+        long zuo = temp + you;
+        result = result * fastPowerMod(2, zuo, mod) % mod;
+        sc.println(result);
+
+    }
+
+    /**
+     * 快速幂模：(base^exponent) % mod
+     *
+     * @param base     底数
+     * @param exponent 指数（必须非负）
+     * @param mod      模数（必须为正）
+     * @return 结果
+     */
+    public static long fastPowerMod(long base, long exponent, long mod) {
+        long result = 1 % mod; // 处理mod=1的情况
+        base = (base % mod + mod) % mod; // 确保base为正数
+        while (exponent > 0) {
+            if ((exponent & 1) != 0) {
+                result = (result * base) % mod;
+            }
+            base = (base * base) % mod;
+            exponent >>= 1;
+        }
+        return result;
     }
 
     public static void main(String[] args) throws Exception {
