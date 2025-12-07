@@ -18,7 +18,11 @@ public class Main {
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
     private static void solve() throws IOException {
-
+        int n = sc.nextInt();
+        int y=sc.nextInt();
+        int r=sc.nextInt();
+        int ans=y/2+r;
+        sc.println(Math.min(ans,n));
     }
 
     public static void main(String[] args) throws Exception {

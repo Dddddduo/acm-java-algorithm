@@ -6,6 +6,7 @@ import java.math.*;
 import java.lang.*;
 
 // 多多世界第一可爱!
+
 public class Main {
 
     static IoScanner sc = new IoScanner();
@@ -19,7 +20,38 @@ public class Main {
 
     private static void solve() throws IOException {
 
+        int n = sc.nextInt();
+
+        int arr[]=new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        Arrays.sort(arr);
+
+        long score1 = 0;
+        long score2 = 0;
+
+        for (int i = arr.length - 1; i >= 0; i--) {
+            int j=arr.length-i;
+            if(j%2==1){
+                // Alice开始
+                if(arr[i]%2==0) score1+=arr[i];
+            }else{
+                // Bob开始
+                if(arr[i]%2==1) score2+=arr[i];
+            }
+        }
+
+        if (score1 > score2) {
+            sc.println("Alice");
+        } else if (score1 == score2) {
+            sc.println("Tie");
+        } else {
+            sc.println("Bob");
+        }
     }
+
 
     public static void main(String[] args) throws Exception {
         int t = 1;

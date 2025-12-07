@@ -18,12 +18,17 @@ public class Main {
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
     private static void solve() throws IOException {
-
+        long n=sc.nextInt();
+        long ans=n/7;
+        long cnt = ans*5;
+        long l = n - ans * 7;
+        cnt+=l>5?5:l;
+        sc.println(cnt*3);
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-        t = sc.nextInt();
+//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }

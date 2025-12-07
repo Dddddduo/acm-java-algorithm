@@ -18,12 +18,11 @@ public class Main {
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
     private static void solve() throws IOException {
-
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-        t = sc.nextInt();
+//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }

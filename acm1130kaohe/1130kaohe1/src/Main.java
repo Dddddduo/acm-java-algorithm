@@ -18,17 +18,50 @@ public class Main {
     static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
     private static void solve() throws IOException {
+        int n = sc.nextInt();
+        int m = sc.nextInt();
 
+        long arr[] = new long[n];
+        long pre[] = new long[n + 1];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        for (int i = 1; i < n + 1; i++) {
+            pre[i] = pre[i - 1] + arr[i - 1];
+        }
+
+        long result = Long.MIN_VALUE;
+
+        Deque<Integer> dq = new LinkedList<>();
+
+        dq.addLast(0);
+
+        for (int i = 1; i <= n; i++) {
+            while (!dq.isEmpty() && i - dq.peekFirst() > m) {
+                dq.pollFirst();
+            }
+            if(!dq.isEmpty()){
+                result = Math.max(result, pre[i] - pre[dq.peekFirst()]);
+            }
+            while (!dq.isEmpty() && pre[i] - pre[dq.peekLast()] <= 0) {
+                dq.pollLast();
+            }
+            dq.addLast(i);
+        }
+
+        sc.println(result);
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-        t = sc.nextInt();
+//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
-        sc.flush();
         sc.bw.close();
+        sc.flush();
     }
 
 }
