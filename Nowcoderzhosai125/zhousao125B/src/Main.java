@@ -1,45 +1,40 @@
+// https://github.com/Dddddduo/acm-java-algorithm
+
 import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
-import java.util.stream.Collectors;
 
 // 多多世界第一可爱!
 public class Main {
 
     static IoScanner sc = new IoScanner();
+//    static final int mod = (int) (1e9 + 7);
+//    static final int mod = (int) (998244353);
+
+    static int n;
+    static int arr[];
+    static boolean visited[];
+    static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
     private static void solve() throws IOException {
-
-        int n = sc.nextInt();
-        List<Long> list = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            list.add(sc.nextLong());
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
         }
 
-        list = list.stream().distinct().collect(Collectors.toList());
-
-        list.sort(Long::compareTo);
-
-//        for (Long l : list) {
-//            sc.println(l);
-//        }
-
-        long max = 0 ;
-
-        Deque<Long> deque = new LinkedList<>();
-
-        for (int i = 0; i < list.size(); i++) {
-            Long num = list.get(i);
-            deque.addLast(num);
-//            sc.println(deque.getLast()-deque.getFirst());
-            while(deque.getLast()-deque.getFirst()>=n){
-                deque.removeFirst();
+        for(int i=1;i<n-1;i++){
+            if(arr[i]>arr[i-1]&&arr[i]>arr[i+1]){
+                arr[i]=Math.max(arr[i-1],arr[i+1]);
             }
-            max = Math.max(deque.size(), max);
         }
 
-        sc.println(max);
+        StringBuilder sb=new StringBuilder();
+        for(int i=0;i<n;i++){
+            sb.append(arr[i]+" ");
+        }
+        sc.println(sb.toString());
 
     }
 
@@ -52,6 +47,7 @@ public class Main {
         sc.flush();
         sc.bw.close();
     }
+
 }
 
 class IoScanner {
@@ -162,12 +158,18 @@ class IoScanner {
         bw.newLine();
     }
 
+    //其他调试命令：
     public void flush() throws IOException {
+        //交互题分组调试，或者提前退出的情况下可以先运行此语句再推出
         bw.flush();
         return;
     }
 
     public boolean hasNext() throws IOException {
+        //本地普通IDE难以使用这个方法调试，需要按照数据组flush，刷新语句:
+        //sc.flush()
+        //调试完可删去
         return bf.ready();
     }
+
 }

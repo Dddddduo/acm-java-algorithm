@@ -1,57 +1,51 @@
+// https://github.com/Dddddduo/acm-java-algorithm
+// powed by Dduo from bhu-acm
 import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
-import java.util.stream.Collectors;
 
 // 多多世界第一可爱!
 public class Main {
 
-    static IoScanner sc = new IoScanner();
+    private static IoScanner sc = new IoScanner();
+//    static final int mod = (int) (1e9 + 7);
+//    static final int mod = (int) (998244353);
+
+    private static int n;
+    private static int arr[];
+    private static boolean visited[];
+    private static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+    private static Stack<Integer> stack = new Stack<>();
+    private static Queue<Integer> queue = new LinkedList<>();
+    private static Deque<Integer> deque = new LinkedList<>();
 
     private static void solve() throws IOException {
-
-        int n = sc.nextInt();
-        List<Long> list = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            list.add(sc.nextLong());
-        }
-
-        list = list.stream().distinct().collect(Collectors.toList());
-
-        list.sort(Long::compareTo);
-
-//        for (Long l : list) {
-//            sc.println(l);
-//        }
-
-        long max = 0 ;
-
-        Deque<Long> deque = new LinkedList<>();
-
-        for (int i = 0; i < list.size(); i++) {
-            Long num = list.get(i);
-            deque.addLast(num);
-//            sc.println(deque.getLast()-deque.getFirst());
-            while(deque.getLast()-deque.getFirst()>=n){
-                deque.removeFirst();
-            }
-            max = Math.max(deque.size(), max);
-        }
-
-        sc.println(max);
 
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-        t = sc.nextInt();
+//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
         sc.flush();
         sc.bw.close();
     }
+
+    private static <T> void dduo(T t) {
+        System.out.print(t);
+    }
+
+    private static <T> void dduoln() {
+        System.out.println("");
+    }
+
+    static <T> void dduoln(T t) {
+        System.out.println(t);
+    }
+
 }
 
 class IoScanner {
@@ -104,70 +98,76 @@ class IoScanner {
         return new BigDecimal(next());
     }
 
-    public void println(int a) throws IOException {
+    public void println(int a) throws IOException{
         print(a);
         println();
     }
 
-    public void print(int a) throws IOException {
+    public void print(int a) throws IOException{
         bw.write(String.valueOf(a));
     }
 
-    public void println(String a) throws IOException {
+    public void println(String a) throws IOException{
         print(a);
         println();
     }
 
-    public void print(String a) throws IOException {
+    public void print(String a) throws IOException{
         bw.write(a);
     }
 
-    public void println(long a) throws IOException {
+    public void println(long a) throws IOException{
         print(a);
         println();
     }
 
-    public void print(long a) throws IOException {
+    public void print(long a) throws IOException{
         bw.write(String.valueOf(a));
     }
 
-    public void println(double a) throws IOException {
+    public void println(double a) throws IOException{
         print(a);
         println();
     }
 
-    public void print(double a) throws IOException {
+    public void print(double a) throws IOException{
         bw.write(String.valueOf(a));
     }
 
-    public void print(BigInteger a) throws IOException {
+    public void print(BigInteger a) throws IOException{
         bw.write(a.toString());
     }
 
-    public void println(BigInteger a) throws IOException {
+    public void println(BigInteger a) throws IOException{
         bw.write(a.toString());
         println();
     }
 
-    public void print(char a) throws IOException {
+    public void print(char a) throws IOException{
         bw.write(String.valueOf(a));
     }
 
-    public void println(char a) throws IOException {
+    public void println(char a) throws IOException{
         print(a);
         println();
     }
 
-    public void println() throws IOException {
+    public void println() throws IOException{
         bw.newLine();
     }
 
-    public void flush() throws IOException {
+    //其他调试命令：
+    public void flush() throws IOException{
+        //交互题分组调试，或者提前退出的情况下可以先运行此语句再推出
         bw.flush();
         return;
     }
 
-    public boolean hasNext() throws IOException {
+    public boolean hasNext() throws IOException{
+        //本地普通IDE难以使用这个方法调试，需要按照数据组flush，刷新语句:
+        //sc.flush()
+        //调试完可删去
         return bf.ready();
     }
+
 }

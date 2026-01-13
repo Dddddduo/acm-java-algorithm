@@ -19,17 +19,34 @@ public class Main {
 
     private static void solve() throws IOException {
 
-        long a=sc.nextLong();
-        long b=sc.nextLong();
-        long c=sc.nextLong();
-        long n=sc.nextLong();
+        long m = sc.nextLong();
+        long a  = sc.nextLong(); // 第一排
+        long b  = sc.nextLong(); // 第二排
+        long c = sc.nextLong(); // 第三排
 
-        long ans=a*n;
-        if(n<=b){
-            ans-=c;
-        }
-        sc.println(ans);
+        long cnt =0 ;
 
+        long first = m;
+        long second = m ;
+
+        long min = 52013143344L;
+
+        min = Math.min(a, first);
+        cnt += min;
+        first -= min;
+
+        min = Math.min(b, second);
+        cnt += min;
+        second -= min;
+
+        min = Math.min(c, first);
+        cnt += min;
+        c-=min;
+
+        min = Math.min(c, second);
+        cnt += min;
+
+        sc.println(cnt);
     }
 
     public static void main(String[] args) throws Exception {
