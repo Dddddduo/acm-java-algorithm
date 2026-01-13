@@ -89,7 +89,7 @@ public class Main {
 
     }
 
-    private static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         int t = 1;
         t = sc.nextInt();
         while (t-- > 0) {
