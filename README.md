@@ -64,7 +64,7 @@ src/
 
 ```java
 // https://github.com/Dddddduo/acm-java-algorithm
-// powed by Dduo
+// powed by Dduo from bhu-acm
 import java.util.*;
 import java.io.*;
 import java.math.*;
@@ -73,20 +73,23 @@ import java.lang.*;
 // 多多世界第一可爱!
 public class Main {
 
-    static IoScanner sc = new IoScanner();
+    private static IoScanner sc = new IoScanner();
 //    static final int mod = (int) (1e9 + 7);
 //    static final int mod = (int) (998244353);
 
-    static int n;
-    static int arr[];
-    static boolean visited[];
-    static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+    private static int n;
+    private static int arr[];
+    private static boolean visited[];
+    private static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+    private static Stack<Integer> stack = new Stack<>();
+    private static Queue<Integer> queue = new LinkedList<>();
+    private static Deque<Integer> deque = new LinkedList<>();
 
     private static void solve() throws IOException {
-      
+
     }
 
-    public static void main(String[] args) throws Exception {
+    private static void main(String[] args) throws Exception {
         int t = 1;
         t = sc.nextInt();
         while (t-- > 0) {
@@ -94,6 +97,18 @@ public class Main {
         }
         sc.flush();
         sc.bw.close();
+    }
+
+    private static <T> void dduo(T t) {
+        System.out.print(t);
+    }
+
+    private static <T> void dduoln() {
+        System.out.println("");
+    }
+
+    static <T> void dduoln(T t) {
+        System.out.println(t);
     }
 
 }
