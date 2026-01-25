@@ -21,7 +21,55 @@ public class Main {
     private static Deque<Integer> deque = new LinkedList<>();
 
     private static void solve() throws IOException {
+        n = sc.nextInt();
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+        }
+        int[] b = new int[n];
+        boolean[] exists = new boolean[1001];
+        int[] dB = new int[1001];
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            b[i] = sc.nextInt();
+            if (!exists[b[i]]) {
+                exists[b[i]] = true;
+                dB[count++] = b[i];
+            }
+        }
+        int[][] cnt = new int[1001][1001];
+        for (int i = 0; i < n; i++) {
+            if (a[i] % b[i] != 0) continue;
 
+            int x = b[i];
+            int c = a[i] / x;
+
+            int[] row = cnt[x];
+
+            for (int k = 0; k < count; k++) {
+                int y = dB[k];
+                if (c % y == 0) {
+                    row[y]++;
+                }
+            }
+        }
+        long ans = 0;
+        for (int x = 1; x <= 1000; x++) {
+            if (!exists[x]) continue;
+            for (int y = x; y <= 1000; y++) {
+                if (!exists[y]) continue;
+
+                if (x == y) {
+                    long k = cnt[x][x];
+                    ans += k * (k - 1) / 2;
+                } else {
+                    long c1 = cnt[x][y];
+                    long c2 = cnt[y][x];
+                    ans += c1 * c2;
+                }
+            }
+        }
+        sc.println(ans);
     }
 
     public static void main(String[] args) throws Exception {
@@ -59,111 +107,111 @@ class IoScanner {
         bw = new BufferedWriter(new OutputStreamWriter(System.out));
     }
 
-    private String nextLine() throws IOException {
+    public String nextLine() throws IOException {
         return bf.readLine();
     }
 
-    private String next() throws IOException {
+    public String next() throws IOException {
         while (!st.hasMoreTokens()) {
             st = new StringTokenizer(bf.readLine());
         }
         return st.nextToken();
     }
 
-    private char nextChar() throws IOException {
+    public char nextChar() throws IOException {
         return next().charAt(0);
     }
 
-    private int nextInt() throws IOException {
+    public int nextInt() throws IOException {
         return Integer.parseInt(next());
     }
 
-    private long nextLong() throws IOException {
+    public long nextLong() throws IOException {
         return Long.parseLong(next());
     }
 
-    private double nextDouble() throws IOException {
+    public double nextDouble() throws IOException {
         return Double.parseDouble(next());
     }
 
-    private float nextFloat() throws IOException {
+    public float nextFloat() throws IOException {
         return Float.parseFloat(next());
     }
 
-    private BigInteger nextBigInteger() throws IOException {
+    public BigInteger nextBigInteger() throws IOException {
         return new BigInteger(next());
     }
 
-    private BigDecimal nextDecimal() throws IOException {
+    public BigDecimal nextDecimal() throws IOException {
         return new BigDecimal(next());
     }
 
-    private void println(int a) throws IOException{
+    public void println(int a) throws IOException{
         print(a);
         println();
     }
 
-    private void print(int a) throws IOException{
+    public void print(int a) throws IOException{
         bw.write(String.valueOf(a));
     }
 
-    private void println(String a) throws IOException{
+    public void println(String a) throws IOException{
         print(a);
         println();
     }
 
-    private void print(String a) throws IOException{
+    public void print(String a) throws IOException{
         bw.write(a);
     }
 
-    private void println(long a) throws IOException{
+    public void println(long a) throws IOException{
         print(a);
         println();
     }
 
-    private void print(long a) throws IOException{
+    public void print(long a) throws IOException{
         bw.write(String.valueOf(a));
     }
 
-    private void println(double a) throws IOException{
+    public void println(double a) throws IOException{
         print(a);
         println();
     }
 
-    private void print(double a) throws IOException{
+    public void print(double a) throws IOException{
         bw.write(String.valueOf(a));
     }
 
-    private void print(BigInteger a) throws IOException{
+    public void print(BigInteger a) throws IOException{
         bw.write(a.toString());
     }
 
-    private void println(BigInteger a) throws IOException{
+    public void println(BigInteger a) throws IOException{
         bw.write(a.toString());
         println();
     }
 
-    private void print(char a) throws IOException{
+    public void print(char a) throws IOException{
         bw.write(String.valueOf(a));
     }
 
-    private void println(char a) throws IOException{
+    public void println(char a) throws IOException{
         print(a);
         println();
     }
 
-    private void println() throws IOException{
+    public void println() throws IOException{
         bw.newLine();
     }
 
     //其他调试命令：
-    void flush() throws IOException{
+    public void flush() throws IOException{
         //交互题分组调试，或者提前退出的情况下可以先运行此语句再推出
         bw.flush();
         return;
     }
 
-    private boolean hasNext() throws IOException{
+    public boolean hasNext() throws IOException{
         //本地普通IDE难以使用这个方法调试，需要按照数据组flush，刷新语句:
         //sc.flush()
         //调试完可删去
