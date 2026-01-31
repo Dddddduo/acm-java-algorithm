@@ -1,6 +1,5 @@
 // https://github.com/Dddddduo/acm-java-algorithm
 // powed by Dduo from bhu-acm
-
 import java.util.*;
 import java.io.*;
 import java.math.*;
@@ -22,7 +21,33 @@ public class Main {
     private static Deque<Integer> deque = new LinkedList<>();
 
     private static void solve() throws IOException {
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        String s = sc.next();
+        int cnt1=0;
+        for (int i = 0; i < n; i++) {
+            char ch = s.charAt(i);
+            if(ch=='1') cnt1++;
+        }
 
+        if(cnt1<=k){
+            sc.println("Alice");
+            return;
+        }
+
+        // 奇数
+        if(n%2!=0&&k*2>n){
+            sc.println("Alice");
+            return;
+        }
+
+        // 偶数
+        if(n%2==0&&k*2>n){
+            sc.println("Alice");
+            return;
+        }
+
+        sc.println("Bob");
     }
 
     public static void main(String[] args) throws Exception {
@@ -99,72 +124,72 @@ class IoScanner {
         return new BigDecimal(next());
     }
 
-    protected void println(int a) throws IOException {
+    protected void println(int a) throws IOException{
         print(a);
         println();
     }
 
-    protected void print(int a) throws IOException {
+    protected void print(int a) throws IOException{
         bw.write(String.valueOf(a));
     }
 
-    protected void println(String a) throws IOException {
+    protected void println(String a) throws IOException{
         print(a);
         println();
     }
 
-    protected void print(String a) throws IOException {
+    protected void print(String a) throws IOException{
         bw.write(a);
     }
 
-    protected void println(long a) throws IOException {
+    protected void println(long a) throws IOException{
         print(a);
         println();
     }
 
-    protected void print(long a) throws IOException {
+    protected void print(long a) throws IOException{
         bw.write(String.valueOf(a));
     }
 
-    protected void println(double a) throws IOException {
+    protected void println(double a) throws IOException{
         print(a);
         println();
     }
 
-    protected void print(double a) throws IOException {
+    protected void print(double a) throws IOException{
         bw.write(String.valueOf(a));
     }
 
-    protected void print(BigInteger a) throws IOException {
+    protected void print(BigInteger a) throws IOException{
         bw.write(a.toString());
     }
 
-    protected void println(BigInteger a) throws IOException {
+    protected void println(BigInteger a) throws IOException{
         bw.write(a.toString());
         println();
     }
 
-    protected void print(char a) throws IOException {
+    protected void print(char a) throws IOException{
         bw.write(String.valueOf(a));
     }
 
-    protected void println(char a) throws IOException {
+    protected void println(char a) throws IOException{
         print(a);
         println();
     }
 
-    protected void println() throws IOException {
+    protected void println() throws IOException{
         bw.newLine();
     }
 
     //其他调试命令：
-    protected void flush() throws IOException {
+    protected void flush() throws IOException{
         //交互题分组调试，或者提前退出的情况下可以先运行此语句再推出
         bw.flush();
         return;
     }
 
-    protected boolean hasNext() throws IOException {
+    protected boolean hasNext() throws IOException{
         //本地普通IDE难以使用这个方法调试，需要按照数据组flush，刷新语句:
         //sc.flush()
         //调试完可删去

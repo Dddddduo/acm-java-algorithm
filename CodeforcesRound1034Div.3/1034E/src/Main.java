@@ -22,9 +22,57 @@ public class Main {
     private static Deque<Integer> deque = new LinkedList<>();
 
     private static void solve() throws IOException {
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int mex=0;
+        for (int i1 = 0; i1 < n; i1++) {
+            arr[i1] = sc.nextInt();
+            map.put(arr[i1], map.getOrDefault(arr[i1], 0) + 1);
+        }
+
+        Arrays.sort(arr);
+
+        for (int i1 = 0; i1 < n; i1++) {
+            if(arr[i1]==mex)mex++;
+        }
+
+//        map.forEach((key, value) -> {
+//            try {
+//                sc.println(key+" "+value);
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//        });
+
+//        sc.println(mex);
+        int diff[] = new int[n + 2];
+
+        // 0~mex
+        for(int i=0;i<=mex;i++){
+            if(map.containsKey(i))diff[map.get(i)]++;
+            else diff[0]++;
+            diff[n-i+1]--;
+//            sc.println(map.get(i)+" "+(n-i+1));
+        }
+
+        int result = 0;
+        StringBuilder sb = new StringBuilder();
+        // 0~n
+        for (int i1 = 0; i1 < n+1; i1++) {
+//            sc.println(diff[i1]);
+            result += diff[i1];
+            sb.append(result+" ");
+        }
+        sc.println(sb.toString());
 
     }
 
+    /**
+     1
+     5
+     1 0 0 1 2
+     */
     public static void main(String[] args) throws Exception {
         int t = 1;
         t = sc.nextInt();

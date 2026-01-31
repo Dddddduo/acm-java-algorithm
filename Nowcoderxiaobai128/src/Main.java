@@ -22,8 +22,103 @@ public class Main {
     private static Deque<Integer> deque = new LinkedList<>();
 
     private static void solve() throws IOException {
+        int n = Integer.parseInt(sc.nextLong() + "");
+        long[] arr = new long[n];
+        HashSet<Long> visited = new HashSet<>();
 
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextLong();
+            visited.add(arr[i]);
+        }
+
+        if (visited.size() == 1) {
+            sc.println((long) n / 2);
+            return;
+        }
+
+        Arrays.sort(arr);
+
+        long cnt = Long.MAX_VALUE;
+
+        if (n / 2 % 2 == 1) {
+            long mid1 = arr[0];
+            if (n != 2) mid1 = arr[n / 2 / 2];
+            long mid2 = arr[n - 1];
+            if (n != 2) mid2 = arr[n - n / 2 / 2 - 1];
+            for(long i=mid1-10;i<mid1+10;i++){
+                for(long j=mid2-10;j<mid2+10;j++){
+                    if(i==j)continue;
+                    long temp=0;
+                    for (int i1 = 0; i1 < n / 2; i1++) {
+                        temp+= Math.abs(arr[i1] - i);
+                    }
+                    for (int i1 = n / 2; i1 < n; i1++) {
+                        temp+= Math.abs(arr[i1] - j);
+                    }
+                    cnt=Math.min(cnt,temp);
+                }
+            }
+            sc.println(cnt);
+        } else {
+            long mid1 = (arr[n / 2 / 2 - 1] + arr[n / 2 / 2]) / 2;
+            long mid2 = arr[n - 1];
+            if (n != 2) mid2 = (arr[n - n / 2 / 2 - 1] + arr[n - n / 2 / 2]) / 2;
+            for(long i=mid1-10;i<mid1+10;i++){
+                for(long j=mid2-10;j<mid2+10;j++){
+                    if(i==j)continue;
+                    long temp=0;
+                    for (int i1 = 0; i1 < n / 2; i1++) {
+                        temp+= Math.abs(arr[i1] - i);
+                    }
+                    for (int i1 = n / 2; i1 < n; i1++) {
+                        temp+= Math.abs(arr[i1] - j);
+                    }
+                    cnt=Math.min(cnt,temp);
+                }
+            }
+//            for (int i1 = 0; i1 < n / 2; i1++) {
+//                cnt += Math.abs(arr[i1] - mid1);
+//            }
+//            for (int i1 = n / 2; i1 < n; i1++) {
+//                cnt += Math.abs(arr[i1] - mid2);
+//            }
+            sc.println(cnt);
+        }
     }
+
+    /**
+     8
+     2
+     3 3
+     2
+     1 2
+     4
+     1 1 1 1
+     4
+     1 2 3 4
+     6
+     1 1 1 1 1 1
+     6
+     1 2 3 4 5 6
+     10
+     10 20 30 40 50 60 70 80 90 100
+     12
+     10 20 30 40 50 60 70 80 90 100 110 120
+
+     6
+     6
+     1 1 1 1 1 2
+     6
+     1 1 1 1 2 2
+     6
+     1 1 1 2 2 2
+     6
+     1 1 2 2 2 2
+     6
+     1 2 2 2 2 2
+     6
+     2 2 2 2 2 2
+     */
 
     public static void main(String[] args) throws Exception {
         int t = 1;
