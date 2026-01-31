@@ -1,6 +1,5 @@
 // https://github.com/Dddddduo/acm-java-algorithm
 // powed by Dduo from bhu-acm
-
 import java.util.*;
 import java.io.*;
 import java.math.*;
@@ -27,7 +26,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-        t = sc.nextInt();
+//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
@@ -60,111 +59,111 @@ class IoScanner {
         bw = new BufferedWriter(new OutputStreamWriter(System.out));
     }
 
-    protected String nextLine() throws IOException {
+    private String nextLine() throws IOException {
         return bf.readLine();
     }
 
-    protected String next() throws IOException {
+    private String next() throws IOException {
         while (!st.hasMoreTokens()) {
             st = new StringTokenizer(bf.readLine());
         }
         return st.nextToken();
     }
 
-    protected char nextChar() throws IOException {
+    private char nextChar() throws IOException {
         return next().charAt(0);
     }
 
-    protected int nextInt() throws IOException {
+    private int nextInt() throws IOException {
         return Integer.parseInt(next());
     }
 
-    protected long nextLong() throws IOException {
+    private long nextLong() throws IOException {
         return Long.parseLong(next());
     }
 
-    protected double nextDouble() throws IOException {
+    private double nextDouble() throws IOException {
         return Double.parseDouble(next());
     }
 
-    protected float nextFloat() throws IOException {
+    private float nextFloat() throws IOException {
         return Float.parseFloat(next());
     }
 
-    protected BigInteger nextBigInteger() throws IOException {
+    private BigInteger nextBigInteger() throws IOException {
         return new BigInteger(next());
     }
 
-    protected BigDecimal nextDecimal() throws IOException {
+    private BigDecimal nextDecimal() throws IOException {
         return new BigDecimal(next());
     }
 
-    protected void println(int a) throws IOException {
+    private void println(int a) throws IOException{
         print(a);
         println();
     }
 
-    protected void print(int a) throws IOException {
+    private void print(int a) throws IOException{
         bw.write(String.valueOf(a));
     }
 
-    protected void println(String a) throws IOException {
+    private void println(String a) throws IOException{
         print(a);
         println();
     }
 
-    protected void print(String a) throws IOException {
+    private void print(String a) throws IOException{
         bw.write(a);
     }
 
-    protected void println(long a) throws IOException {
+    private void println(long a) throws IOException{
         print(a);
         println();
     }
 
-    protected void print(long a) throws IOException {
+    private void print(long a) throws IOException{
         bw.write(String.valueOf(a));
     }
 
-    protected void println(double a) throws IOException {
+    private void println(double a) throws IOException{
         print(a);
         println();
     }
 
-    protected void print(double a) throws IOException {
+    private void print(double a) throws IOException{
         bw.write(String.valueOf(a));
     }
 
-    protected void print(BigInteger a) throws IOException {
+    private void print(BigInteger a) throws IOException{
         bw.write(a.toString());
     }
 
-    protected void println(BigInteger a) throws IOException {
+    private void println(BigInteger a) throws IOException{
         bw.write(a.toString());
         println();
     }
 
-    protected void print(char a) throws IOException {
+    private void print(char a) throws IOException{
         bw.write(String.valueOf(a));
     }
 
-    protected void println(char a) throws IOException {
+    private void println(char a) throws IOException{
         print(a);
         println();
     }
 
-    protected void println() throws IOException {
+    private void println() throws IOException{
         bw.newLine();
     }
 
     //其他调试命令：
-    protected void flush() throws IOException {
+    void flush() throws IOException{
         //交互题分组调试，或者提前退出的情况下可以先运行此语句再推出
         bw.flush();
         return;
     }
 
-    protected boolean hasNext() throws IOException {
+    private boolean hasNext() throws IOException{
         //本地普通IDE难以使用这个方法调试，需要按照数据组flush，刷新语句:
         //sc.flush()
         //调试完可删去
