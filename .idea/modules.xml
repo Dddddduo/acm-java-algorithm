@@ -160,6 +160,7 @@
       <module fileurl="file://$PROJECT_DIR$/20251113xunlian/20251113xunlian.iml" filepath="$PROJECT_DIR$/20251113xunlian/20251113xunlian.iml" />
       <module fileurl="file://$PROJECT_DIR$/xingshengsai2025/2025A/2025A.iml" filepath="$PROJECT_DIR$/xingshengsai2025/2025A/2025A.iml" />
       <module fileurl="file://$PROJECT_DIR$/NowcoderYurengjie2025/2025B/2025B.iml" filepath="$PROJECT_DIR$/NowcoderYurengjie2025/2025B/2025B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2025CCPCfujian/2025CCPCfujian.iml" filepath="$PROJECT_DIR$/2025CCPCfujian/2025CCPCfujian.iml" />
       <module fileurl="file://$PROJECT_DIR$/2025CCPCjilin/2025CCPCjilin.iml" filepath="$PROJECT_DIR$/2025CCPCjilin/2025CCPCjilin.iml" />
       <module fileurl="file://$PROJECT_DIR$/NowcoderYurengjie2025/2025F/2025F.iml" filepath="$PROJECT_DIR$/NowcoderYurengjie2025/2025F/2025F.iml" />
       <module fileurl="file://$PROJECT_DIR$/NowcoderYurengjie2025/2025I/2025I.iml" filepath="$PROJECT_DIR$/NowcoderYurengjie2025/2025I/2025I.iml" />
@@ -294,6 +295,8 @@
       <module fileurl="file://$PROJECT_DIR$/temple/LcmAndGcd/LcmAndGcd.iml" filepath="$PROJECT_DIR$/temple/LcmAndGcd/LcmAndGcd.iml" />
       <module fileurl="file://$PROJECT_DIR$/NowcoderXiaobai107/NowcoderXiaobai107.iml" filepath="$PROJECT_DIR$/NowcoderXiaobai107/NowcoderXiaobai107.iml" />
       <module fileurl="file://$PROJECT_DIR$/NowcoderYurengjie2025/NowcoderYurengjie2025.iml" filepath="$PROJECT_DIR$/NowcoderYurengjie2025/NowcoderYurengjie2025.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderhanjia1/Nowcoderhanjia1.iml" filepath="$PROJECT_DIR$/Nowcoderhanjia1/Nowcoderhanjia1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderhanjia2/Nowcoderhanjia2.iml" filepath="$PROJECT_DIR$/Nowcoderhanjia2/Nowcoderhanjia2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderlianxi136/Nowcoderlianxi136.iml" filepath="$PROJECT_DIR$/Nowcoderlianxi136/Nowcoderlianxi136.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderlianxi146/Nowcoderlianxi146.iml" filepath="$PROJECT_DIR$/Nowcoderlianxi146/Nowcoderlianxi146.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderxiaobai113/Nowcoderxiaobai113.iml" filepath="$PROJECT_DIR$/Nowcoderxiaobai113/Nowcoderxiaobai113.iml" />
@@ -339,6 +342,7 @@
       <module fileurl="file://$PROJECT_DIR$/ccfxunlian/ccfxunlian3/ccfxunlian3.iml" filepath="$PROJECT_DIR$/ccfxunlian/ccfxunlian3/ccfxunlian3.iml" />
       <module fileurl="file://$PROJECT_DIR$/ccfxunlian/ccfxunlian4/ccfxunlian4.iml" filepath="$PROJECT_DIR$/ccfxunlian/ccfxunlian4/ccfxunlian4.iml" />
       <module fileurl="file://$PROJECT_DIR$/changshuligong2025/changshuligong2025.iml" filepath="$PROJECT_DIR$/changshuligong2025/changshuligong2025.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chuti/chuti.iml" filepath="$PROJECT_DIR$/chuti/chuti.iml" />
       <module fileurl="file://$PROJECT_DIR$/day1/day1.iml" filepath="$PROJECT_DIR$/day1/day1.iml" />
       <module fileurl="file://$PROJECT_DIR$/day2/day2.iml" filepath="$PROJECT_DIR$/day2/day2.iml" />
       <module fileurl="file://$PROJECT_DIR$/day3/day3.iml" filepath="$PROJECT_DIR$/day3/day3.iml" />
@@ -377,8 +381,25 @@
       <module fileurl="file://$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanbat4/dongbeisaixuanbat4.iml" filepath="$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanbat4/dongbeisaixuanbat4.iml" />
       <module fileurl="file://$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanbat5/dongbeisaixuanbat5.iml" filepath="$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanbat5/dongbeisaixuanbat5.iml" />
       <module fileurl="file://$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanbat6/dongbeisaixuanbat6.iml" filepath="$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanbat6/dongbeisaixuanbat6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2025CCPCfujian/fujianG/fujianG.iml" filepath="$PROJECT_DIR$/2025CCPCfujian/fujianG/fujianG.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2025CCPCfujian/fujianJ/fujianJ.iml" filepath="$PROJECT_DIR$/2025CCPCfujian/fujianJ/fujianJ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2025CCPCfujian/fujianK/fujianK.iml" filepath="$PROJECT_DIR$/2025CCPCfujian/fujianK/fujianK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2025CCPCfujian/fujianM/fujianM.iml" filepath="$PROJECT_DIR$/2025CCPCfujian/fujianM/fujianM.iml" />
       <module fileurl="file://$PROJECT_DIR$/gzdx2025/gzdx2025.iml" filepath="$PROJECT_DIR$/gzdx2025/gzdx2025.iml" />
       <module fileurl="file://$PROJECT_DIR$/gzdx2025/gzdx2025A/gzdx2025A.iml" filepath="$PROJECT_DIR$/gzdx2025/gzdx2025A/gzdx2025A.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderhanjia1/hanjia1A/hanjia1A.iml" filepath="$PROJECT_DIR$/Nowcoderhanjia1/hanjia1A/hanjia1A.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderhanjia1/hanjia1B/hanjia1B.iml" filepath="$PROJECT_DIR$/Nowcoderhanjia1/hanjia1B/hanjia1B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderhanjia1/hanjia1C/hanjia1C.iml" filepath="$PROJECT_DIR$/Nowcoderhanjia1/hanjia1C/hanjia1C.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderhanjia1/hanjia1E/hanjia1E.iml" filepath="$PROJECT_DIR$/Nowcoderhanjia1/hanjia1E/hanjia1E.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderhanjia1/hanjia1G/hanjia1G.iml" filepath="$PROJECT_DIR$/Nowcoderhanjia1/hanjia1G/hanjia1G.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderhanjia1/hanjia1H/hanjia1H.iml" filepath="$PROJECT_DIR$/Nowcoderhanjia1/hanjia1H/hanjia1H.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderhanjia1/hanjia1K/hanjia1K.iml" filepath="$PROJECT_DIR$/Nowcoderhanjia1/hanjia1K/hanjia1K.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderhanjia1/hanjia1L/hanjia1L.iml" filepath="$PROJECT_DIR$/Nowcoderhanjia1/hanjia1L/hanjia1L.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderhanjia2/hanjia2A/hanjia2A.iml" filepath="$PROJECT_DIR$/Nowcoderhanjia2/hanjia2A/hanjia2A.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderhanjia2/hanjia2B/hanjia2B.iml" filepath="$PROJECT_DIR$/Nowcoderhanjia2/hanjia2B/hanjia2B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderhanjia2/hanjia2F/hanjia2F.iml" filepath="$PROJECT_DIR$/Nowcoderhanjia2/hanjia2F/hanjia2F.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderhanjia2/hanjia2H/hanjia2H.iml" filepath="$PROJECT_DIR$/Nowcoderhanjia2/hanjia2H/hanjia2H.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderhanjia2/hanjia2I/hanjia2I.iml" filepath="$PROJECT_DIR$/Nowcoderhanjia2/hanjia2I/hanjia2I.iml" />
       <module fileurl="file://$PROJECT_DIR$/hbgydx2025/hbgydx2025.iml" filepath="$PROJECT_DIR$/hbgydx2025/hbgydx2025.iml" />
       <module fileurl="file://$PROJECT_DIR$/hbgydx2025/hbgydx2025A/hbgydx2025A.iml" filepath="$PROJECT_DIR$/hbgydx2025/hbgydx2025A/hbgydx2025A.iml" />
       <module fileurl="file://$PROJECT_DIR$/hbgydx2025/hbgydx2025C/hbgydx2025C.iml" filepath="$PROJECT_DIR$/hbgydx2025/hbgydx2025C/hbgydx2025C.iml" />
@@ -449,6 +470,8 @@
       <module fileurl="file://$PROJECT_DIR$/day2/t6/t6.iml" filepath="$PROJECT_DIR$/day2/t6/t6.iml" />
       <module fileurl="file://$PROJECT_DIR$/20251024nowcoder/temp1/temp1.iml" filepath="$PROJECT_DIR$/20251024nowcoder/temp1/temp1.iml" />
       <module fileurl="file://$PROJECT_DIR$/temple/temple.iml" filepath="$PROJECT_DIR$/temple/temple.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderxiaobai128/text1/text1.iml" filepath="$PROJECT_DIR$/Nowcoderxiaobai128/text1/text1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderxiaobai128/text2/text2.iml" filepath="$PROJECT_DIR$/Nowcoderxiaobai128/text2/text2.iml" />
       <module fileurl="file://$PROJECT_DIR$/tiaozhansai83/tiaozhansai83.iml" filepath="$PROJECT_DIR$/tiaozhansai83/tiaozhansai83.iml" />
       <module fileurl="file://$PROJECT_DIR$/tiaozhansai83/tiaozhansai83A/tiaozhansai83A.iml" filepath="$PROJECT_DIR$/tiaozhansai83/tiaozhansai83A/tiaozhansai83A.iml" />
       <module fileurl="file://$PROJECT_DIR$/tiaozhansai83/tiaozhansai83B/tiaozhansai83B.iml" filepath="$PROJECT_DIR$/tiaozhansai83/tiaozhansai83B/tiaozhansai83B.iml" />
@@ -465,6 +488,7 @@
       <module fileurl="file://$PROJECT_DIR$/Nowcoderyuesai124/xiaobai124D/xiaobai124D.iml" filepath="$PROJECT_DIR$/Nowcoderyuesai124/xiaobai124D/xiaobai124D.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderyuesai124/xiaobai124E/xiaobai124E.iml" filepath="$PROJECT_DIR$/Nowcoderyuesai124/xiaobai124E/xiaobai124E.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderyuesai124/xiaobai124F/xiaobai124F.iml" filepath="$PROJECT_DIR$/Nowcoderyuesai124/xiaobai124F/xiaobai124F.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xiaosai/xiaosai.iml" filepath="$PROJECT_DIR$/xiaosai/xiaosai.iml" />
       <module fileurl="file://$PROJECT_DIR$/xingshengsai2025/xingshengsai2025.iml" filepath="$PROJECT_DIR$/xingshengsai2025/xingshengsai2025.iml" />
       <module fileurl="file://$PROJECT_DIR$/xunlian1105/xunlian1105.iml" filepath="$PROJECT_DIR$/xunlian1105/xunlian1105.iml" />
       <module fileurl="file://$PROJECT_DIR$/The 2022 Zhejiang University City College Freshman Programming Contest/zhedacitycollegeA/zhedacitycollegeA.iml" filepath="$PROJECT_DIR$/The 2022 Zhejiang University City College Freshman Programming Contest/zhedacitycollegeA/zhedacitycollegeA.iml" />
