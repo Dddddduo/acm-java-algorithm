@@ -25,8 +25,77 @@ public class Main {
     private static int dy[]={1,0,-1,0};
 
     private static void solve() throws IOException {
+        int n = sc.nextInt();
+        int hpa=sc.nextInt();
+        int hpb=sc.nextInt();
+
+        Long[] a = new Long[n];
+        for (int i1 = 0; i1 < n; i1++) {
+            a[i1]=sc.nextLong();
+        }
+        Long[] b = new Long[n];
+        for (int i1 = 0; i1 < n; i1++) {
+            b[i1]=sc.nextLong();
+        }
+
+        Arrays.sort(a,new Comparator<Long>() {
+            @Override
+            public int compare(Long o1, Long o2) {
+                return Long.compare(o2,o1);
+            }
+        });
+
+        Arrays.sort(b,new Comparator<Long>() {
+            @Override
+            public int compare(Long o1, Long o2) {
+                if(o1!=-1&&o2!=-1){
+                    return Long.compare(o1,o2);
+                }
+                if(o1==-1||o2==-1){
+                    return Long.compare(o2,o1);
+                }
+                return Long.compare(o1,o2);
+            }
+        });
+
+//        for (Integer i : a) {
+//            sc.print(i+" ");
+//        }
+//        sc.println();
+//        for (Integer i : b) {
+//            sc.print(i+" ");
+//        }
+//        sc.println();
+
+        for (int i1 = 0; i1 < n; i1++) {
+            if(a[i1]==-1||b[i1]==-1)continue;
+            hpa-=b[i1];
+            hpb-=a[i1];
+//            if(hpa<=0){
+//                sc.println("no");
+//                return;
+//            }
+            if(hpb<=0&&hpa>0){
+                sc.println("yes");
+                return;
+            }
+        }
+
+        sc.println("no");
 
     }
+
+    /**
+    2
+    3 4 9
+    -1 7 3
+    5 2 1
+
+    5 9 11
+    3 -1 6 4 1
+    -1 -1 10 5 2
+
+     */
 
     public static void main(String[] args) throws Exception {
         int t = 1;

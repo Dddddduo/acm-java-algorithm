@@ -25,13 +25,69 @@ public class Main {
     private static int dy[]={1,0,-1,0};
 
     private static void solve() throws IOException {
+        String str=sc.next();
+        char arr[]=str.toCharArray();
+        Deque<Character> dq = new LinkedList<>();
+
+        if(arr.length<=2){
+            sc.println(str);
+            return;
+        }
+
+        dq.addLast(arr[0]);
+        dq.addLast(arr[1]);
+
+        char c1=arr[0];
+        char c2=arr[1];
+
+        for (int i1 = 2; i1 < arr.length; i1++) {
+            char now=arr[i1];
+            if(dq.size()>=2&&c1==c2&&c1==now&&c2==now){
+                dq.pollLast();
+                dq.pollLast();
+                if(dq.size()>=2){
+                    Character temp = dq.pollLast();
+                    c1=dq.peekLast();
+                    c2=temp;
+                    dq.addLast(temp);
+                }else if(dq.size()==1){
+                    c1='C';
+                    c2=dq.peekLast();
+                }else if(dq.size()==0){
+                    c1='A';
+                    c2='B';
+                }
+            }else{
+                c1=c2;
+                c2=now;
+                dq.addLast(now);
+            }
+        }
+
+        if(dq.isEmpty()){
+            sc.print("NAN");
+        }else{
+            StringBuilder sb = new StringBuilder();
+            while(!dq.isEmpty()){
+                sb.append(dq.pollFirst());
+            }
+            sc.print(sb.toString());
+        }
 
     }
+
+    /**
+     bcabaaabbccabcc
+
+     bcabbbccabcc
+
+     bcaccabcc
+     */
 
     public static void main(String[] args) throws Exception {
         int t = 1;
         // 默认开启多组输入
-        t = sc.nextInt();
+//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
