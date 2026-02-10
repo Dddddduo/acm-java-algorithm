@@ -24,14 +24,76 @@ public class Main {
     private static int dx[]={0,1,0,-1};
     private static int dy[]={1,0,-1,0};
 
+    private static long INF = (long) 9e18;
+
     private static void solve() throws IOException {
+
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+
+        long[][] a = new long[n + 1][m + 1];
+        long[][] b = new long[n + 1][m + 1];
+        long[][] dp = new long[n + 1][m + 1];
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= m; j++) {
+                a[i][j] = sc.nextLong();
+                dp[i][j] = INF;
+            }
+        }
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= m; j++) {
+                b[i][j] = sc.nextLong();
+            }
+        }
+
+        dp[1][1] = b[1][1];
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= m; j++) {
+
+                if (i == 1 && j == 1) continue;
+
+                if (i >= 2) {
+                    dp[i][j] = Math.min(dp[i - 1][j], dp[i][j]);
+                }
+                if (j >= 2) {
+                    dp[i][j] = Math.min(dp[i][j - 1], dp[i][j]);
+                }
+
+                dp[i][j] += b[i][j];
+
+                if (a[i][j] - a[1][1] - dp[i][j] < 0) {
+                    dp[i][j] = INF;
+                }
+            }
+        }
+
+        boolean flag = false;
+        for (int j = 1; j <= m; j++) {
+            if (dp[n][j] < INF) {
+                flag = true;
+                break;
+            }
+        }
+
+        for (int i = 1; i <= n; i++) {
+            if (dp[i][m] < INF) {
+                flag = true;
+                break;
+            }
+        }
+
+        if(flag)sc.println("YES");
+        else sc.println("NO");
 
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
         // 默认开启多组输入
-        t = sc.nextInt();
+//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }

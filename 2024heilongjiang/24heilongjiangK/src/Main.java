@@ -21,17 +21,87 @@ public class Main {
     private static Stack<Integer> stack = new Stack<>();
     private static Queue<Integer> queue = new LinkedList<>();
     private static Deque<Integer> deque = new LinkedList<>();
-    private static int dx[]={0,1,0,-1};
-    private static int dy[]={1,0,-1,0};
+    private static int dx[] = {0, 1, 0, -1};
+    private static int dy[] = {1, 0, -1, 0};
+
+    public static HashSet<Long> set;
 
     private static void solve() throws IOException {
+        set = new HashSet<>();
+        long a = sc.nextLong();
+        long b = sc.nextLong();
+        long c = sc.nextLong();
+        long d = sc.nextLong();
+        long arr[] = new long[]{a, b, c, d};
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                for (int k = 0; k < 4; k++) {
+                    for (int l = 0; l < 4; l++) {
+                        if(i!=j&&i!=k&&i!=l&&j!=k&&j!=l&&k!=l){
+                            ways(arr[i], arr[j], arr[k], arr[l]);
+                        }
+                    }
+                }
+            }
+        }
 
+        sc.print(set.size());
+    }
+
+    public static void ways(long a, long b, long c, long d) {
+        //  0 1 2
+        //  + - *
+        // a b c d
+        for (int i1 = 0; i1 < 3; i1++) {
+            for (int i2 = 0; i2 < 3; i2++) {
+                for (int i3 = 0; i3 < 3; i3++) {
+                    // 27种
+
+                    // 3
+                    if (i1 == 0 && i2 == 0 && i3 == 0) set.add(a + b + c + d);
+                    if (i1 == 1 && i2 == 1 && i3 == 1) set.add(a - b - c - d);
+                    if (i1 == 2 && i2 == 2 && i3 == 2) set.add(a * b * c * d);
+
+                    //6 1 0
+                    if (i1 == 1 && i2 == 0 && i3 == 0) set.add(a - b + c + d);
+                    if (i1 == 0 && i2 == 1 && i3 == 0) set.add(a + b - c + d);
+                    if (i1 == 0 && i2 == 0 && i3 == 1) set.add(a + b + c - d);
+                    if (i1 == 1 && i2 == 1 && i3 == 0) set.add(a - b - c + d);
+                    if (i1 == 1 && i2 == 0 && i3 == 1) set.add(a - b + c - d);
+                    if (i1 == 0 && i2 == 1 && i3 == 1) set.add(a + b - c - d);
+
+                    //6 1 2
+                    if (i1 == 1 && i2 == 2 && i3 == 2) set.add(a - b * c * d);
+                    if (i1 == 2 && i2 == 1 && i3 == 2) set.add(a * b - c * d);
+                    if (i1 == 2 && i2 == 2 && i3 == 1) set.add(a * b * c - d);
+                    if (i1 == 1 && i2 == 1 && i3 == 2) set.add(a - b - c * d);
+                    if (i1 == 1 && i2 == 2 && i3 == 1) set.add(a - b * c - d);
+                    if (i1 == 2 && i2 == 1 && i3 == 1) set.add(a * b - c - d);
+
+                    //6 2 0
+                    if (i1 == 2 && i2 == 0 && i3 == 0) set.add(a * b + c + d);
+                    if (i1 == 0 && i2 == 2 && i3 == 0) set.add(a + b * c + d);
+                    if (i1 == 0 && i2 == 0 && i3 == 2) set.add(a + b + c * d);
+                    if (i1 == 2 && i2 == 2 && i3 == 0) set.add(a * b * c + d);
+                    if (i1 == 2 && i2 == 0 && i3 == 2) set.add(a * b + c * d);
+                    if (i1 == 0 && i2 == 2 && i3 == 2) set.add(a + b * c * d);
+
+                    // 6 0 1 2
+                    if (i1 == 0 && i2 == 1 && i3 == 2) set.add(a + b - c * d);
+                    if (i1 == 0 && i2 == 2 && i3 == 1) set.add(a + b * c - d);
+                    if (i1 == 1 && i2 == 0 && i3 == 2) set.add(a - b + c * d);
+                    if (i1 == 1 && i2 == 2 && i3 == 0) set.add(a - b * c + d);
+                    if (i1 == 2 && i2 == 1 && i3 == 0) set.add(a * b - c + d);
+                    if (i1 == 2 && i2 == 0 && i3 == 1) set.add(a + b + c - d);
+                }
+            }
+        }
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
         // 默认开启多组输入
-        t = sc.nextInt();
+//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }

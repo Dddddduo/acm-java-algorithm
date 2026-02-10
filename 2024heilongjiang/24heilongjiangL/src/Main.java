@@ -25,13 +25,18 @@ public class Main {
     private static int dy[]={1,0,-1,0};
 
     private static void solve() throws IOException {
-
+        int n=sc.nextInt();
+        int cnt=0;
+        for(int i=0;i<32;i++){
+            if(((n>>i)&1)==1)cnt++;
+        }
+        sc.print(cnt);
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
         // 默认开启多组输入
-        t = sc.nextInt();
+//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
