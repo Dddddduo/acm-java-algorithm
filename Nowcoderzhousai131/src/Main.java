@@ -1,24 +1,13 @@
+// https://github.com/Dddddduo/acm-java-algorithm
+// coding by Dduo from bhu-acm
+
 import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
-import java.lang.annotation.*;
 
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@interface Dduo {
-    String author() default "";
-    String description() default "";
-    String version() default "";
-    String slogan() default "Dduo is the cutest girl in the world!";
-}
-
-@Dduo(
-        author = "Dduo from bhu-acm",
-        description = "coding by Dduo from bhu-acm",
-        version = "1.0"
-)
+// 多多世界第一可爱!
+// Dduo is the cutest girl in the world!
 public class Main {
 
     private static DduoScanner sc = new DduoScanner();
@@ -36,14 +25,60 @@ public class Main {
     private static int dy[]={1,0,-1,0};
 
     private static void solve() throws IOException {
+        // 1 0 -> 1 1 或者 0 0
+        // 0 0 -> 0 0
+        // 1 1 -> 0 0
+        int n = sc.nextInt();
+        String next1 = sc.next();
+        String next2 = sc.next();
+        char arrS[]=next1.toCharArray();
+        char arrT[]=next2.toCharArray();
+
+        boolean flag = false;
+
+        for (int i1 = 0; i1 < arrS.length; i1++) {
+            int c=arrS[i1];
+            if(c=='1'){
+                flag=true;
+                break;
+            }
+        }
+
+//        if(next1==next2){
+//            sc.println("YES");
+//            return;
+//        }
+
+        if(next1.equals(next2)){
+            sc.println("YES");
+            return;
+        }
+
+        if(flag==false){
+            sc.println("NO");
+            return;
+        }
+
+        for(int i=0;i<n-1;i++){
+            if(arrS[i]==arrT[i]){
+                sc.println("YES");
+            }
+        }
+
+        sc.println("NO");
+
+
 
     }
+
+    /**
+     0100
+     */
 
     public static void main(String[] args) throws Exception {
         int t = 1;
         // 默认开启多组输入
-        t = sc.nextInt();
-        多多世界第一可爱:
+//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
@@ -53,11 +88,10 @@ public class Main {
 
 }
 
-@Dduo(
-        author = "Dduo",
-        description = "Java快速流模版",
-        version = "1.0"
-)
+/**
+
+ */
+
 class DduoScanner {
     BufferedReader bf;
     StringTokenizer st;

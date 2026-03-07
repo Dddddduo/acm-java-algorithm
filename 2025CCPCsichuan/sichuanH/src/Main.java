@@ -1,24 +1,13 @@
+// https://github.com/Dddddduo/acm-java-algorithm
+// coding by Dduo from bhu-acm
+
 import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
-import java.lang.annotation.*;
 
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@interface Dduo {
-    String author() default "";
-    String description() default "";
-    String version() default "";
-    String slogan() default "Dduo is the cutest girl in the world!";
-}
-
-@Dduo(
-        author = "Dduo from bhu-acm",
-        description = "coding by Dduo from bhu-acm",
-        version = "1.0"
-)
+// 多多世界第一可爱!
+// Dduo is the cutest girl in the world!
 public class Main {
 
     private static DduoScanner sc = new DduoScanner();
@@ -37,13 +26,46 @@ public class Main {
 
     private static void solve() throws IOException {
 
+        long x1 = sc.nextLong();
+        long y1 = sc.nextLong();
+
+        long x2 = sc.nextLong();
+        long y2 = sc.nextLong();
+
+        // 直接在起点
+        if(x1==x2&&y1==y2){
+            sc.println(0);
+            return;
+        }
+
+        if(x1!=x2&&y1!=y2){
+            long tempx=Math.abs(x1-x2);
+            long tempy=Math.abs(y1-y2);
+            sc.println((Math.max(tempx,tempy)+1)/2);
+            return;
+        }
+
+        long tempx=Math.abs(x1-x2);
+        long tempy=Math.abs(y1-y2);
+        long max=(Math.max(tempx,tempy)+1)/2;
+        if(max%2!=0)max++;
+        sc.println(max);
+
     }
+
+    /**
+     * @throws Exception
+    3
+    1 2 1 2
+    1 1 3 4
+    1 1 98 98
+
+     */
 
     public static void main(String[] args) throws Exception {
         int t = 1;
         // 默认开启多组输入
         t = sc.nextInt();
-        多多世界第一可爱:
         while (t-- > 0) {
             solve();
         }
@@ -53,11 +75,6 @@ public class Main {
 
 }
 
-@Dduo(
-        author = "Dduo",
-        description = "Java快速流模版",
-        version = "1.0"
-)
 class DduoScanner {
     BufferedReader bf;
     StringTokenizer st;

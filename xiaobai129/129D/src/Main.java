@@ -1,24 +1,13 @@
+// https://github.com/Dddddduo/acm-java-algorithm
+// coding by Dduo from bhu-acm
+
 import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
-import java.lang.annotation.*;
 
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@interface Dduo {
-    String author() default "";
-    String description() default "";
-    String version() default "";
-    String slogan() default "Dduo is the cutest girl in the world!";
-}
-
-@Dduo(
-        author = "Dduo from bhu-acm",
-        description = "coding by Dduo from bhu-acm",
-        version = "1.0"
-)
+// 多多世界第一可爱!
+// Dduo is the cutest girl in the world!
 public class Main {
 
     private static DduoScanner sc = new DduoScanner();
@@ -27,15 +16,83 @@ public class Main {
 
     private static int n;
     private static int arr[];
-    private static boolean visited[];
+    private static boolean visitedited[];
     private static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
     private static Stack<Integer> stack = new Stack<>();
     private static Queue<Integer> queue = new LinkedList<>();
     private static Deque<Integer> deque = new LinkedList<>();
-    private static int dx[]={0,1,0,-1};
-    private static int dy[]={1,0,-1,0};
+    private static int dx[] = {0, 1, 0, -1};
+    private static int dy[] = {1, 0, -1, 0};
 
     private static void solve() throws IOException {
+
+        int m = sc.nextInt();
+        long c = sc.nextLong();
+        int q = sc.nextInt();
+
+        long[] a = new long[m];
+        for (int i = 0; i < m; i++) {
+            a[i] = sc.nextLong();
+        }
+
+        loop:for (int i1 = 0; i1 < q; i1++) {
+
+            long x = sc.nextLong();
+
+            if (c == x) {
+                sc.println("Yes");
+                continue;
+            }
+
+            if (c < x) {
+                sc.println("No");
+                continue;
+            }
+
+            long target = c - x;
+
+            long[] visited = new long[m];
+            Arrays.fill(visited, -1);
+
+            ArrayList<Integer> path = new ArrayList<>();
+
+            int u = (int) (x % m);
+
+            long current = 0;
+
+            while (current <= target) {
+                if (current == target) {
+                    sc.println("Yes");
+                    continue loop;
+                }
+                // 成环
+                if (visited[u] != -1) {
+                    long start = visited[u];
+                    long last = current - start;
+                    if (last > 0) {
+                        for (int p : path) {
+                            long num = visited[p];
+                            if (num >= start) {
+                                if ((target - num) % last == 0) {
+                                    sc.println("Yes");
+                                    continue loop;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                // 未成环
+                }else{
+                    visited[u] = current;
+                    path.add(u);
+                    long step = a[u];
+                    current += step;
+                    u = (int) ((u + step) % m);
+                }
+            }
+
+            sc.println("No");
+        }
 
     }
 
@@ -43,7 +100,6 @@ public class Main {
         int t = 1;
         // 默认开启多组输入
         t = sc.nextInt();
-        多多世界第一可爱:
         while (t-- > 0) {
             solve();
         }
@@ -53,11 +109,10 @@ public class Main {
 
 }
 
-@Dduo(
-        author = "Dduo",
-        description = "Java快速流模版",
-        version = "1.0"
-)
+/**
+ *
+ */
+
 class DduoScanner {
     BufferedReader bf;
     StringTokenizer st;

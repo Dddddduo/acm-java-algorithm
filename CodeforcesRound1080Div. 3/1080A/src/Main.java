@@ -1,24 +1,13 @@
+// https://github.com/Dddddduo/acm-java-algorithm
+// coding by Dduo from bhu-acm
+
 import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
-import java.lang.annotation.*;
 
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@interface Dduo {
-    String author() default "";
-    String description() default "";
-    String version() default "";
-    String slogan() default "Dduo is the cutest girl in the world!";
-}
-
-@Dduo(
-        author = "Dduo from bhu-acm",
-        description = "coding by Dduo from bhu-acm",
-        version = "1.0"
-)
+// 多多世界第一可爱!
+// Dduo is the cutest girl in the world!
 public class Main {
 
     private static DduoScanner sc = new DduoScanner();
@@ -36,14 +25,34 @@ public class Main {
     private static int dy[]={1,0,-1,0};
 
     private static void solve() throws IOException {
+        int n = sc.nextInt();
+        int arr[]=new int[n];
+        boolean index[]=new boolean[100000];
+        for (int i1 = 0; i1 < n; i1++) {
+            arr[i1]=sc.nextInt();
+            index[arr[i1]]=true;
+        }
 
+        for(int i1 = 0; i1 < n; i1++) {
+            int mul=arr[i1];
+            for(int j1 = 0; j1 < n; j1++) {
+                if(index[j1]==true){
+                    index[j1*mul]=true;
+                }
+            }
+        }
+
+        if(index[67]==true){
+            sc.println("YES");
+        }else {
+            sc.println("NO");
+        }
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
         // 默认开启多组输入
         t = sc.nextInt();
-        多多世界第一可爱:
         while (t-- > 0) {
             solve();
         }
@@ -53,11 +62,6 @@ public class Main {
 
 }
 
-@Dduo(
-        author = "Dduo",
-        description = "Java快速流模版",
-        version = "1.0"
-)
 class DduoScanner {
     BufferedReader bf;
     StringTokenizer st;

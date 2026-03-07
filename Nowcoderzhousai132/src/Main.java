@@ -2,62 +2,95 @@ import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
-import java.lang.annotation.*;
 
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@interface Dduo {
-    String author() default "";
-    String description() default "";
-    String version() default "";
-    String slogan() default "Dduo is the cutest girl in the world!";
-}
-
-@Dduo(
-        author = "Dduo from bhu-acm",
-        description = "coding by Dduo from bhu-acm",
-        version = "1.0"
-)
+// 多多世界第一可爱!
+// Dduo is the cutest girl in the world!
 public class Main {
 
     private static DduoScanner sc = new DduoScanner();
-//    private static final long MOD = (long) (1e9 + 7);
-//    private static final long MOD = (long) (998244353);
 
-    private static int n;
-    private static int arr[];
-    private static boolean visited[];
-    private static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
-    private static Stack<Integer> stack = new Stack<>();
-    private static Queue<Integer> queue = new LinkedList<>();
-    private static Deque<Integer> deque = new LinkedList<>();
-    private static int dx[]={0,1,0,-1};
-    private static int dy[]={1,0,-1,0};
+    private static final int MAX_LIMIT = 10000050;
+    private static int[] visit;
+    private static int[] dist;
 
     private static void solve() throws IOException {
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int k = sc.nextInt();
 
+        visit = new int[MAX_LIMIT];
+        dist = new int[MAX_LIMIT];
+
+        Queue<Integer> queue = new LinkedList<>();
+        dist[a]=0;
+        queue.offer(a);
+
+        int limit=1;
+        long ans=b;
+        while(ans>0){
+            limit*=10;
+            ans/=10;
+        }
+
+        if(a>limit){
+            sc.println("-1");
+            return;
+        }
+
+        while(!queue.isEmpty()){
+
+            Integer poll = queue.poll();
+            int distance = dist[poll];
+
+            if(poll==b){
+                sc.println(distance);
+                return;
+            }
+
+            // 翻转
+            if(poll%10!=0){
+                int reverse = reverse(poll);
+                if(visit[reverse]==0&&reverse<=limit){
+                    visit[reverse]=1;
+                    dist[reverse]=distance+1;
+                    queue.offer(reverse);
+                }
+            }
+
+            // 加k
+            int add=poll+k;
+            if(visit[add]==0&&add<=limit){
+                visit[add]=1;
+                dist[add]=distance+1;
+                queue.offer(add);
+            }
+        }
+
+        sc.println("-1");
+
+
+    }
+
+    public static int reverse(int num) {
+        int mirror = 0;
+        while (num > 0) {
+            mirror = mirror * 10 + num % 10;
+            num /= 10;
+        }
+        return mirror;
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
-        // 默认开启多组输入
         t = sc.nextInt();
-        多多世界第一可爱:
         while (t-- > 0) {
             solve();
         }
         sc.flush();
         sc.bw.close();
     }
-
 }
 
-@Dduo(
-        author = "Dduo",
-        description = "Java快速流模版",
-        version = "1.0"
-)
 class DduoScanner {
     BufferedReader bf;
     StringTokenizer st;

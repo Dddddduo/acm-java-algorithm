@@ -1,24 +1,13 @@
+// https://github.com/Dddddduo/acm-java-algorithm
+// coding by Dduo from bhu-acm
+
 import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
-import java.lang.annotation.*;
 
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@interface Dduo {
-    String author() default "";
-    String description() default "";
-    String version() default "";
-    String slogan() default "Dduo is the cutest girl in the world!";
-}
-
-@Dduo(
-        author = "Dduo from bhu-acm",
-        description = "coding by Dduo from bhu-acm",
-        version = "1.0"
-)
+// 多多世界第一可爱!
+// Dduo is the cutest girl in the world!
 public class Main {
 
     private static DduoScanner sc = new DduoScanner();
@@ -32,10 +21,41 @@ public class Main {
     private static Stack<Integer> stack = new Stack<>();
     private static Queue<Integer> queue = new LinkedList<>();
     private static Deque<Integer> deque = new LinkedList<>();
-    private static int dx[]={0,1,0,-1};
-    private static int dy[]={1,0,-1,0};
+    private static int dx[] = {0, 1, 0, -1};
+    private static int dy[] = {1, 0, -1, 0};
 
     private static void solve() throws IOException {
+        int n = sc.nextInt();
+        int arr[] = new int[n + 1];
+        for (int i1 = 1; i1 < n + 1; i1++) {
+            arr[i1] = sc.nextInt();
+        }
+
+        int visited[]=new int[n+1];
+
+        for(int i=1;i<=n/2;i++){
+            if(visited[i]==1)continue;
+            ArrayList<Integer> list = new ArrayList<>();
+            for(int j=i;j<=n;j*=2){
+                list.add(arr[j]);
+                visited[j]=1;
+            }
+            Collections.sort(list);
+            int index=0;
+            for(int j=i;j<=n;j*=2){
+                arr[j]=list.get(index);
+                index++;
+            }
+        }
+
+        for (int i1 = 2; i1 <= n; i1++) {
+            if(arr[i1]<arr[i1-1]){
+                sc.println("NO");
+                return;
+            }
+        }
+
+        sc.println("YES");
 
     }
 
@@ -43,7 +63,6 @@ public class Main {
         int t = 1;
         // 默认开启多组输入
         t = sc.nextInt();
-        多多世界第一可爱:
         while (t-- > 0) {
             solve();
         }
@@ -53,11 +72,6 @@ public class Main {
 
 }
 
-@Dduo(
-        author = "Dduo",
-        description = "Java快速流模版",
-        version = "1.0"
-)
 class DduoScanner {
     BufferedReader bf;
     StringTokenizer st;
