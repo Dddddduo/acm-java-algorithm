@@ -1,24 +1,13 @@
+// https://github.com/Dddddduo/acm-java-algorithm
+// coding by Dduo from bhu-acm
+
 import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
-import java.lang.annotation.*;
 
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@interface Dduo {
-    String author() default "";
-    String description() default "";
-    String version() default "";
-    String slogan() default "Dduo is the cutest girl in the world!";
-}
-
-@Dduo(
-        author = "Dduo from bhu-acm",
-        description = "coding by Dduo from bhu-acm",
-        version = "1.0"
-)
+// 多多世界第一可爱!
+// Dduo is the cutest girl in the world!
 public class Main {
 
     private static DduoScanner sc = new DduoScanner();
@@ -36,6 +25,63 @@ public class Main {
     private static int dy[]={1,0,-1,0};
 
     private static void solve() throws IOException {
+        int n = sc.nextInt();
+        int arr[]=new int[n];
+        for (int i1 = 0; i1 < n; i1++) {
+            arr[i1]=sc.nextInt();
+        }
+
+        int index=0;
+        while(index<n&&arr[index]==n-index){
+            index++;
+        }
+
+        if(index==n){
+            for (int i1 = 0; i1 < n; i1++) {
+                sc.print(arr[i1]+" ");
+            }
+            sc.println();
+            return;
+        }
+
+//        sc.println(index);
+
+        int temp=arr[index];
+//        arr[index]=n-index;
+
+        int index1=0;
+
+        for(int i=index+1;i<n;i++){
+            if(arr[i]==n-index){
+//                arr[i]=temp;
+                index1=i;
+                break;
+            }
+        }
+
+        // index ~ index1
+//        sc.println(index+" "+index1);
+
+        int left = index;
+        int right = index1;
+        while (left < right) {
+//            sc.println(arr[left]+" "+arr[right]);
+            // 交换left和right位置的元素
+            int temp1 = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp1;
+            // 指针向中间移动
+            left++;
+            right--;
+        }
+
+        for (int i1 = 0; i1 < n; i1++) {
+            sc.print(arr[i1]+" ");
+        }
+
+        sc.println();
+
+        return;
 
     }
 
@@ -43,7 +89,6 @@ public class Main {
         int t = 1;
         // 默认开启多组输入
         t = sc.nextInt();
-        多多世界第一可爱:
         while (t-- > 0) {
             solve();
         }
@@ -53,11 +98,6 @@ public class Main {
 
 }
 
-@Dduo(
-        author = "Dduo",
-        description = "Java快速流模版",
-        version = "1.0"
-)
 class DduoScanner {
     BufferedReader bf;
     StringTokenizer st;

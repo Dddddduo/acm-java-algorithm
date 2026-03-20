@@ -1,24 +1,13 @@
+// https://github.com/Dddddduo/acm-java-algorithm
+// coding by Dduo from bhu-acm
+
 import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
-import java.lang.annotation.*;
 
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@interface Dduo {
-    String author() default "";
-    String description() default "";
-    String version() default "";
-    String slogan() default "Dduo is the cutest girl in the world!";
-}
-
-@Dduo(
-        author = "Dduo from bhu-acm",
-        description = "coding by Dduo from bhu-acm",
-        version = "1.0"
-)
+// 多多世界第一可爱!
+// Dduo is the cutest girl in the world!
 public class Main {
 
     private static DduoScanner sc = new DduoScanner();
@@ -37,13 +26,58 @@ public class Main {
 
     private static void solve() throws IOException {
 
+        long n=sc.nextLong();
+        long a=sc.nextLong();
+        long b=sc.nextLong();
+
+        long limit=2*7*8/2;
+        sc.println(limit);
+
+        long max=-1;
+
+        // td
+        for (long i = 0; i <= limit; i++) { // qcjjkkt
+            for (long j = 0; j <= limit; j++) { // qcjjkktd
+                long cost=i*7L+j*8L;
+                if(cost<=n){
+                    long l = n - cost;
+                    l/=2;
+                    max=Math.max(i*a+j*(a+b)+l*b,max);
+                }
+            }
+        }
+
+        // qcjjkkt
+        for (long i = 0; i <= limit; i++) { // td
+            for (long j = 0; j <= limit; j++) { // qcjjkktd
+                long cost=i*2L+j*8L;
+                if(cost<=n){
+                    long l = n - cost;
+                    l/=7;
+                    max=Math.max(i*b+j*(a+b)+l*a,max);
+                }
+            }
+        }
+
+        // qcjjkktd
+        for (long i = 0; i <= limit; i++) { // td
+            for (long j = 0; j <= limit; j++) { // qcjjkkt
+                long cost=i*2L+j*7L;
+                if(cost<=n){
+                    long l = n - cost;
+                    l/=8;
+                    max=Math.max(i*b+j*a+l*(a+b),max);
+                }
+            }
+        }
+
+        sc.println(max);
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
         // 默认开启多组输入
         t = sc.nextInt();
-        多多世界第一可爱:
         while (t-- > 0) {
             solve();
         }
@@ -53,11 +87,6 @@ public class Main {
 
 }
 
-@Dduo(
-        author = "Dduo",
-        description = "Java快速流模版",
-        version = "1.0"
-)
 class DduoScanner {
     BufferedReader bf;
     StringTokenizer st;

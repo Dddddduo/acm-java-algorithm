@@ -1,24 +1,13 @@
+// https://github.com/Dddddduo/acm-java-algorithm
+// coding by Dduo from bhu-acm
+
 import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
-import java.lang.annotation.*;
 
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@interface Dduo {
-    String author() default "";
-    String description() default "";
-    String version() default "";
-    String slogan() default "Dduo is the cutest girl in the world!";
-}
-
-@Dduo(
-        author = "Dduo from bhu-acm",
-        description = "coding by Dduo from bhu-acm",
-        version = "1.0"
-)
+// 多多世界第一可爱!
+// Dduo is the cutest girl in the world!
 public class Main {
 
     private static DduoScanner sc = new DduoScanner();
@@ -32,18 +21,64 @@ public class Main {
     private static Stack<Integer> stack = new Stack<>();
     private static Queue<Integer> queue = new LinkedList<>();
     private static Deque<Integer> deque = new LinkedList<>();
-    private static int dx[]={0,1,0,-1};
-    private static int dy[]={1,0,-1,0};
+    private static int dx[] = {0, 1, 0, -1};
+    private static int dy[] = {1, 0, -1, 0};
 
     private static void solve() throws IOException {
+        int n = sc.nextInt();
+        String str = " " + sc.next();
+        char[] arr = str.toCharArray();
+        ArrayList<Integer> wenhao = new ArrayList<>();
 
+        //
+        for (int i1 = 1; i1 < arr.length; i1++) {
+            if (arr[i1] == '?') {
+                wenhao.add(i1);
+                arr[i1] = '0';
+            }
+        }
+
+        long p0[] = new long[n + 10];
+        long p1[] = new long[n + 10];
+
+        for (int i = 1; i <= arr.length - 1; i++) {
+            p0[i] = p0[i - 1] + (arr[i] == '0' ? 1 : 0);
+            p1[i] = p1[i - 1] + (arr[i] == '1' ? 1 : 0);
+        }
+
+        long s0[] = new long[n + 10];
+        long s1[] = new long[n + 10];
+        for (int i = arr.length - 1; i >= 1; i--) {
+            s0[i] = s0[i + 1] + (arr[i] == '0' ? 1 : 0);
+            s1[i] = s1[i + 1] + (arr[i] == '1' ? 1 : 0);
+        }
+
+        long cnt = 0;
+        for (int i = 1; i <= arr.length - 1; i++) {
+            if (arr[i] == '1') {
+                cnt += s0[i + 1];
+            }
+        }
+
+        long k = cnt;
+
+        for (int i = 0; i < wenhao.size(); i++) {
+            // 当前0变成1
+            int idx = wenhao.get(i);
+            long loss = p1[idx - 1] + i;
+            long gain = s0[idx + 1];
+            k -= loss;
+            k += gain;
+            cnt = Math.max(cnt, k);
+        }
+
+        sc.println(cnt);
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
         // 默认开启多组输入
         t = sc.nextInt();
-        多多世界第一可爱:
         while (t-- > 0) {
             solve();
         }
@@ -53,11 +88,6 @@ public class Main {
 
 }
 
-@Dduo(
-        author = "Dduo",
-        description = "Java快速流模版",
-        version = "1.0"
-)
 class DduoScanner {
     BufferedReader bf;
     StringTokenizer st;

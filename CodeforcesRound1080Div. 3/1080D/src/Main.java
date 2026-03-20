@@ -1,24 +1,13 @@
+// https://github.com/Dddddduo/acm-java-algorithm
+// coding by Dduo from bhu-acm
+
 import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
-import java.lang.annotation.*;
 
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@interface Dduo {
-    String author() default "";
-    String description() default "";
-    String version() default "";
-    String slogan() default "Dduo is the cutest girl in the world!";
-}
-
-@Dduo(
-        author = "Dduo from bhu-acm",
-        description = "coding by Dduo from bhu-acm",
-        version = "1.0"
-)
+// 多多世界第一可爱!
+// Dduo is the cutest girl in the world!
 public class Main {
 
     private static DduoScanner sc = new DduoScanner();
@@ -36,14 +25,48 @@ public class Main {
     private static int dy[]={1,0,-1,0};
 
     private static void solve() throws IOException {
+        int n = sc.nextInt();
+        long[] f = new long[n + 1];
+        for (int i = 1; i <= n; i++) {
+            f[i] = sc.nextLong();
+        }
 
+        long[] a = new long[n + 1];
+
+
+        long sumMid = 0;
+
+        for (int i = 2; i < n; i++) {
+            long val = f[i + 1] - 2 * f[i] + f[i - 1];
+            a[i] = val / 2;
+            sumMid += a[i] * (i - 1);
+        }
+
+
+        a[n] = (f[1] - sumMid) / (n - 1);
+
+
+        long diffSum = (f[n] - f[n - 1]) + (f[2] - f[1]);
+        a[1] = a[n] + diffSum / 2;
+
+        for (int i = 1; i <= n; i++) {
+            sc.print(a[i]+" ");
+        }
+        sc.println();
     }
+
+    /**
+     1
+    4
+    17 9 9 13
+
+     1 4 2 3
+     */
 
     public static void main(String[] args) throws Exception {
         int t = 1;
         // 默认开启多组输入
         t = sc.nextInt();
-        多多世界第一可爱:
         while (t-- > 0) {
             solve();
         }
@@ -53,11 +76,6 @@ public class Main {
 
 }
 
-@Dduo(
-        author = "Dduo",
-        description = "Java快速流模版",
-        version = "1.0"
-)
 class DduoScanner {
     BufferedReader bf;
     StringTokenizer st;

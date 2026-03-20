@@ -1,29 +1,18 @@
+// https://github.com/Dddddduo/acm-java-algorithm
+// coding by Dduo from bhu-acm
+
 import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
-import java.lang.annotation.*;
 
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@interface Dduo {
-    String author() default "";
-    String description() default "";
-    String version() default "";
-    String slogan() default "Dduo is the cutest girl in the world!";
-}
-
-@Dduo(
-        author = "Dduo from bhu-acm",
-        description = "coding by Dduo from bhu-acm",
-        version = "1.0"
-)
+// 多多世界第一可爱!
+// Dduo is the cutest girl in the world!
 public class Main {
 
     private static DduoScanner sc = new DduoScanner();
 //    private static final long MOD = (long) (1e9 + 7);
-//    private static final long MOD = (long) (998244353);
+    private static final long MOD = (long) (998244353);
 
     private static int n;
     private static int arr[];
@@ -36,14 +25,30 @@ public class Main {
     private static int dy[]={1,0,-1,0};
 
     private static void solve() throws IOException {
-
+        long n=sc.nextLong();
+        long k=sc.nextLong();
+        sc.println(qpow(n,k*2+1));
     }
+
+    // 快速幂模版
+    private static long  qpow(long  base, long  exp) {
+        long  res = 1;
+        base %= MOD;
+        while (exp > 0) {
+            if (exp % 2 == 1) {
+                res = (res * base) % MOD;
+            }
+            base = (base * base) % MOD;
+            exp /= 2;
+        }
+        return res;
+    }
+
 
     public static void main(String[] args) throws Exception {
         int t = 1;
         // 默认开启多组输入
-        t = sc.nextInt();
-        多多世界第一可爱:
+//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
@@ -53,11 +58,10 @@ public class Main {
 
 }
 
-@Dduo(
-        author = "Dduo",
-        description = "Java快速流模版",
-        version = "1.0"
-)
+/**
+
+ */
+
 class DduoScanner {
     BufferedReader bf;
     StringTokenizer st;

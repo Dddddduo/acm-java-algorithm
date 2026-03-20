@@ -1,24 +1,13 @@
+// https://github.com/Dddddduo/acm-java-algorithm
+// coding by Dduo from bhu-acm
+
 import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
-import java.lang.annotation.*;
 
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@interface Dduo {
-    String author() default "";
-    String description() default "";
-    String version() default "";
-    String slogan() default "Dduo is the cutest girl in the world!";
-}
-
-@Dduo(
-        author = "Dduo from bhu-acm",
-        description = "coding by Dduo from bhu-acm",
-        version = "1.0"
-)
+// 多多世界第一可爱!
+// Dduo is the cutest girl in the world!
 public class Main {
 
     private static DduoScanner sc = new DduoScanner();
@@ -36,14 +25,20 @@ public class Main {
     private static int dy[]={1,0,-1,0};
 
     private static void solve() throws IOException {
-
+        int n=sc.nextInt();
+        Trie trie = new Trie();
+        for (int i1 = 0; i1 < n; i1++) {
+            String str=sc.next();
+            StringBuilder sb =new StringBuilder(str).reverse();
+            trie.insert(sb.toString());
+        }
+        sc.println(trie.cnt);
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
         // 默认开启多组输入
-        t = sc.nextInt();
-        多多世界第一可爱:
+//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
@@ -53,11 +48,6 @@ public class Main {
 
 }
 
-@Dduo(
-        author = "Dduo",
-        description = "Java快速流模版",
-        version = "1.0"
-)
 class DduoScanner {
     BufferedReader bf;
     StringTokenizer st;
@@ -180,4 +170,36 @@ class DduoScanner {
         return bf.ready();
     }
 
+}
+
+class Trie {
+    int[][] tree = new int[300000+10][26];
+    int cnt = 0;
+    boolean[] end = new boolean[300000+10];
+
+    public void insert(String word) {
+        int p = 0;
+        char[] chars = word.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            int c = chars[i] - 'a';
+            if (tree[p][c] == 0) {
+                tree[p][c] = ++cnt;
+            }
+            p = tree[p][c];
+        }
+        end[p] = true;
+    }
+
+    public boolean find(String word) {
+        int p = 0;
+        char[] chars = word.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            int c = chars[i] - 'a';
+            if (tree[p][c] == 0) {
+                return false;
+            }
+            p = tree[p][c];
+        }
+        return end[p];
+    }
 }

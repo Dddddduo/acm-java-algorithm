@@ -1,28 +1,17 @@
+// https://github.com/Dddddduo/acm-java-algorithm
+// coding by Dduo from bhu-acm
+
 import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
-import java.lang.annotation.*;
 
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@interface Dduo {
-    String author() default "";
-    String description() default "";
-    String version() default "";
-    String slogan() default "Dduo is the cutest girl in the world!";
-}
-
-@Dduo(
-        author = "Dduo from bhu-acm",
-        description = "coding by Dduo from bhu-acm",
-        version = "1.0"
-)
+// 多多世界第一可爱!
+// Dduo is the cutest girl in the world!
 public class Main {
 
     private static DduoScanner sc = new DduoScanner();
-//    private static final long MOD = (long) (1e9 + 7);
+    private static final long MOD = (long) (1e9 + 7);
 //    private static final long MOD = (long) (998244353);
 
     private static int n;
@@ -35,15 +24,90 @@ public class Main {
     private static int dx[]={0,1,0,-1};
     private static int dy[]={1,0,-1,0};
 
+    static class Node implements Comparable<Node> {
+        long weight; // 质量
+        long count; // 数量
+
+        public Node(long weight, long count) {
+            this.weight = weight;
+            this.count = count;
+        }
+
+        @Override
+        public int compareTo(Node o) {
+            return Long.compare(this.weight, o.weight);
+        }
+    }
+
     private static void solve() throws IOException {
 
+        int n = sc.nextInt();
+        HashMap<Long, Long> map = new HashMap<>();
+        for (int i = 0; i < n; i++) {
+            long c = sc.nextLong();
+            long w = sc.nextLong();
+            map.put(w, map.getOrDefault(w, 0L) + c);
+        }
+
+        PriorityQueue<Node> pq = new PriorityQueue<>();
+        for (Map.Entry<Long, Long> entry : map.entrySet()) {
+            pq.offer(new Node(entry.getKey(), entry.getValue()));
+        }
+
+        long ans = 0;
+
+        while (!pq.isEmpty()) {
+
+            Node current = pq.poll();
+
+            while (!pq.isEmpty() && pq.peek().weight == current.weight) {
+                current.count += pq.poll().count;
+            }
+
+            if (pq.isEmpty() && current.count == 1) {
+                break;
+            }
+
+            // 批量处理2倍数的贡献
+            if (current.count >= 2) {
+
+                long sum = ((current.weight % MOD * 2) % MOD * ( current.count / 2 % MOD)) % MOD;
+                ans = (ans + sum) % MOD;
+
+                pq.offer(new Node(current.weight * 2, current.count / 2));
+
+                // 奇数个
+                if (current.count%2 == 1) {
+                    pq.offer(new Node(current.weight, 1));
+                }
+                continue;
+            }
+
+            Node next = pq.poll();
+
+            while (!pq.isEmpty() && pq.peek().weight == next.weight) {
+                next.count += pq.poll().count;
+            }
+
+            long now = (current.weight % MOD + next.weight % MOD) % MOD;
+            ans = (ans + now) % MOD;
+
+            long l1 = current.weight + next.weight;
+            pq.offer(new Node(l1, 1));
+
+            if (next.count > 1) {
+                pq.offer(new Node(next.weight, next.count - 1));
+            }
+
+        }
+
+        sc.println(ans);
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
         // 默认开启多组输入
-        t = sc.nextInt();
-        多多世界第一可爱:
+//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
@@ -53,11 +117,6 @@ public class Main {
 
 }
 
-@Dduo(
-        author = "Dduo",
-        description = "Java快速流模版",
-        version = "1.0"
-)
 class DduoScanner {
     BufferedReader bf;
     StringTokenizer st;

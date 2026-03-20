@@ -1,24 +1,13 @@
+// https://github.com/Dddddduo/acm-java-algorithm
+// coding by Dduo from bhu-acm
+
 import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
-import java.lang.annotation.*;
 
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@interface Dduo {
-    String author() default "";
-    String description() default "";
-    String version() default "";
-    String slogan() default "Dduo is the cutest girl in the world!";
-}
-
-@Dduo(
-        author = "Dduo from bhu-acm",
-        description = "coding by Dduo from bhu-acm",
-        version = "1.0"
-)
+// 多多世界第一可爱!
+// Dduo is the cutest girl in the world!
 public class Main {
 
     private static DduoScanner sc = new DduoScanner();
@@ -32,18 +21,53 @@ public class Main {
     private static Stack<Integer> stack = new Stack<>();
     private static Queue<Integer> queue = new LinkedList<>();
     private static Deque<Integer> deque = new LinkedList<>();
-    private static int dx[]={0,1,0,-1};
-    private static int dy[]={1,0,-1,0};
+    private static int dx[] = {0, 1, 0, -1};
+    private static int dy[] = {1, 0, -1, 0};
 
     private static void solve() throws IOException {
+        int arr[][] = new int[4][4];
+        HashSet<Integer> set = new HashSet<>();
+        for (int i1 = 1; i1 <= 3; i1++) {
+            for (int i2 = 1; i2 <= 3; i2++) {
+                arr[i1][i2] = sc.nextInt();
+                set.add(arr[i1][i2]);
+            }
+        }
 
+        if (set.size() != 9) {
+            sc.println("No");
+            return;
+        }
+
+        int i1 = arr[1][1] + arr[1][2] + arr[1][3];
+        int i2 = arr[2][1] + arr[2][2] + arr[2][3];
+        int i3 = arr[3][1] + arr[3][2] + arr[3][3];
+
+        int i4 = arr[1][1] + arr[2][1] + arr[3][1];
+        int i5 = arr[1][2] + arr[2][2] + arr[3][2];
+        int i6 = arr[1][3] + arr[2][3] + arr[3][3];
+
+        int i7 = arr[1][1] + arr[2][2] + arr[3][3];
+        int i8 = arr[1][3] + arr[2][2] + arr[3][1];
+
+        if (i1 != i2 || i1 != i3 || i1 != i4 || i1 != i5 || i1 != i6 || i1 != i7 || i1 != i8 ||
+                i2 != i3 || i2 != i4 || i2 != i5 || i2 != i6 || i2 != i7 || i2 != i8 ||
+                i3 != i4 || i3 != i5 || i3 != i6 || i3 != i7 || i3 != i8 ||
+                i4 != i5 || i4 != i6 || i4 != i7 || i4 != i8 ||
+                i5 != i6 || i5 != i7 || i5 != i8 ||
+                i6 != i7 || i6 != i8 ||
+                i7 != i8) {
+            sc.println("No");
+            return;
+        }
+
+        sc.println("Yes");
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
         // 默认开启多组输入
-        t = sc.nextInt();
-        多多世界第一可爱:
+//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
@@ -53,11 +77,6 @@ public class Main {
 
 }
 
-@Dduo(
-        author = "Dduo",
-        description = "Java快速流模版",
-        version = "1.0"
-)
 class DduoScanner {
     BufferedReader bf;
     StringTokenizer st;

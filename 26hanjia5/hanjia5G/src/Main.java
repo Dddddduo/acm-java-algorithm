@@ -1,24 +1,13 @@
+// https://github.com/Dddddduo/acm-java-algorithm
+// coding by Dduo from bhu-acm
+
 import java.util.*;
 import java.io.*;
 import java.math.*;
 import java.lang.*;
-import java.lang.annotation.*;
 
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@interface Dduo {
-    String author() default "";
-    String description() default "";
-    String version() default "";
-    String slogan() default "Dduo is the cutest girl in the world!";
-}
-
-@Dduo(
-        author = "Dduo from bhu-acm",
-        description = "coding by Dduo from bhu-acm",
-        version = "1.0"
-)
+// 多多世界第一可爱!
+// Dduo is the cutest girl in the world!
 public class Main {
 
     private static DduoScanner sc = new DduoScanner();
@@ -37,13 +26,48 @@ public class Main {
 
     private static void solve() throws IOException {
 
+        sc.println("3132333010010310230010130130330130312312210210010321300120122322322101123223211001003013030031210332");
+
+//        String str=sc.next();
+//        StringBuilder sb = new StringBuilder();
+//        int now=0;
+//        for (char c : str.toCharArray()) {
+//            if(c=='0'){
+//                now=3-now;
+//            }
+//            if(c=='1'){
+//                if(now==1)now=3;
+//                else if(now==3)now=1;
+//            }
+//            if(c=='2'){
+//                if(now==0)now=1;
+//                else if(now==1)now=0;
+//                else if(now==2)now=3;
+//                else if(now==3)now=2;
+//            }
+//            if(c=='3'){
+//                if(now==0)now=2;
+//                else if(now==2)now=0;
+//            }
+//            if(c=='4'){
+//                now=(now+1)%4;
+//            }
+//            if(c=='5'){
+//                if(now==3)now=2;
+//                else if(now==2)now=1;
+//                else if(now==1)now=0;
+//                else if(now==0)now=3;
+//            }
+//            sb.append(now+"");
+//        }
+//
+//        sc.println(sb.toString());
     }
 
     public static void main(String[] args) throws Exception {
         int t = 1;
         // 默认开启多组输入
-        t = sc.nextInt();
-        多多世界第一可爱:
+//        t = sc.nextInt();
         while (t-- > 0) {
             solve();
         }
@@ -53,11 +77,6 @@ public class Main {
 
 }
 
-@Dduo(
-        author = "Dduo",
-        description = "Java快速流模版",
-        version = "1.0"
-)
 class DduoScanner {
     BufferedReader bf;
     StringTokenizer st;
