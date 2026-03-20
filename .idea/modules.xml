@@ -2,6 +2,20 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/20260308/0308A/0308A.iml" filepath="$PROJECT_DIR$/20260308/0308A/0308A.iml" />
+      <module fileurl="file://$PROJECT_DIR$/20260308/0308B/0308B.iml" filepath="$PROJECT_DIR$/20260308/0308B/0308B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/20260308/0308C/0308C.iml" filepath="$PROJECT_DIR$/20260308/0308C/0308C.iml" />
+      <module fileurl="file://$PROJECT_DIR$/20260308/0308E/0308E.iml" filepath="$PROJECT_DIR$/20260308/0308E/0308E.iml" />
+      <module fileurl="file://$PROJECT_DIR$/20260308/0308L/0308L.iml" filepath="$PROJECT_DIR$/20260308/0308L/0308L.iml" />
+      <module fileurl="file://$PROJECT_DIR$/0314xunlian/0312B/0312B.iml" filepath="$PROJECT_DIR$/0314xunlian/0312B/0312B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/0314xunlian/0312C/0312C.iml" filepath="$PROJECT_DIR$/0314xunlian/0312C/0312C.iml" />
+      <module fileurl="file://$PROJECT_DIR$/0314xunlian/0312D/0312D.iml" filepath="$PROJECT_DIR$/0314xunlian/0312D/0312D.iml" />
+      <module fileurl="file://$PROJECT_DIR$/0314xunlian/0312R/0312R.iml" filepath="$PROJECT_DIR$/0314xunlian/0312R/0312R.iml" />
+      <module fileurl="file://$PROJECT_DIR$/0314xunlian/0314xunlian.iml" filepath="$PROJECT_DIR$/0314xunlian/0314xunlian.iml" />
+      <module fileurl="file://$PROJECT_DIR$/0315xunlian/0315xunlian.iml" filepath="$PROJECT_DIR$/0315xunlian/0315xunlian.iml" />
+      <module fileurl="file://$PROJECT_DIR$/0318xunlian/0318A/0318A.iml" filepath="$PROJECT_DIR$/0318xunlian/0318A/0318A.iml" />
+      <module fileurl="file://$PROJECT_DIR$/0318xunlian/0318B/0318B.iml" filepath="$PROJECT_DIR$/0318xunlian/0318B/0318B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/0318xunlian/0318xunlian.iml" filepath="$PROJECT_DIR$/0318xunlian/0318xunlian.iml" />
       <module fileurl="file://$PROJECT_DIR$/0416train/0416B/0416B.iml" filepath="$PROJECT_DIR$/0416train/0416B/0416B.iml" />
       <module fileurl="file://$PROJECT_DIR$/0416train/0416C/0416C.iml" filepath="$PROJECT_DIR$/0416train/0416C/0416C.iml" />
       <module fileurl="file://$PROJECT_DIR$/0416train/0416E/0416E.iml" filepath="$PROJECT_DIR$/0416train/0416E/0416E.iml" />
@@ -106,6 +120,7 @@
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai110/110D/110D.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai110/110D/110D.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai110/110E/110E.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai110/110E/110E.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai110/110F/110F.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai110/110F/110F.iml" />
+      <module fileurl="file://$PROJECT_DIR$/0315xunlian/111/111.iml" filepath="$PROJECT_DIR$/0315xunlian/111/111.iml" />
       <module fileurl="file://$PROJECT_DIR$/acm1130kaohe/1130kaohe1/1130kaohe1.iml" filepath="$PROJECT_DIR$/acm1130kaohe/1130kaohe1/1130kaohe1.iml" />
       <module fileurl="file://$PROJECT_DIR$/acm1130kaohe/1130kaohe2/1130kaohe2.iml" filepath="$PROJECT_DIR$/acm1130kaohe/1130kaohe2/1130kaohe2.iml" />
       <module fileurl="file://$PROJECT_DIR$/acm1130kaohe/1130kaohe3/1130kaohe3.iml" filepath="$PROJECT_DIR$/acm1130kaohe/1130kaohe3/1130kaohe3.iml" />
@@ -120,6 +135,12 @@
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai131/131B/131B.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai131/131B/131B.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai131/131C/131C.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai131/131C/131C.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai131/131D/131D.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai131/131D/131D.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai134/134A/134A.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai134/134A/134A.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai134/134B/134B.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai134/134B/134B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai134/134C/134C.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai134/134C/134C.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai134/134D/134D.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai134/134D/134D.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai134/134E/134E.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai134/134E/134E.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai134/134F/134F.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai134/134F/134F.iml" />
       <module fileurl="file://$PROJECT_DIR$/1400-1700 day1/1400-1700 day1.iml" filepath="$PROJECT_DIR$/1400-1700 day1/1400-1700 day1.iml" />
       <module fileurl="file://$PROJECT_DIR$/1400-1700 day2/1400-1700 day2.iml" filepath="$PROJECT_DIR$/1400-1700 day2/1400-1700 day2.iml" />
       <module fileurl="file://$PROJECT_DIR$/1400-1700 day3/1400-1700 day3.iml" filepath="$PROJECT_DIR$/1400-1700 day3/1400-1700 day3.iml" />
@@ -207,6 +228,8 @@
       <module fileurl="file://$PROJECT_DIR$/xingshengsai2025/2025xxsJ/2025xxsJ.iml" filepath="$PROJECT_DIR$/xingshengsai2025/2025xxsJ/2025xxsJ.iml" />
       <module fileurl="file://$PROJECT_DIR$/xingshengsai2025/2025xxsL/2025xxsL.iml" filepath="$PROJECT_DIR$/xingshengsai2025/2025xxsL/2025xxsL.iml" />
       <module fileurl="file://$PROJECT_DIR$/xingshengsai2025/2025xxsN/2025xxsN.iml" filepath="$PROJECT_DIR$/xingshengsai2025/2025xxsN/2025xxsN.iml" />
+      <module fileurl="file://$PROJECT_DIR$/20260308/20260308.iml" filepath="$PROJECT_DIR$/20260308/20260308.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2026xiaosai/2026xiaosai.iml" filepath="$PROJECT_DIR$/2026xiaosai/2026xiaosai.iml" />
       <module fileurl="file://$PROJECT_DIR$/2024heilongjiang/24heilongjiangB/24heilongjiangB.iml" filepath="$PROJECT_DIR$/2024heilongjiang/24heilongjiangB/24heilongjiangB.iml" />
       <module fileurl="file://$PROJECT_DIR$/2024heilongjiang/24heilongjiangD/24heilongjiangD.iml" filepath="$PROJECT_DIR$/2024heilongjiang/24heilongjiangD/24heilongjiangD.iml" />
       <module fileurl="file://$PROJECT_DIR$/2024heilongjiang/24heilongjiangJ/24heilongjiangJ.iml" filepath="$PROJECT_DIR$/2024heilongjiang/24heilongjiangJ/24heilongjiangJ.iml" />
@@ -214,6 +237,13 @@
       <module fileurl="file://$PROJECT_DIR$/2024heilongjiang/24heilongjiangL/24heilongjiangL.iml" filepath="$PROJECT_DIR$/2024heilongjiang/24heilongjiangL/24heilongjiangL.iml" />
       <module fileurl="file://$PROJECT_DIR$/25qixi/25qixi.iml" filepath="$PROJECT_DIR$/25qixi/25qixi.iml" />
       <module fileurl="file://$PROJECT_DIR$/26hanjia5/26hanjia5.iml" filepath="$PROJECT_DIR$/26hanjia5/26hanjia5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/311xunlian/311A/311A.iml" filepath="$PROJECT_DIR$/311xunlian/311A/311A.iml" />
+      <module fileurl="file://$PROJECT_DIR$/311xunlian/311B/311B.iml" filepath="$PROJECT_DIR$/311xunlian/311B/311B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/311xunlian/311C/311C.iml" filepath="$PROJECT_DIR$/311xunlian/311C/311C.iml" />
+      <module fileurl="file://$PROJECT_DIR$/311xunlian/311D/311D.iml" filepath="$PROJECT_DIR$/311xunlian/311D/311D.iml" />
+      <module fileurl="file://$PROJECT_DIR$/311xunlian/311E/311E.iml" filepath="$PROJECT_DIR$/311xunlian/311E/311E.iml" />
+      <module fileurl="file://$PROJECT_DIR$/311xunlian/311F/311F.iml" filepath="$PROJECT_DIR$/311xunlian/311F/311F.iml" />
+      <module fileurl="file://$PROJECT_DIR$/311xunlian/311xunlian.iml" filepath="$PROJECT_DIR$/311xunlian/311xunlian.iml" />
       <module fileurl="file://$PROJECT_DIR$/shengsaijixun4_14/414A/414A.iml" filepath="$PROJECT_DIR$/shengsaijixun4_14/414A/414A.iml" />
       <module fileurl="file://$PROJECT_DIR$/shengsaijixun4_14/414B/414B.iml" filepath="$PROJECT_DIR$/shengsaijixun4_14/414B/414B.iml" />
       <module fileurl="file://$PROJECT_DIR$/shengsaijixun4_14/414C/414C.iml" filepath="$PROJECT_DIR$/shengsaijixun4_14/414C/414C.iml" />
@@ -361,6 +391,7 @@
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai128/Nowcoderzhousai128.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai128/Nowcoderzhousai128.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai131/Nowcoderzhousai131.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai131/Nowcoderzhousai131.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai132/Nowcoderzhousai132.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai132/Nowcoderzhousai132.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai134/Nowcoderzhousai134.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai134/Nowcoderzhousai134.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai87/Nowcoderzhousai87.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai87/Nowcoderzhousai87.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai88/Nowcoderzhousai88.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai88/Nowcoderzhousai88.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nowcoderzhousai89/Nowcoderzhousai89.iml" filepath="$PROJECT_DIR$/Nowcoderzhousai89/Nowcoderzhousai89.iml" />
@@ -376,6 +407,7 @@
       <module fileurl="file://$PROJECT_DIR$/The 2022 Zhejiang University City College Freshman Programming Contest/The 2022 Zhejiang University City College Freshman Programming Contest.iml" filepath="$PROJECT_DIR$/The 2022 Zhejiang University City College Freshman Programming Contest/The 2022 Zhejiang University City College Freshman Programming Contest.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tuesday/Tuesday.iml" filepath="$PROJECT_DIR$/Tuesday/Tuesday.iml" />
       <module fileurl="file://$PROJECT_DIR$/Warm/Warm.iml" filepath="$PROJECT_DIR$/Warm/Warm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/0314xunlian/aaaaa/aaaaa.iml" filepath="$PROJECT_DIR$/0314xunlian/aaaaa/aaaaa.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/acm-java-algorithm.iml" filepath="$PROJECT_DIR$/.idea/acm-java-algorithm.iml" />
       <module fileurl="file://$PROJECT_DIR$/acm1130kaohe/acm1130kaohe.iml" filepath="$PROJECT_DIR$/acm1130kaohe/acm1130kaohe.iml" />
       <module fileurl="file://$PROJECT_DIR$/2024CCPChenan/ans/ans.iml" filepath="$PROJECT_DIR$/2024CCPChenan/ans/ans.iml" />
@@ -415,6 +447,9 @@
       <module fileurl="file://$PROJECT_DIR$/day8/day82/day82.iml" filepath="$PROJECT_DIR$/day8/day82/day82.iml" />
       <module fileurl="file://$PROJECT_DIR$/day8/day83/day83.iml" filepath="$PROJECT_DIR$/day8/day83/day83.iml" />
       <module fileurl="file://$PROJECT_DIR$/day8/day84/day84.iml" filepath="$PROJECT_DIR$/day8/day84/day84.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2026xiaosai/dfs/dfs.iml" filepath="$PROJECT_DIR$/2026xiaosai/dfs/dfs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2026xiaosai/dfsbfs1/dfsbfs1.iml" filepath="$PROJECT_DIR$/2026xiaosai/dfsbfs1/dfsbfs1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2026xiaosai/dfsbfs2/dfsbfs2.iml" filepath="$PROJECT_DIR$/2026xiaosai/dfsbfs2/dfsbfs2.iml" />
       <module fileurl="file://$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanba.iml" filepath="$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanba.iml" />
       <module fileurl="file://$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanba6/dongbeisaixuanba6.iml" filepath="$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanba6/dongbeisaixuanba6.iml" />
       <module fileurl="file://$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanba7/dongbeisaixuanba7.iml" filepath="$PROJECT_DIR$/dongbeisaixuanba/dongbeisaixuanba7/dongbeisaixuanba7.iml" />
@@ -547,6 +582,8 @@
       <module fileurl="file://$PROJECT_DIR$/Nowcoderyuesai124/xiaobai124F/xiaobai124F.iml" filepath="$PROJECT_DIR$/Nowcoderyuesai124/xiaobai124F/xiaobai124F.iml" />
       <module fileurl="file://$PROJECT_DIR$/xiaobai129/xiaobai129.iml" filepath="$PROJECT_DIR$/xiaobai129/xiaobai129.iml" />
       <module fileurl="file://$PROJECT_DIR$/xiaosai/xiaosai.iml" filepath="$PROJECT_DIR$/xiaosai/xiaosai.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2026xiaosai/xiaosaiA/xiaosaiA.iml" filepath="$PROJECT_DIR$/2026xiaosai/xiaosaiA/xiaosaiA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2026xiaosai/xiaosaiB/xiaosaiB.iml" filepath="$PROJECT_DIR$/2026xiaosai/xiaosaiB/xiaosaiB.iml" />
       <module fileurl="file://$PROJECT_DIR$/xingshengsai2025/xingshengsai2025.iml" filepath="$PROJECT_DIR$/xingshengsai2025/xingshengsai2025.iml" />
       <module fileurl="file://$PROJECT_DIR$/xunlian1105/xunlian1105.iml" filepath="$PROJECT_DIR$/xunlian1105/xunlian1105.iml" />
       <module fileurl="file://$PROJECT_DIR$/The 2022 Zhejiang University City College Freshman Programming Contest/zhedacitycollegeA/zhedacitycollegeA.iml" filepath="$PROJECT_DIR$/The 2022 Zhejiang University City College Freshman Programming Contest/zhedacitycollegeA/zhedacitycollegeA.iml" />

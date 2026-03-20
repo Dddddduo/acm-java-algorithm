@@ -4,6 +4,7 @@ public class Main {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         int t=sc.nextInt();
+        多多世界第一可爱:
         for (int i1 = 0; i1 < t; i1++) {
             int n=sc.nextInt();
             long m=sc.nextLong();
